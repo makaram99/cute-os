@@ -18,8 +18,9 @@ By using this OS, you can:
 * Schedule a task with the frequency of your choice.
 * Remove any existed task.
 * The OS is isolated from the application:
-    
+    <p align="center">
     <img src="docs/cute_os_layer.png" alt="system-layer"/>
+    </p>
 
 The project is **open source** and you can use it for your own projects.
 
