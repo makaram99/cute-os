@@ -1,0 +1,7 @@
+<map id="code/include/main.h" name="code/include/main.h">
+<area shape="rect" id="node1" title="Project Header for main.c." alt="" coords="285,5,480,37"/>
+<area shape="rect" id="node2" href="$cute_o_s_8c.html" title="Main file for Cute Embedded Operating System (cuteOS) for 8051." alt="" coords="5,85,187,117"/>
+<area shape="rect" id="node3" href="$main_8c.html" title="Testing cute OS." alt="" coords="211,85,370,117"/>
+<area shape="rect" id="node4" href="$traffic_8c.html" title="This is a traffic Light project (Chapter 8 &#45; Embedded C by Professor j. Pont)." alt="" coords="395,85,557,117"/>
+<area shape="rect" id="node5" href="$traffic__cfg_8c.html" title="Configurations of Traffic Light System." alt="" coords="582,85,781,117"/>
+</map>

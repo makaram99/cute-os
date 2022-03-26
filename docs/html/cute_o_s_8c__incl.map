@@ -1,0 +1,7 @@
+<map id="code/src/cuteOS.c" name="code/src/cuteOS.c">
+<area shape="rect" id="node1" title="Main file for Cute Embedded Operating System (cuteOS) for 8051." alt="" coords="173,5,355,37"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,85,93,117"/>
+<area shape="rect" id="node3" href="$_s_t_d___t_y_p_e_s_8h.html" title="Standard data types For AVR Microcontrollers." alt="" coords="117,85,269,117"/>
+<area shape="rect" id="node4" href="$main_8h.html" title="Project Header for main.c." alt="" coords="293,85,376,117"/>
+<area shape="rect" id="node5" href="$cute_o_s_8h.html" title="Simple EOS interfaces header file. See cuteOS.c for more details." alt="" coords="401,85,503,117"/>
+</map>

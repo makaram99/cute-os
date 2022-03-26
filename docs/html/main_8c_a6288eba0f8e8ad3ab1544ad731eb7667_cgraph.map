@@ -1,0 +1,15 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,313,69,345"/>
+<area shape="rect" id="node2" href="$main_8c.html#a6c976f7ac0ffb00b38efc557b4c019ec" title=" " alt="" coords="152,5,297,37"/>
+<area shape="rect" id="node3" href="$cute_o_s_8h.html#a538cb1529929abdc516dbc5a23bf41fd" title="Sets up Timer 2 to drive the simple EOS." alt="" coords="163,61,286,93"/>
+<area shape="rect" id="node4" href="$cute_o_s_8h.html#a90f66f4ffbd452ceb65c8968caada76f" title="The OS enters &#39;idle mode&#39; between clock ticks to save power." alt="" coords="155,117,294,149"/>
+<area shape="rect" id="node5" href="$cute_o_s_8h.html#a7d3052acc66fae6a67b7cf7ccbf3d8d4" title="Create a task with the given task function and the given tick time." alt="" coords="125,173,324,205"/>
+<area shape="rect" id="node6" href="$cute_o_s_8h.html#a29a8d320c73b798551f37a26b03cab71" title="Remove a task from the tasks array." alt="" coords="117,229,332,261"/>
+<area shape="rect" id="node7" href="$main_8c.html#a1997966c7114e418ca8a5cca191d1f88" title=" " alt="" coords="167,285,283,317"/>
+<area shape="rect" id="node8" href="$main_8c.html#a6fa8e7c693565ded0ab5ee29fa5de791" title=" " alt="" coords="163,341,286,373"/>
+<area shape="rect" id="node9" href="$main_8c.html#a47b506b62b06e2e85e62520338abe72e" title=" " alt="" coords="163,397,286,429"/>
+<area shape="rect" id="node10" href="$main_8c.html#af0bbe854fc7f08055c70db5ed01faef9" title=" " alt="" coords="163,453,286,485"/>
+<area shape="rect" id="node11" href="$main_8c.html#a4cad5dd5dd4488af1f611c046b28b517" title=" " alt="" coords="157,509,292,541"/>
+<area shape="rect" id="node12" href="$traffic_8h.html#aec307edaf66438346ef2f2a23e961ccb" title="Initialize the traffic light system to RED state." alt="" coords="155,565,295,597"/>
+<area shape="rect" id="node13" href="$traffic_8h.html#aac30159179227db868e8343ffc3ba333" title=" " alt="" coords="135,621,314,653"/>
+</map>
