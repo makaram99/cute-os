@@ -1,0 +1,38 @@
+\hypertarget{_b_i_t___m_a_t_h_8h_source}{}\doxysubsection{BIT\+\_\+\+MATH.\+h}
+\label{_b_i_t___m_a_t_h_8h_source}\index{code/include/BIT\_MATH.h@{code/include/BIT\_MATH.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#ifndef BIT\_MATH\_H}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define BIT\_MATH\_H}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00019}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_aaaaf1c4418f4d6ce97f56c0b73c11b30}{00019}} \textcolor{preprocessor}{\#define GET\_BIT(REGISTER, BIT)      ( 1 \& ( (REGISTER) >> (BIT) ) )}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00028}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a369f3fccb27e49bc7faeb3875786b322}{00028}} \textcolor{preprocessor}{\#define SET\_BIT(REGISTER, BIT)      ( (REGISTER) |= (1 << (BIT)) )}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00037}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a1cc1f10aa5e19a6fe3383f5a4065a127}{00037}} \textcolor{preprocessor}{\#define CLR\_BIT(REGISTER, BIT)      ( (REGISTER) \&= \string~(1 << (BIT)) )}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00046}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a57d2403dc501b81376600c70ba3f9c42}{00046}} \textcolor{preprocessor}{\#define TOG\_BIT(REGISTER, BIT)      ( (REGISTER) \string^= (1 << (BIT)) )}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00056}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a20033cb17b243d3c1b511123b53a135c}{00056}} \textcolor{preprocessor}{\#define BIT\_IS\_SET(REGISTER,Bit)    ( (REGISTER) \& (1 << (Bit)) )}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00067}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a65f55e6701263c9ce92ab7f8cc3d6af0}{00067}} \textcolor{preprocessor}{\#define BIT\_IS\_CLEAR(REGISTER,Bit)  ( !( (REGISTER) \& (1 << (Bit)) ) )}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00069}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a97912f2f3043abd92d5041a6a86601ef}{00069}} \textcolor{preprocessor}{\#define CONCAT\_8BITS(b7, b6, b5, b4, b3, b2, b1, b0)  (0b\#\#b7\#\#b6\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)}}
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00070}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a57d72084fe58997125c00329ef544357}{00070}} \textcolor{preprocessor}{\#define CONCAT\_7BITS(b6, b5, b4, b3, b2, b1, b0)      (0b\#\#b6\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)}}
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00071}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a31dd164c7357d6ea2bd1deeb5110ad44}{00071}} \textcolor{preprocessor}{\#define CONCAT\_6BITS(b5, b4, b3, b2, b1, b0)          (0b\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)}}
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00072}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a9ffc652539dedb7efc129978b35b04a5}{00072}} \textcolor{preprocessor}{\#define CONCAT\_5BITS(b4, b3, b2, b1, b0)              (0b\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)}}
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00073}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a170830840eb8dbbdceb5670e753caaf1}{00073}} \textcolor{preprocessor}{\#define CONCAT\_4BITS(b3, b2, b1, b0)                  (0b\#\#b3\#\#b2\#\#b1\#\#b0)}}
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00074}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_abb416ad83a20d51e3c349d18cf96a129}{00074}} \textcolor{preprocessor}{\#define CONCAT\_3BITS(b2, b1, b0)                      (0b\#\#b2\#\#b1\#\#b0)}}
+\DoxyCodeLine{\Hypertarget{_b_i_t___m_a_t_h_8h_source_l00075}\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a47c601992a278679cf351b8fe43b9da4}{00075}} \textcolor{preprocessor}{\#define CONCAT\_2BITS(b1, b0)                          (0b\#\#b1\#\#b0)}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00077 \textcolor{preprocessor}{\#endif          }\textcolor{comment}{/* BIT\_MATH\_H   */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

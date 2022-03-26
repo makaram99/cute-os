@@ -1,0 +1,1 @@
+"src\traffic.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\include) DEBUG OBJECTEXTEND PRINT(.\Listings\traffic.lst) TABS (2) OBJECT(.\Objects\traffic.obj)

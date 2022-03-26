@@ -1,0 +1,7 @@
+".\Objects\STARTUP.obj",
+".\Objects\cuteOS.obj",
+".\Objects\main.obj",
+".\Objects\traffic.obj",
+".\Objects\traffic_cfg.obj" 
+TO ".\Objects\cuteOS" 
+PRINT(".\Listings\cuteOS.m51") RAMSIZE(256) 

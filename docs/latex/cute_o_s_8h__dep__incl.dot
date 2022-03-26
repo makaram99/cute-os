@@ -1,0 +1,11 @@
+digraph "code/include/cuteOS.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="14",labelfontname="Helvetica",labelfontsize="14"];
+  node [fontname="Helvetica",fontsize="14",shape=record];
+  Node1 [label="code/include/cuteOS.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Simple EOS interfaces header file. See cuteOS.c for more details."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="14",style="solid"];
+  Node2 [label="code/src/cuteOS.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cute_o_s_8c.html",tooltip="Main file for Cute Embedded Operating System (cuteOS) for 8051."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="14",style="solid"];
+  Node3 [label="code/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Testing cute OS."];
+}

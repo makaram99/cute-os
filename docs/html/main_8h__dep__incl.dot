@@ -1,0 +1,15 @@
+digraph "code/include/main.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="14",labelfontname="Helvetica",labelfontsize="14"];
+  node [fontname="Helvetica",fontsize="14",shape=record];
+  Node1 [label="code/include/main.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Project Header for main.c."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="14",style="solid",fontname="Helvetica"];
+  Node2 [label="code/src/cuteOS.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cute_o_s_8c.html",tooltip="Main file for Cute Embedded Operating System (cuteOS) for 8051."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="14",style="solid",fontname="Helvetica"];
+  Node3 [label="code/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Testing cute OS."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="14",style="solid",fontname="Helvetica"];
+  Node4 [label="code/src/traffic.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$traffic_8c.html",tooltip="This is a traffic Light project (Chapter 8 - Embedded C by Professor j. Pont)."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="14",style="solid",fontname="Helvetica"];
+  Node5 [label="code/src/traffic_cfg.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$traffic__cfg_8c.html",tooltip="Configurations of Traffic Light System."];
+}

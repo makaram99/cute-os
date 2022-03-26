@@ -1,0 +1,172 @@
+\hypertarget{cute_o_s_8c_source}{}\doxysubsection{cute\+OS.\+c}
+\label{cute_o_s_8c_source}\index{code/src/cuteOS.c@{code/src/cuteOS.c}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include <reg52.h>}}
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h}{STD\_TYPES.h}}"{}}}
+\DoxyCodeLine{00025 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_8h}{main.H}}"{}}}
+\DoxyCodeLine{00026 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cute_o_s_8h}{cuteOS.h}}"{}}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00030 \textcolor{comment}{/*                          PRIVATE DATA                              */}}
+\DoxyCodeLine{00031 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00042 \textcolor{preprocessor}{\#define MAX\_TICK\_TIME\_MS  65         }}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00045 \textcolor{keyword}{static} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} cuteOS\_TickTimeMs = 50; }
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00048 \textcolor{keyword}{static} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aa0b167025ed1eead1300bc4dbdfb230e}{u16}} cuteOS\_TickCount = 0;}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00053 \textcolor{preprocessor}{\#define MAX\_TASKS\_NUM   10   }}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00056 \textcolor{keyword}{static} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} cuteOS\_TaskCounter = 0;         }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00059}\mbox{\hyperlink{structcute_o_s___t_a_s_k__t}{00059}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00060}\mbox{\hyperlink{structcute_o_s___t_a_s_k__t_a1b24265c326f0a03355aed4646ae74ac}{00060}}     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} (*callback)(void);    }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00061}\mbox{\hyperlink{structcute_o_s___t_a_s_k__t_afe7a80281ab293cd2692d4701778992a}{00061}}     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aa0b167025ed1eead1300bc4dbdfb230e}{u16}} \mbox{\hyperlink{structcute_o_s___t_a_s_k__t_afe7a80281ab293cd2692d4701778992a}{ticks}};    }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00062}\mbox{\hyperlink{structcute_o_s___t_a_s_k__t_a06b0c1fe0b3340c9767270a44106fff3}{00062}}     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}}  \mbox{\hyperlink{structcute_o_s___t_a_s_k__t_a06b0c1fe0b3340c9767270a44106fff3}{id}};       }
+\DoxyCodeLine{00063 \}\mbox{\hyperlink{structcute_o_s___t_a_s_k__t}{cuteOS\_TASK\_t}};}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00066}\mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{00066}} \mbox{\hyperlink{structcute_o_s___t_a_s_k__t}{cuteOS\_TASK\_t}} \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[\mbox{\hyperlink{cute_o_s_8c_ac0b95c23b7a758d99a77b87104c7ce1a}{MAX\_TASKS\_NUM}}] = \{0\};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00075 \textcolor{comment}{/*                          PRIVATE FUNCTIONS                         */}}
+\DoxyCodeLine{00076 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00081 \textcolor{keyword}{static} \textcolor{keywordtype}{void} cuteOS\_ISR() interrupt \mbox{\hyperlink{main_8h_ab4c0d7cb4e6168feed69b699a6959be7}{INTERRUPT\_Timer\_2\_Overflow}} \{}
+\DoxyCodeLine{00082     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} i = 0;}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00085     TF2 = 0;       }
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00088     ++cuteOS\_TickCount;}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00091     \textcolor{keywordflow}{for}(i = 0; i < cuteOS\_TaskCounter; ++i) \{}
+\DoxyCodeLine{00092         \textcolor{keywordflow}{if}( (cuteOS\_TickCount \% \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[i].ticks) == 0) \{}
+\DoxyCodeLine{00094             \textcolor{comment}{// cuteOS\_TickCount = 0;}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00097             \textcolor{keywordflow}{if}(\mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[i].callback != \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}) \{}
+\DoxyCodeLine{00098                 \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[i].\mbox{\hyperlink{structcute_o_s___t_a_s_k__t_a1b24265c326f0a03355aed4646ae74ac}{callback}}();}
+\DoxyCodeLine{00099             \}}
+\DoxyCodeLine{00100         \}}
+\DoxyCodeLine{00101     \}}
+\DoxyCodeLine{00102 \}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00110 \textcolor{keyword}{static} \textcolor{keywordtype}{void} cuteOS\_Sleep(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{00112     PCON |= 0x01;}
+\DoxyCodeLine{00113 \}}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00117 \textcolor{comment}{/*                          PUBLIC FUNCTIONS                          */}}
+\DoxyCodeLine{00118 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00126}\mbox{\hyperlink{cute_o_s_8h_a7d3052acc66fae6a67b7cf7ccbf3d8d4}{00126}} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} \mbox{\hyperlink{cute_o_s_8c_a4ef255dec8ad744f847c6ae1727955e2}{cuteOS\_TaskCreate}}(\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} (* \textcolor{keyword}{const} callback)(\textcolor{keywordtype}{void}), \textcolor{keyword}{const} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aa0b167025ed1eead1300bc4dbdfb230e}{u16}} TICK\_MS) \{}
+\DoxyCodeLine{00127     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} error = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386}{ERROR\_NO}};}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129     ++cuteOS\_TaskCounter;}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131     \textcolor{keywordflow}{if}(cuteOS\_TaskCounter > \mbox{\hyperlink{cute_o_s_8c_ac0b95c23b7a758d99a77b87104c7ce1a}{MAX\_TASKS\_NUM}}) \{}
+\DoxyCodeLine{00132         error = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a796107c17e41c601d633f670e5e29800}{ERROR\_OUT\_OF\_RANGE}};}
+\DoxyCodeLine{00133     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00134         \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[cuteOS\_TaskCounter -\/ 1].\mbox{\hyperlink{structcute_o_s___t_a_s_k__t_a06b0c1fe0b3340c9767270a44106fff3}{id}} = cuteOS\_TaskCounter -\/ 1;}
+\DoxyCodeLine{00135         \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[cuteOS\_TaskCounter -\/ 1].\mbox{\hyperlink{structcute_o_s___t_a_s_k__t_afe7a80281ab293cd2692d4701778992a}{ticks}} = TICK\_MS / cuteOS\_TickTimeMs;}
+\DoxyCodeLine{00136         \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[cuteOS\_TaskCounter -\/ 1].\mbox{\hyperlink{structcute_o_s___t_a_s_k__t_a1b24265c326f0a03355aed4646ae74ac}{callback}} = callback;}
+\DoxyCodeLine{00137     \}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139     \textcolor{keywordflow}{return} error;}
+\DoxyCodeLine{00140 \}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00152}\mbox{\hyperlink{cute_o_s_8h_a29a8d320c73b798551f37a26b03cab71}{00152}} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} \mbox{\hyperlink{cute_o_s_8c_a89c6bb64928dbd209d4ed38940c384f5}{cuteOS\_TaskRemove}}(\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} (* \textcolor{keyword}{const} callback)(\textcolor{keywordtype}{void})) \{}
+\DoxyCodeLine{00153     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} error = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0af969f1757e97a9d2af755759dfc738e5}{ERROR\_YES}};}
+\DoxyCodeLine{00154     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} i = 0;}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00157     \textcolor{keywordflow}{for}(i = 0; i < cuteOS\_TaskCounter; ++i) \{}
+\DoxyCodeLine{00158         \textcolor{keywordflow}{if}(\mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[i].callback == callback) \{}
+\DoxyCodeLine{00159             error = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386}{ERROR\_NO}};   }
+\DoxyCodeLine{00161             \textcolor{keywordflow}{for}(; i < cuteOS\_TaskCounter -\/ 1; ++i) \{}
+\DoxyCodeLine{00162                 \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[i] = \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[i + 1];}
+\DoxyCodeLine{00163             \}}
+\DoxyCodeLine{00165             \mbox{\hyperlink{cute_o_s_8c_a69a2dd048673d77404365a337ae98486}{tasks}}[cuteOS\_TaskCounter -\/ 1].\mbox{\hyperlink{structcute_o_s___t_a_s_k__t_a1b24265c326f0a03355aed4646ae74ac}{callback}} = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{00166             }
+\DoxyCodeLine{00168             -\/-\/cuteOS\_TaskCounter;}
+\DoxyCodeLine{00169             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00170         \}}
+\DoxyCodeLine{00171     \}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173     \textcolor{keywordflow}{return} error;}
+\DoxyCodeLine{00174 \}}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00179}\mbox{\hyperlink{cute_o_s_8h_a90f66f4ffbd452ceb65c8968caada76f}{00179}} \textcolor{keywordtype}{void} \mbox{\hyperlink{cute_o_s_8c_a90f66f4ffbd452ceb65c8968caada76f}{cuteOS\_Start}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{00181     \textcolor{keywordflow}{while}(1) \{}
+\DoxyCodeLine{00182         cuteOS\_Sleep();         }
+\DoxyCodeLine{00183     \}}
+\DoxyCodeLine{00184 \}}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00191}\mbox{\hyperlink{cute_o_s_8h_aff29e811be108f7817418708f6437635}{00191}} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} \mbox{\hyperlink{cute_o_s_8c_aff29e811be108f7817418708f6437635}{cuteOS\_SetTickTime}}(\textcolor{keyword}{const} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} TICK\_MS)\{}
+\DoxyCodeLine{00192     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} error = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386}{ERROR\_NO}};}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194     cuteOS\_TickTimeMs = TICK\_MS;}
+\DoxyCodeLine{00195     }
+\DoxyCodeLine{00196     \textcolor{keywordflow}{if}(cuteOS\_TickTimeMs > \mbox{\hyperlink{cute_o_s_8c_a9fc5af181e328f735296e4b33cc358d5}{MAX\_TICK\_TIME\_MS}}) \{}
+\DoxyCodeLine{00197         error = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a796107c17e41c601d633f670e5e29800}{ERROR\_OUT\_OF\_RANGE}};}
+\DoxyCodeLine{00198     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00200         \mbox{\hyperlink{cute_o_s_8c_a538cb1529929abdc516dbc5a23bf41fd}{cuteOS\_Init}}();}
+\DoxyCodeLine{00201     \}}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386}{ERROR\_NO}};}
+\DoxyCodeLine{00204 \}}
+\DoxyCodeLine{00205 }
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00209}\mbox{\hyperlink{cute_o_s_8h_ac7e59d52f9f16ee8fc8a444ce42805f8}{00209}} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} \mbox{\hyperlink{cute_o_s_8c_a18538719fdf26dba49b5582c9beed432}{cuteOS\_GetTickTime}}(\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} * \textcolor{keyword}{const} tickTimeInMsPtr)\{}
+\DoxyCodeLine{00210     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} error = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386}{ERROR\_NO}};}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212     \textcolor{keywordflow}{if}(tickTimeInMsPtr != \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}) \{}
+\DoxyCodeLine{00213         *tickTimeInMsPtr = cuteOS\_TickTimeMs;}
+\DoxyCodeLine{00214     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00215         error |= \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a3d37cbe00af5e55b2ab0cfac2a5b4b0e}{ERROR\_NULL\_POINTER}};}
+\DoxyCodeLine{00216     \}}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218     \textcolor{keywordflow}{return} error;}
+\DoxyCodeLine{00219 \}}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{\Hypertarget{cute_o_s_8c_source_l00228}\mbox{\hyperlink{cute_o_s_8h_a538cb1529929abdc516dbc5a23bf41fd}{00228}} \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} \mbox{\hyperlink{cute_o_s_8c_a538cb1529929abdc516dbc5a23bf41fd}{cuteOS\_Init}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{00229     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\_t}} error = \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386}{ERROR\_NO}};}
+\DoxyCodeLine{00230     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_a0ceed739f3b2b55ee8d4d2a79a82cdea}{u32}} Inc;}
+\DoxyCodeLine{00231     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aa0b167025ed1eead1300bc4dbdfb230e}{u16}} Reload\_16;}
+\DoxyCodeLine{00232     \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} Reload\_08H, Reload\_08L;}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234     TR2 = 0;                                 }
+\DoxyCodeLine{00236 }
+\DoxyCodeLine{00240     T2CON = 0x04;   }
+\DoxyCodeLine{00248     Inc = ((\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_a0ceed739f3b2b55ee8d4d2a79a82cdea}{u32}})cuteOS\_TickTimeMs * (\mbox{\hyperlink{main_8h_a91ed25b07bdff25ce25e42c2fb36f655}{OSC\_FREQ}}/1000)) / (\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_a0ceed739f3b2b55ee8d4d2a79a82cdea}{u32}})\mbox{\hyperlink{main_8h_a711dc0d0e45a9f32cd1adb066c654b42}{OSC\_PER\_INST}};}
+\DoxyCodeLine{00249 }
+\DoxyCodeLine{00251     Reload\_16 = (\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aa0b167025ed1eead1300bc4dbdfb230e}{u16}}) (65536UL -\/ Inc);}
+\DoxyCodeLine{00252 }
+\DoxyCodeLine{00254     Reload\_08H = (\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}})(Reload\_16 / 256);  }
+\DoxyCodeLine{00255     Reload\_08L = (\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}})(Reload\_16 \% 256);  }
+\DoxyCodeLine{00257     \textcolor{comment}{// Used for manually checking timing (in simulator)}}
+\DoxyCodeLine{00258     \textcolor{comment}{//P2 = Reload\_08H;}}
+\DoxyCodeLine{00259     \textcolor{comment}{//P3 = Reload\_08L;}}
+\DoxyCodeLine{00260     RCAP2H = TH2 = Reload\_08H;              }
+\DoxyCodeLine{00261     RCAP2L = TL2 = Reload\_08L;              }
+\DoxyCodeLine{00263     ET2 = 1;                                }
+\DoxyCodeLine{00264     TR2 = 1;                                }
+\DoxyCodeLine{00265     EA = 1;                                 }
+\DoxyCodeLine{00267     \textcolor{keywordflow}{return} error;}
+\DoxyCodeLine{00268 \}}
+\DoxyCodeLine{00269 }
+
+\end{DoxyCode}

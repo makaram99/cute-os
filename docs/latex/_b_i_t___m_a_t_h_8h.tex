@@ -1,0 +1,282 @@
+\hypertarget{_b_i_t___m_a_t_h_8h}{}\doxysubsection{code/include/\+BIT\+\_\+\+MATH.h File Reference}
+\label{_b_i_t___m_a_t_h_8h}\index{code/include/BIT\_MATH.h@{code/include/BIT\_MATH.h}}
+
+
+Common bit manipulation operations.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_aaaaf1c4418f4d6ce97f56c0b73c11b30}{GET\+\_\+\+BIT}}(REGISTER,  BIT)~( 1 \& ( (REGISTER) $>$$>$ (BIT) ) )
+\begin{DoxyCompactList}\small\item\em Read state of a specific bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a369f3fccb27e49bc7faeb3875786b322}{SET\+\_\+\+BIT}}(REGISTER,  BIT)~( (REGISTER) $\vert$= (1 $<$$<$ (BIT)) )
+\begin{DoxyCompactList}\small\item\em Set state of a specific bit (set to 1) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a1cc1f10aa5e19a6fe3383f5a4065a127}{CLR\+\_\+\+BIT}}(REGISTER,  BIT)~( (REGISTER) \&= $\sim$(1 $<$$<$ (BIT)) )
+\begin{DoxyCompactList}\small\item\em Clear state of a specific bit (set to 0) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a57d2403dc501b81376600c70ba3f9c42}{TOG\+\_\+\+BIT}}(REGISTER,  BIT)~( (REGISTER) $^\wedge$= (1 $<$$<$ (BIT)) )
+\begin{DoxyCompactList}\small\item\em Toggle state of a specific bit (set to 0) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a20033cb17b243d3c1b511123b53a135c}{BIT\+\_\+\+IS\+\_\+\+SET}}(REGISTER,  Bit)~( (REGISTER) \& (1 $<$$<$ (Bit)) )
+\begin{DoxyCompactList}\small\item\em Check if state of a specific bit is set (state = 1) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a65f55e6701263c9ce92ab7f8cc3d6af0}{BIT\+\_\+\+IS\+\_\+\+CLEAR}}(REGISTER,  Bit)~( !( (REGISTER) \& (1 $<$$<$ (Bit)) ) )
+\begin{DoxyCompactList}\small\item\em Check if state of a specific bit is Cleared (state = 0) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a97912f2f3043abd92d5041a6a86601ef}{CONCAT\+\_\+8\+BITS}}(b7,  b6,  b5,  b4,  b3,  b2,  b1,  b0)~(0b\#\#b7\#\#b6\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)
+\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a57d72084fe58997125c00329ef544357}{CONCAT\+\_\+7\+BITS}}(b6,  b5,  b4,  b3,  b2,  b1,  b0)~(0b\#\#b6\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)
+\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a31dd164c7357d6ea2bd1deeb5110ad44}{CONCAT\+\_\+6\+BITS}}(b5,  b4,  b3,  b2,  b1,  b0)~(0b\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)
+\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a9ffc652539dedb7efc129978b35b04a5}{CONCAT\+\_\+5\+BITS}}(b4,  b3,  b2,  b1,  b0)~(0b\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)
+\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a170830840eb8dbbdceb5670e753caaf1}{CONCAT\+\_\+4\+BITS}}(b3,  b2,  b1,  b0)~(0b\#\#b3\#\#b2\#\#b1\#\#b0)
+\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_abb416ad83a20d51e3c349d18cf96a129}{CONCAT\+\_\+3\+BITS}}(b2,  b1,  b0)~(0b\#\#b2\#\#b1\#\#b0)
+\item 
+\#define \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a47c601992a278679cf351b8fe43b9da4}{CONCAT\+\_\+2\+BITS}}(b1,  b0)~(0b\#\#b1\#\#b0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Common bit manipulation operations. 
+
+\begin{DoxyAuthor}{Author}
+Mahmoud Karam (\href{mailto:ma.karam272@gmail.com}{\texttt{ ma.\+karam272@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/07-\/31 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+
+
+\doxysubsubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a65f55e6701263c9ce92ab7f8cc3d6af0}\label{_b_i_t___m_a_t_h_8h_a65f55e6701263c9ce92ab7f8cc3d6af0}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!BIT\_IS\_CLEAR@{BIT\_IS\_CLEAR}}
+\index{BIT\_IS\_CLEAR@{BIT\_IS\_CLEAR}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{BIT\_IS\_CLEAR}{BIT\_IS\_CLEAR}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+IS\+\_\+\+CLEAR(\begin{DoxyParamCaption}\item[{}]{REGISTER,  }\item[{}]{Bit }\end{DoxyParamCaption})~( !( (REGISTER) \& (1 $<$$<$ (Bit)) ) )}
+
+
+
+Check if state of a specific bit is Cleared (state = 0) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em REGISTER} & the register includes the bit \\
+\hline
+\mbox{\texttt{ in}}  & {\em BIT} & the required bit number to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 or 0\+: 1 if the bit is cleared, 0 if the bit is set 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{For example\+:}
+\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a65f55e6701263c9ce92ab7f8cc3d6af0}{BIT\+\_\+\+IS\+\_\+\+CLEAR(\+PORT\+\_\+\+A, PIN0)}} will return 1 if bit 0 of PORT\+\_\+A is LOW or 0 if it is HIGH 
+\end{DoxyParagraph}
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00067}{67}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a20033cb17b243d3c1b511123b53a135c}\label{_b_i_t___m_a_t_h_8h_a20033cb17b243d3c1b511123b53a135c}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!BIT\_IS\_SET@{BIT\_IS\_SET}}
+\index{BIT\_IS\_SET@{BIT\_IS\_SET}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{BIT\_IS\_SET}{BIT\_IS\_SET}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+IS\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{REGISTER,  }\item[{}]{Bit }\end{DoxyParamCaption})~( (REGISTER) \& (1 $<$$<$ (Bit)) )}
+
+
+
+Check if state of a specific bit is set (state = 1) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em REGISTER} & the register includes the bit \\
+\hline
+\mbox{\texttt{ in}}  & {\em BIT} & the required bit number to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 or 0\+: 1 if the bit is set, 0 if the bit is cleared 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{For example\+:}
+\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a20033cb17b243d3c1b511123b53a135c}{BIT\+\_\+\+IS\+\_\+\+SET(\+PORT\+\_\+\+A, PIN0)}} will return 1 if bit 0 of PORT\+\_\+A is HIGH or 0 if it is LOW 
+\end{DoxyParagraph}
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00056}{56}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a1cc1f10aa5e19a6fe3383f5a4065a127}\label{_b_i_t___m_a_t_h_8h_a1cc1f10aa5e19a6fe3383f5a4065a127}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!CLR\_BIT@{CLR\_BIT}}
+\index{CLR\_BIT@{CLR\_BIT}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{CLR\_BIT}{CLR\_BIT}}
+{\footnotesize\ttfamily \#define CLR\+\_\+\+BIT(\begin{DoxyParamCaption}\item[{}]{REGISTER,  }\item[{}]{BIT }\end{DoxyParamCaption})~( (REGISTER) \&= $\sim$(1 $<$$<$ (BIT)) )}
+
+
+
+Clear state of a specific bit (set to 0) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em REGISTER} & the register includes the bit \\
+\hline
+\mbox{\texttt{ in}}  & {\em BIT} & the required bit number to be cleared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{For example\+:}
+CLEAR\+\_\+\+BIT(\+PORT\+\_\+\+A, PIN0) will set bit 0 of PORT\+\_\+A to LOW (0) 
+\end{DoxyParagraph}
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00037}{37}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a47c601992a278679cf351b8fe43b9da4}\label{_b_i_t___m_a_t_h_8h_a47c601992a278679cf351b8fe43b9da4}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!CONCAT\_2BITS@{CONCAT\_2BITS}}
+\index{CONCAT\_2BITS@{CONCAT\_2BITS}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{CONCAT\_2BITS}{CONCAT\_2BITS}}
+{\footnotesize\ttfamily \#define CONCAT\+\_\+2\+BITS(\begin{DoxyParamCaption}\item[{}]{b1,  }\item[{}]{b0 }\end{DoxyParamCaption})~(0b\#\#b1\#\#b0)}
+
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00075}{75}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_abb416ad83a20d51e3c349d18cf96a129}\label{_b_i_t___m_a_t_h_8h_abb416ad83a20d51e3c349d18cf96a129}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!CONCAT\_3BITS@{CONCAT\_3BITS}}
+\index{CONCAT\_3BITS@{CONCAT\_3BITS}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{CONCAT\_3BITS}{CONCAT\_3BITS}}
+{\footnotesize\ttfamily \#define CONCAT\+\_\+3\+BITS(\begin{DoxyParamCaption}\item[{}]{b2,  }\item[{}]{b1,  }\item[{}]{b0 }\end{DoxyParamCaption})~(0b\#\#b2\#\#b1\#\#b0)}
+
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00074}{74}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a170830840eb8dbbdceb5670e753caaf1}\label{_b_i_t___m_a_t_h_8h_a170830840eb8dbbdceb5670e753caaf1}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!CONCAT\_4BITS@{CONCAT\_4BITS}}
+\index{CONCAT\_4BITS@{CONCAT\_4BITS}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{CONCAT\_4BITS}{CONCAT\_4BITS}}
+{\footnotesize\ttfamily \#define CONCAT\+\_\+4\+BITS(\begin{DoxyParamCaption}\item[{}]{b3,  }\item[{}]{b2,  }\item[{}]{b1,  }\item[{}]{b0 }\end{DoxyParamCaption})~(0b\#\#b3\#\#b2\#\#b1\#\#b0)}
+
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00073}{73}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a9ffc652539dedb7efc129978b35b04a5}\label{_b_i_t___m_a_t_h_8h_a9ffc652539dedb7efc129978b35b04a5}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!CONCAT\_5BITS@{CONCAT\_5BITS}}
+\index{CONCAT\_5BITS@{CONCAT\_5BITS}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{CONCAT\_5BITS}{CONCAT\_5BITS}}
+{\footnotesize\ttfamily \#define CONCAT\+\_\+5\+BITS(\begin{DoxyParamCaption}\item[{}]{b4,  }\item[{}]{b3,  }\item[{}]{b2,  }\item[{}]{b1,  }\item[{}]{b0 }\end{DoxyParamCaption})~(0b\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)}
+
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00072}{72}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a31dd164c7357d6ea2bd1deeb5110ad44}\label{_b_i_t___m_a_t_h_8h_a31dd164c7357d6ea2bd1deeb5110ad44}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!CONCAT\_6BITS@{CONCAT\_6BITS}}
+\index{CONCAT\_6BITS@{CONCAT\_6BITS}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{CONCAT\_6BITS}{CONCAT\_6BITS}}
+{\footnotesize\ttfamily \#define CONCAT\+\_\+6\+BITS(\begin{DoxyParamCaption}\item[{}]{b5,  }\item[{}]{b4,  }\item[{}]{b3,  }\item[{}]{b2,  }\item[{}]{b1,  }\item[{}]{b0 }\end{DoxyParamCaption})~(0b\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)}
+
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00071}{71}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a57d72084fe58997125c00329ef544357}\label{_b_i_t___m_a_t_h_8h_a57d72084fe58997125c00329ef544357}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!CONCAT\_7BITS@{CONCAT\_7BITS}}
+\index{CONCAT\_7BITS@{CONCAT\_7BITS}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{CONCAT\_7BITS}{CONCAT\_7BITS}}
+{\footnotesize\ttfamily \#define CONCAT\+\_\+7\+BITS(\begin{DoxyParamCaption}\item[{}]{b6,  }\item[{}]{b5,  }\item[{}]{b4,  }\item[{}]{b3,  }\item[{}]{b2,  }\item[{}]{b1,  }\item[{}]{b0 }\end{DoxyParamCaption})~(0b\#\#b6\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)}
+
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00070}{70}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a97912f2f3043abd92d5041a6a86601ef}\label{_b_i_t___m_a_t_h_8h_a97912f2f3043abd92d5041a6a86601ef}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!CONCAT\_8BITS@{CONCAT\_8BITS}}
+\index{CONCAT\_8BITS@{CONCAT\_8BITS}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{CONCAT\_8BITS}{CONCAT\_8BITS}}
+{\footnotesize\ttfamily \#define CONCAT\+\_\+8\+BITS(\begin{DoxyParamCaption}\item[{}]{b7,  }\item[{}]{b6,  }\item[{}]{b5,  }\item[{}]{b4,  }\item[{}]{b3,  }\item[{}]{b2,  }\item[{}]{b1,  }\item[{}]{b0 }\end{DoxyParamCaption})~(0b\#\#b7\#\#b6\#\#b5\#\#b4\#\#b3\#\#b2\#\#b1\#\#b0)}
+
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00069}{69}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_aaaaf1c4418f4d6ce97f56c0b73c11b30}\label{_b_i_t___m_a_t_h_8h_aaaaf1c4418f4d6ce97f56c0b73c11b30}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!GET\_BIT@{GET\_BIT}}
+\index{GET\_BIT@{GET\_BIT}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{GET\_BIT}{GET\_BIT}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+BIT(\begin{DoxyParamCaption}\item[{}]{REGISTER,  }\item[{}]{BIT }\end{DoxyParamCaption})~( 1 \& ( (REGISTER) $>$$>$ (BIT) ) )}
+
+
+
+Read state of a specific bit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em REGISTER} & the register includes the bit \\
+\hline
+\mbox{\texttt{ in}}  & {\em BIT} & the required bit number to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+state of the bit\+: 1 or 0 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{For example\+:}
+\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_aaaaf1c4418f4d6ce97f56c0b73c11b30}{GET\+\_\+\+BIT(\+PORT\+\_\+\+A, PIN0)}} will return 1 if bit 0 of PORT\+\_\+A is HIGH or 0 if it is LOW 
+\end{DoxyParagraph}
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00019}{19}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a369f3fccb27e49bc7faeb3875786b322}\label{_b_i_t___m_a_t_h_8h_a369f3fccb27e49bc7faeb3875786b322}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!SET\_BIT@{SET\_BIT}}
+\index{SET\_BIT@{SET\_BIT}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{SET\_BIT}{SET\_BIT}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+BIT(\begin{DoxyParamCaption}\item[{}]{REGISTER,  }\item[{}]{BIT }\end{DoxyParamCaption})~( (REGISTER) $\vert$= (1 $<$$<$ (BIT)) )}
+
+
+
+Set state of a specific bit (set to 1) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em REGISTER} & the register includes the bit \\
+\hline
+\mbox{\texttt{ in}}  & {\em BIT} & the required bit number to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{For example\+:}
+\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a369f3fccb27e49bc7faeb3875786b322}{SET\+\_\+\+BIT(\+PORT\+\_\+\+A, PIN0)}} will set bit 0 of PORT\+\_\+A to HIGH (1) 
+\end{DoxyParagraph}
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00028}{28}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+
+\mbox{\Hypertarget{_b_i_t___m_a_t_h_8h_a57d2403dc501b81376600c70ba3f9c42}\label{_b_i_t___m_a_t_h_8h_a57d2403dc501b81376600c70ba3f9c42}} 
+\index{BIT\_MATH.h@{BIT\_MATH.h}!TOG\_BIT@{TOG\_BIT}}
+\index{TOG\_BIT@{TOG\_BIT}!BIT\_MATH.h@{BIT\_MATH.h}}
+\doxyparagraph{\texorpdfstring{TOG\_BIT}{TOG\_BIT}}
+{\footnotesize\ttfamily \#define TOG\+\_\+\+BIT(\begin{DoxyParamCaption}\item[{}]{REGISTER,  }\item[{}]{BIT }\end{DoxyParamCaption})~( (REGISTER) $^\wedge$= (1 $<$$<$ (BIT)) )}
+
+
+
+Toggle state of a specific bit (set to 0) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em REGISTER} & is the register includes the bit \\
+\hline
+\mbox{\texttt{ in}}  & {\em BIT} & the required bit number to be toggled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{For example\+:}
+\mbox{\hyperlink{_b_i_t___m_a_t_h_8h_a57d2403dc501b81376600c70ba3f9c42}{TOG\+\_\+\+BIT(\+PORT\+\_\+\+A, PIN0)}} will toggle bit 0 of PORT\+\_\+A. So if it was HIGH, it will be LOW, and if it was LOW, it will be HIGH. 
+\end{DoxyParagraph}
+
+
+Definition at line \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source_l00046}{46}} of file \mbox{\hyperlink{_b_i_t___m_a_t_h_8h_source}{BIT\+\_\+\+MATH.\+h}}.
+

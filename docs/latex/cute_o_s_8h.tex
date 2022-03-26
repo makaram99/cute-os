@@ -1,0 +1,335 @@
+\hypertarget{cute_o_s_8h}{}\doxysubsection{code/include/cute\+OS.h File Reference}
+\label{cute_o_s_8h}\index{code/include/cuteOS.h@{code/include/cuteOS.h}}
+
+
+Simple EOS interfaces header file. See \mbox{\hyperlink{cute_o_s_8c}{cute\+OS.\+c}} for more details.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{cute_o_s_8h_a32d0e04c4a7f18fe77d639ec7e0de4c4}{cute\+OS\+\_\+\+Set\+Callback}} (\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}($\ast$const task\+Ptr)(void))
+\begin{DoxyCompactList}\small\item\em Set callback function for Simple EOS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{cute_o_s_8h_a538cb1529929abdc516dbc5a23bf41fd}{cute\+OS\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Sets up Timer 2 to drive the simple EOS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{cute_o_s_8h_a7d3052acc66fae6a67b7cf7ccbf3d8d4}{cute\+OS\+\_\+\+Task\+Create}} (\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}($\ast$const task\+Ptr)(void), const \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aa0b167025ed1eead1300bc4dbdfb230e}{u16}} TICK\+\_\+\+MS)
+\begin{DoxyCompactList}\small\item\em Create a task with the given task function and the given tick time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{cute_o_s_8h_a29a8d320c73b798551f37a26b03cab71}{cute\+OS\+\_\+\+Task\+Remove}} (\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}($\ast$const task\+Ptr)(void))
+\begin{DoxyCompactList}\small\item\em Remove a task from the tasks array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cute_o_s_8h_a90f66f4ffbd452ceb65c8968caada76f}{cute\+OS\+\_\+\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em The OS enters \textquotesingle{}idle mode\textquotesingle{} between clock ticks to save power. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{cute_o_s_8h_aff29e811be108f7817418708f6437635}{cute\+OS\+\_\+\+Set\+Tick\+Time}} (const \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} TICK\+\_\+\+MS)
+\begin{DoxyCompactList}\small\item\em Set the tick time in milliseconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{cute_o_s_8h_ac7e59d52f9f16ee8fc8a444ce42805f8}{cute\+OS\+\_\+\+Get\+Tick\+Time}} (\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} $\ast$const TICK\+\_\+\+MS)
+\begin{DoxyCompactList}\small\item\em Get the tick time in milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Simple EOS interfaces header file. See \mbox{\hyperlink{cute_o_s_8c}{cute\+OS.\+c}} for more details. 
+
+\begin{DoxyAuthor}{Author}
+Mahmoud Karam (\href{mailto:ma.karam272@gmail.com}{\texttt{ ma.\+karam272@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/03-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{cute_o_s_8h_source}{cute\+OS.\+h}}.
+
+
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{cute_o_s_8h_ac7e59d52f9f16ee8fc8a444ce42805f8}\label{cute_o_s_8h_ac7e59d52f9f16ee8fc8a444ce42805f8}} 
+\index{cuteOS.h@{cuteOS.h}!cuteOS\_GetTickTime@{cuteOS\_GetTickTime}}
+\index{cuteOS\_GetTickTime@{cuteOS\_GetTickTime}!cuteOS.h@{cuteOS.h}}
+\doxyparagraph{\texorpdfstring{cuteOS\_GetTickTime()}{cuteOS\_GetTickTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} cute\+OS\+\_\+\+Get\+Tick\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} $\ast$const}]{tick\+Time\+In\+Ms\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Get the tick time in milliseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TICK\+\_\+\+MS} & pointer to the tick time in milliseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR Status\+: Check the options in the global enum \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}} tickTimeInMs;}
+\DoxyCodeLine{\textcolor{comment}{// Get the tick time in milliseconds and store it in tickTimeInMs}}
+\DoxyCodeLine{\mbox{\hyperlink{cute_o_s_8h_ac7e59d52f9f16ee8fc8a444ce42805f8}{cuteOS\_GetTickTime}}(\&tickTimeInMs);    }
+
+\end{DoxyCode}
+~\newline
+
+\end{DoxyParagraph}
+Get the tick time in milliseconds. 
+
+Definition at line \mbox{\hyperlink{cute_o_s_8c_source_l00209}{209}} of file \mbox{\hyperlink{cute_o_s_8c_source}{cute\+OS.\+c}}.
+
+\mbox{\Hypertarget{cute_o_s_8h_a538cb1529929abdc516dbc5a23bf41fd}\label{cute_o_s_8h_a538cb1529929abdc516dbc5a23bf41fd}} 
+\index{cuteOS.h@{cuteOS.h}!cuteOS\_Init@{cuteOS\_Init}}
+\index{cuteOS\_Init@{cuteOS\_Init}!cuteOS.h@{cuteOS.h}}
+\doxyparagraph{\texorpdfstring{cuteOS\_Init()}{cuteOS\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} cute\+OS\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sets up Timer 2 to drive the simple EOS. 
+
+Initialize the Cute OS using Timer 2 overflow\+:
+\begin{DoxyItemize}
+\item Timer mode
+\item Tick time
+\item Interrupt enable
+\item Auto-\/reload mode 
+\end{DoxyItemize}$<$ Disable Timer 2
+
+Enable Timer 2 (16-\/bit timer) and configure it as a timer and automatically reloaded its value at overflow and
+
+$<$ Load Timer 2 control register ~\newline
+
+
+$<$ Number of timer increments required (max 65536) ~\newline
+
+
+$<$ Inc = (Number of m\+Sec) $\ast$ (Number of Instructions per m\+Sec) ~\newline
+
+
+$<$ Number of m\+Sec = cute\+OS\+\_\+\+Tick\+Time\+Ms ~\newline
+
+
+$<$ Number of Instructions per m\+Sec = (Number of Oscillations per m\+Sec) $\ast$ (Number of Instructions per Oscillation)
+
+$<$ Number of Oscillations per m\+Sec = \mbox{\hyperlink{main_8h_a91ed25b07bdff25ce25e42c2fb36f655}{OSC\+\_\+\+FREQ(\+MHz)}} / 1000
+
+$<$ Number of Instructions per Oscillation = 1 / OSC\+\_\+\+PER\+\_\+\+INST
+
+$<$ 16-\/bit reload value ~\newline
+
+
+$<$ 8-\/bit reload values (High \& Low) ~\newline
+
+
+$<$ High byte ~\newline
+
+
+$<$ Low byte ~\newline
+
+
+$<$ Load T2 and reload capt. reg. high bytes ~\newline
+
+
+$<$ Load T2 and reload capt. reg. low bytes ~\newline
+
+
+$<$ Enable Timer 2 interrupt ~\newline
+
+
+$<$ Start Timer 2 ~\newline
+
+
+$<$ Globally enable interrupts ~\newline
+
+
+Definition at line \mbox{\hyperlink{cute_o_s_8c_source_l00228}{228}} of file \mbox{\hyperlink{cute_o_s_8c_source}{cute\+OS.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{cute_o_s_8h_a32d0e04c4a7f18fe77d639ec7e0de4c4}\label{cute_o_s_8h_a32d0e04c4a7f18fe77d639ec7e0de4c4}} 
+\index{cuteOS.h@{cuteOS.h}!cuteOS\_SetCallback@{cuteOS\_SetCallback}}
+\index{cuteOS\_SetCallback@{cuteOS\_SetCallback}!cuteOS.h@{cuteOS.h}}
+\doxyparagraph{\texorpdfstring{cuteOS\_SetCallback()}{cuteOS\_SetCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} cute\+OS\+\_\+\+Set\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}($\ast$)(void)}]{task\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Set callback function for Simple EOS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Ptr} & pointer to the task function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR Status\+: Check the options in the global enum \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is called by the user to set the callback function for the Simple EOS 
+\end{DoxyNote}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Set the callback function for the Simple EOS to the function LED\_Toggle()}}
+\DoxyCodeLine{cuteOS\_setCallback(LED\_Toggle);  \textcolor{comment}{// LED\_Toggle() is a function that toggles the LED}}
+
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{cute_o_s_8h_aff29e811be108f7817418708f6437635}\label{cute_o_s_8h_aff29e811be108f7817418708f6437635}} 
+\index{cuteOS.h@{cuteOS.h}!cuteOS\_SetTickTime@{cuteOS\_SetTickTime}}
+\index{cuteOS\_SetTickTime@{cuteOS\_SetTickTime}!cuteOS.h@{cuteOS.h}}
+\doxyparagraph{\texorpdfstring{cuteOS\_SetTickTime()}{cuteOS\_SetTickTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} cute\+OS\+\_\+\+Set\+Tick\+Time (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aed742c436da53c1080638ce6ef7d13de}{u8}}}]{TICK\+\_\+\+MS }\end{DoxyParamCaption})}
+
+
+
+Set the tick time in milliseconds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TICK\+\_\+\+MS} & tick time in milliseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR Status\+: Check the options in the global enum \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{cute_o_s_8h_aff29e811be108f7817418708f6437635}{cuteOS\_SetTickTime}}(1000);     \textcolor{comment}{// Set the tick time to 1 second}}
+
+\end{DoxyCode}
+~\newline
+
+\end{DoxyParagraph}
+Set the value of the tick time in milliseconds. So, the timing of the tasks is determined by the frequency of Timer 2 overflow. Overflow occurs every tick\+Time\+In\+Ms milliseconds. $<$ Set the value of the tick time in ms
+
+Definition at line \mbox{\hyperlink{cute_o_s_8c_source_l00191}{191}} of file \mbox{\hyperlink{cute_o_s_8c_source}{cute\+OS.\+c}}.
+
+\mbox{\Hypertarget{cute_o_s_8h_a90f66f4ffbd452ceb65c8968caada76f}\label{cute_o_s_8h_a90f66f4ffbd452ceb65c8968caada76f}} 
+\index{cuteOS.h@{cuteOS.h}!cuteOS\_Start@{cuteOS\_Start}}
+\index{cuteOS\_Start@{cuteOS\_Start}!cuteOS.h@{cuteOS.h}}
+\doxyparagraph{\texorpdfstring{cuteOS\_Start()}{cuteOS\_Start()}}
+{\footnotesize\ttfamily void cute\+OS\+\_\+\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The OS enters \textquotesingle{}idle mode\textquotesingle{} between clock ticks to save power. 
+
+\begin{DoxyNote}{Note}
+The next clock tick will return the processor to the normal operating state.
+\end{DoxyNote}
+The OS enters \textquotesingle{}idle mode\textquotesingle{} between clock ticks to save power. $<$ Super loop
+
+$<$ Enter idle mode to save power
+
+Definition at line \mbox{\hyperlink{cute_o_s_8c_source_l00179}{179}} of file \mbox{\hyperlink{cute_o_s_8c_source}{cute\+OS.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{cute_o_s_8h_a7d3052acc66fae6a67b7cf7ccbf3d8d4}\label{cute_o_s_8h_a7d3052acc66fae6a67b7cf7ccbf3d8d4}} 
+\index{cuteOS.h@{cuteOS.h}!cuteOS\_TaskCreate@{cuteOS\_TaskCreate}}
+\index{cuteOS\_TaskCreate@{cuteOS\_TaskCreate}!cuteOS.h@{cuteOS.h}}
+\doxyparagraph{\texorpdfstring{cuteOS\_TaskCreate()}{cuteOS\_TaskCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} cute\+OS\+\_\+\+Task\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}($\ast$)(void)}]{callback,  }\item[{const \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aa0b167025ed1eead1300bc4dbdfb230e}{u16}}}]{TICK\+\_\+\+MS }\end{DoxyParamCaption})}
+
+
+
+Create a task with the given task function and the given tick time. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em task\+Ptr} & Pointer to the task function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em TICK\+\_\+\+MS} & the frequency of task execution in milliseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR Status\+: Check the options in the global enum \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{cute_o_s_8h_a7d3052acc66fae6a67b7cf7ccbf3d8d4}{cuteOS\_TaskCreate}}(task1, 1000); \textcolor{comment}{// task1 will run every 1 second }}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{cute_o_s_8h_a7d3052acc66fae6a67b7cf7ccbf3d8d4}{cuteOS\_TaskCreate}}(task2, 2000); \textcolor{comment}{// task2 will run every 2 seconds }}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+This function does the following\+:
+\begin{DoxyItemize}
+\item Increment the task counter.
+\item Set the task ID.
+\item Set the pointer to the task function.
+\item Set the number of schedular ticks after which the task will run. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{cute_o_s_8c_source_l00126}{126}} of file \mbox{\hyperlink{cute_o_s_8c_source}{cute\+OS.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{cute_o_s_8h_a29a8d320c73b798551f37a26b03cab71}\label{cute_o_s_8h_a29a8d320c73b798551f37a26b03cab71}} 
+\index{cuteOS.h@{cuteOS.h}!cuteOS\_TaskRemove@{cuteOS\_TaskRemove}}
+\index{cuteOS\_TaskRemove@{cuteOS\_TaskRemove}!cuteOS.h@{cuteOS.h}}
+\doxyparagraph{\texorpdfstring{cuteOS\_TaskRemove()}{cuteOS\_TaskRemove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} cute\+OS\+\_\+\+Task\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}($\ast$)(void)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Remove a task from the tasks array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em task\+Ptr} & Pointer to the task function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR Status\+: Check the options in the global enum \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}. 
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{cute_o_s_8h_a29a8d320c73b798551f37a26b03cab71}{cuteOS\_TaskRemove}}(task1);       \textcolor{comment}{// remove task1 }}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{cute_o_s_8h_a29a8d320c73b798551f37a26b03cab71}{cuteOS\_TaskRemove}}(task2);       \textcolor{comment}{// remove task2 }}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+This function does the following\+:
+\begin{DoxyItemize}
+\item Search for the task in the tasks array.
+\item If found, remove the task from the tasks array.
+\item Rearrange the tasks array.
+\item Decrement the task counter.
+\item If the task is not available, an error is returned. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback} & Pointer to the task function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR Status\+: Check the options in the global enum \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}$<$ Find the task in the task array
+
+$<$ Task found
+
+$<$ Decrement the number of tasks
+
+Definition at line \mbox{\hyperlink{cute_o_s_8c_source_l00152}{152}} of file \mbox{\hyperlink{cute_o_s_8c_source}{cute\+OS.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 4

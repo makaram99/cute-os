@@ -1,0 +1,15 @@
+digraph "code/src/traffic_cfg.c"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="14",labelfontname="Helvetica",labelfontsize="14"];
+  node [fontname="Helvetica",fontsize="14",shape=record];
+  Node1 [label="code/src/traffic_cfg.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Configurations of Traffic Light System."];
+  Node1 -> Node2 [color="midnightblue",fontsize="14",style="solid",fontname="Helvetica"];
+  Node2 [label="STD_TYPES.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_s_t_d___t_y_p_e_s_8h.html",tooltip="Standard data types For AVR Microcontrollers."];
+  Node1 -> Node3 [color="midnightblue",fontsize="14",style="solid",fontname="Helvetica"];
+  Node3 [label="Main.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8h.html",tooltip="Project Header for main.c."];
+  Node1 -> Node4 [color="midnightblue",fontsize="14",style="solid",fontname="Helvetica"];
+  Node4 [label="traffic.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$traffic_8h.html",tooltip="Traffic Light System interfaces header file. See traffic.c for more details."];
+  Node1 -> Node5 [color="midnightblue",fontsize="14",style="solid",fontname="Helvetica"];
+  Node5 [label="traffic_cfg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$traffic__cfg_8h.html",tooltip="Traffic Light System interfaces header file. See traffic.c for more details."];
+}

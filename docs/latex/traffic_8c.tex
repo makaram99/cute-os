@@ -1,0 +1,150 @@
+\hypertarget{traffic_8c}{}\doxysubsection{code/src/traffic.c File Reference}
+\label{traffic_8c}\index{code/src/traffic.c@{code/src/traffic.c}}
+
+
+This is a traffic Light project (Chapter 8 -\/ Embedded C by Professor j. Pont).  
+
+
+{\ttfamily \#include $<$reg52.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}STD\+\_\+\+TYPES.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Port.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}traffic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}traffic\+\_\+cfg.\+h\char`\"{}}\newline
+Include dependency graph for traffic.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{traffic_8c_aec307edaf66438346ef2f2a23e961ccb}{TRAFFIC\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the traffic light system to RED state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{traffic_8c_a18e76d0f14a41f57567645e6297c658a}{TRAFFIC\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De Initialize the traffic light system by turning off all the lights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{traffic_8c_ac816059d21ec1dbdecd72a1d6a600ed4}{TRAFFIC\+\_\+\+Set\+Color}} (const \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457}{TRAFFIC\+\_\+\+SEQUENCE\+\_\+t}} Copy\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Set the traffic light color sequence to the given color sequence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} \mbox{\hyperlink{traffic_8c_a65dc64ad3e0eb4ffe6452232f9566f19}{TRAFFIC\+\_\+\+Get\+Color}} (\mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457}{TRAFFIC\+\_\+\+SEQUENCE\+\_\+t}} $\ast$const Copy\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Get the traffic light color sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This is a traffic Light project (Chapter 8 -\/ Embedded C by Professor j. Pont). 
+
+\begin{DoxyAuthor}{Author}
+Mahmoud Karam (\href{mailto:ma.karam272@gmail.com}{\texttt{ ma.\+karam272@gmail.\+com}})
+\end{DoxyAuthor}
+A basic version of the traffic-\/light sequencer requires no inputs from the environment and will perform well by executing a sequence of pre-\/determined manoeuvres. It is a classic example of a Multi-\/\+State (Timed) system.
+
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/03-\/22 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{traffic_8c_source}{traffic.\+c}}.
+
+
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{traffic_8c_a18e76d0f14a41f57567645e6297c658a}\label{traffic_8c_a18e76d0f14a41f57567645e6297c658a}} 
+\index{traffic.c@{traffic.c}!TRAFFIC\_DeInit@{TRAFFIC\_DeInit}}
+\index{TRAFFIC\_DeInit@{TRAFFIC\_DeInit}!traffic.c@{traffic.c}}
+\doxyparagraph{\texorpdfstring{TRAFFIC\_DeInit()}{TRAFFIC\_DeInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} TRAFFIC\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+De Initialize the traffic light system by turning off all the lights. 
+
+This function does the following\+:
+\begin{DoxyItemize}
+\item Turning off all the traffic lights.
+\item Assign the callback function of the OS delay to NULL. 
+\end{DoxyItemize}$<$ Setting traffic light to red
+
+$<$ Setting callback function to NULL
+
+Definition at line \mbox{\hyperlink{traffic_8c_source_l00148}{148}} of file \mbox{\hyperlink{traffic_8c_source}{traffic.\+c}}.
+
+\mbox{\Hypertarget{traffic_8c_a65dc64ad3e0eb4ffe6452232f9566f19}\label{traffic_8c_a65dc64ad3e0eb4ffe6452232f9566f19}} 
+\index{traffic.c@{traffic.c}!TRAFFIC\_GetColor@{TRAFFIC\_GetColor}}
+\index{TRAFFIC\_GetColor@{TRAFFIC\_GetColor}!traffic.c@{traffic.c}}
+\doxyparagraph{\texorpdfstring{TRAFFIC\_GetColor()}{TRAFFIC\_GetColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} TRAFFIC\+\_\+\+Get\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457}{TRAFFIC\+\_\+\+SEQUENCE\+\_\+t}} $\ast$const}]{Copy\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Get the traffic light color sequence. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em Copy\+\_\+color} & pointer to the variable to store the color sequence. Expected values\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457af80f9a890089d211842d59625e561f88}{RED}}
+\item \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457a77e3d0fbeb9f02d74acbc8ab1bf8d38d}{RED\+\_\+\+AMBER}}
+\item \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457aa60bd322f93178d68184e30e162571ca}{GREEN}}
+\item \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457ab2b41fdc9ef47b345b95936b36d730cc}{AMBER}} Those colors are members of the global enumeration \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457}{TRAFFIC\+\_\+\+SEQUENCE\+\_\+t}}. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR Status\+: Check the options in the global enum \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{traffic_8c_source_l00171}{171}} of file \mbox{\hyperlink{traffic_8c_source}{traffic.\+c}}.
+
+\mbox{\Hypertarget{traffic_8c_aec307edaf66438346ef2f2a23e961ccb}\label{traffic_8c_aec307edaf66438346ef2f2a23e961ccb}} 
+\index{traffic.c@{traffic.c}!TRAFFIC\_Init@{TRAFFIC\_Init}}
+\index{TRAFFIC\_Init@{TRAFFIC\_Init}!traffic.c@{traffic.c}}
+\doxyparagraph{\texorpdfstring{TRAFFIC\_Init()}{TRAFFIC\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} TRAFFIC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the traffic light system to RED state. 
+
+This function does the following\+:
+\begin{DoxyItemize}
+\item Initialize the traffic light system to \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457af80f9a890089d211842d59625e561f88}{RED}} sequence.
+\item Set the callback function of the OS delay to the function \mbox{\hyperlink{traffic_8h_aac30159179227db868e8343ffc3ba333}{TRAFFIC\+\_\+\+Update}}. 
+\end{DoxyItemize}$<$ Reset the time counter
+
+$<$ Initialize the color\+Sequence
+
+Definition at line \mbox{\hyperlink{traffic_8c_source_l00128}{128}} of file \mbox{\hyperlink{traffic_8c_source}{traffic.\+c}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{traffic_8c_ac816059d21ec1dbdecd72a1d6a600ed4}\label{traffic_8c_ac816059d21ec1dbdecd72a1d6a600ed4}} 
+\index{traffic.c@{traffic.c}!TRAFFIC\_SetColor@{TRAFFIC\_SetColor}}
+\index{TRAFFIC\_SetColor@{TRAFFIC\_SetColor}!traffic.c@{traffic.c}}
+\doxyparagraph{\texorpdfstring{TRAFFIC\_SetColor()}{TRAFFIC\_SetColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}} TRAFFIC\+\_\+\+Set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457}{TRAFFIC\+\_\+\+SEQUENCE\+\_\+t}}}]{Copy\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Set the traffic light color sequence to the given color sequence. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em color} & sequence\+: The color sequence to set\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457af80f9a890089d211842d59625e561f88}{RED}}
+\item \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457a77e3d0fbeb9f02d74acbc8ab1bf8d38d}{RED\+\_\+\+AMBER}}
+\item \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457aa60bd322f93178d68184e30e162571ca}{GREEN}}
+\item \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457ab2b41fdc9ef47b345b95936b36d730cc}{AMBER}} Those colors are members of the global enumeration \mbox{\hyperlink{traffic_8h_a00e0e3324d15be77df026e35644b6457}{TRAFFIC\+\_\+\+SEQUENCE\+\_\+t}}. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR Status\+: Check the options in the global enum \mbox{\hyperlink{_s_t_d___t_y_p_e_s_8h_aecc54e7bb223450c39e49a6b89d7dbd0}{ERROR\+\_\+t}}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{traffic_8c_source_l00162}{162}} of file \mbox{\hyperlink{traffic_8c_source}{traffic.\+c}}.
+
