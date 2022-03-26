@@ -160,7 +160,7 @@ After running the simulator on uVision Keil, the power consumption of the CPU de
       2. <u>With cute OS</u>: As shown in the above image, the code is running in:
           * **idle mode** (<u>cuteOS_Sleep</u> function runs for 98.2% of the time.), and
           * **normal mode** (<u>cuteOS_ISR</u> function runs for 1.8% of the time.).  
-      3. So, the **average current** consumption is:  ```(11mA *1.8% + 2mA* 98.2%) / 100 = 2.162mA```.
+      3. So, the **average current** consumption is:  ```(11mA * 1.8% + 2mA * 98.2%) / 100 = 2.162mA```.
     * The power consumption of the CPU is:
       1. Without the OS: ```11mA * 5V = 55mW```
       2. With the OS: ```2.162mA * 5V = 10.81mW```
