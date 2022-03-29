@@ -11,11 +11,11 @@
 #---------------------------------------------------------------------------------#
 # ENVIRONMENT VARIABLES: ----CHANGE THESE WHEN MOVING TO A DIFFERENT OS----		  #
 #---------------------------------------------------------------------------------#
-# Shell: bash for Linux, sh for MacOS, cmd for Windows
+# Shell of the OS, Options are: bash for Linux, sh for MacOS, cmd for Windows
 SHELL 	= cmd
-# Remove files command: rm -rf for Linux, rm for MacOS, del /s /q for Windows
+# Remove files command of the OS, Options are: rm -rf for Linux, rm for MacOS, del /s /q for Windows
 RM		= del /s /q
-# Remove directories command: rmdir -rf for Linux or MacOS, rmdir /s /q or Windows
+# Remove directories command of the OS, Options are: rmdir -rf for Linux or MacOS, rmdir /s /q or Windows
 RMDIR 	= rmdir /s /q
 
 

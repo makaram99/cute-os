@@ -1,6 +1,6 @@
 /***********************************************************************************
  *  @file     STD_TYPES.h
- *	@brief    Standard data types For AVR Microcontrollers
+ *	@brief    Standard data types For 8051 Microcontrollers
  *	@author   Mahmoud Karam (ma.karam272@gmail.com)
  *	@date	  2022-03-20
  *	@version  1.0.0
