@@ -24,7 +24,9 @@ By using this OS, you can:
 * Schedule a task with the frequency of your choice.
 * Remove any existed task.
 * The OS is isolated from the application:
+    <p align="center">
     <img src="docs/cute_os_layer.png" alt="system-layer"/>
+    </p>
 
 The project is **open source** and you can use it for your own projects.
 
@@ -116,6 +118,7 @@ To develop the project, you need to:
 * It will open with Keil-uVision5.
 * Enjoy the development.
 * You can build the project by clicking on **F7** key on keyboard.
+NOTE: The scheduler is the function called **cuteOS_ISR** which is periodically to run new tasks.
 
 **NOTE**: The scheduler is the function called **cuteOS_ISR** which is executed periodically to check whether to run new tasks or not.
 
@@ -198,10 +201,22 @@ After running the simulator on Keil-uVision5, the power consumption of the CPU d
       2. <u>With cute OS</u>: As shown in the above image, the code is running in:
           * **idle mode** (<u>cuteOS_Sleep</u> function runs for 98.2% of the time.), and
           * **normal mode** (<u>cuteOS_ISR</u> function runs for 1.8% of the time.).  
-      3. So, the **average current** consumption is:  ```(11mA *1.8% + 2mA* 98.2%) / 100 = 2.162mA```.
+      3. So, the **average current** consumption is:  ```(11mA * 1.8% + 2mA * 98.2%) / 100 = 2.162mA```.
     * The power consumption of the CPU is:
       1. Without the OS: ```11mA * 5V = 55mW```
       2. With the OS: ```2.162mA * 5V = 10.81mW```
+
+---
+
+## 📑 Generate Documentation
+
+To generate documentation:
+
+1. YOU MUST HAVE **DOXYGEN** AND **MAKE** INSTALLED ON YOUR COMPUTER.
+2. From the home directory of the project (**cuteOS**), open the command prompt in your OS (**cmd** for Windows, **bash** for linux, ...)
+3. Run the following command:
+   ```make -f doxygen.mk all```
+4. The documentation will be generated in the **[docs](docs)** directory.
 
 ---
 
