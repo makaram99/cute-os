@@ -152,37 +152,6 @@ To simulate the project, you need to:
 
 ---
 
-## 📑 Generate Documentation
-
-To generate documentation:
-
-1. YOU MUST HAVE **DOXYGEN** AND **MAKE** INSTALLED ON YOUR COMPUTER.
-2. From the home directory of the project ([cuteOS](./)), open the command prompt in your OS (**cmd** for Windows, **bash** for linux, ...)
-3. Run the following command:
-   ```make -f doxygen.mk all```
-4. The documentation will be generated in the **[docs](docs)** directory.
-
-**NOTE**: the file doxygen.mk is configured to run on Windows OS. If you want to run it on Linux OS, you need to change the configurations by opening the file and search for the section:
-
-   ```ENVIRONMENT VARIABLES```
-
-   and change each variable value depending on the OS you are using.
-   Options are given in the comment before each variable.
-   For example, to change the Shell name:
-
-   ``` makefile
-   # Shell of the OS, Options are: bash for Linux, sh for MacOS, cmd for Windows
-    SHELL = cmd
-   ```
-
-Options for shell are:
-
-* **bash** for Linux
-* **sh** for MacOS
-* **cmd** for Windows
-
----
-
 ## 🎯 Results
 
 After running the simulator on Keil-uVision5, the power consumption of the CPU decreased from **55mW** to **10.81mW**. This is because:
@@ -213,10 +182,29 @@ After running the simulator on Keil-uVision5, the power consumption of the CPU d
 To generate documentation:
 
 1. YOU MUST HAVE **DOXYGEN** AND **MAKE** INSTALLED ON YOUR COMPUTER.
-2. From the home directory of the project (**cuteOS**), open the command prompt in your OS (**cmd** for Windows, **bash** for linux, ...)
+2. From the home directory of the project ([cuteOS](./)), open the command prompt in your OS (**cmd** for Windows, **bash** for linux, ...)
 3. Run the following command:
    ```make -f doxygen.mk all```
 4. The documentation will be generated in the **[docs](docs)** directory.
+
+**NOTE**: the file doxygen.mk is configured to run on Windows OS. If you want to run it on Linux OS, you need to change the configurations by opening the file and search for the section:
+
+   ```ENVIRONMENT VARIABLES```
+
+   and change each variable value depending on the OS you are using.
+   Options are given in the comment before each variable.
+   For example, to change the Shell name:
+
+   ``` makefile
+   # Shell of the OS, Options are: bash for Linux, sh for MacOS, cmd for Windows
+    SHELL = cmd
+   ```
+
+Options for shell are:
+
+* **bash** for Linux
+* **sh** for MacOS
+* **cmd** for Windows
 
 ---
 
