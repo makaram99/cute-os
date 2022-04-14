@@ -1,10 +1,10 @@
-C51 COMPILER V9.60.0.0   MAIN                                                              03/26/2022 18:33:57 PAGE 1   
+C51 COMPILER V9.60.0.0   MAIN                                                              04/14/2022 16:34:57 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN .\Objects\main.obj
 COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE src\main.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\include) DEBUG OBJECTEXTEND
-                    - PRINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+                    - PRINT(.\Listings\main.lst) OBJECT(.\Objects\main.obj)
 
 line level    source
 
@@ -12,31 +12,31 @@ line level    source
    2           * @file    main.c
    3           * @author  Mahmoud Karam (ma.karam272@gmail.com)
    4           * @brief   Testing cute OS.
-   5           * @details Traffic light system (Chapter 8 - Embedded C by Professor j. Pont).       
-   6           *      See \ref traffic.c for the implementation and sequence of the system.
+   5           * @details     Traffic light system (Chapter 8 - Embedded C by Professor j. Pont).                     
+   6           *                      See \ref traffic.c for the implementation and sequence of the system.
    7           * @version 1.0.0
    8           * @date    2022-03-24
    9           * @copyright Copyright (c) 2022
   10           * 
-  11           * @details Application usage:
-  12           *      - Run the application.
-  13           *      - The application will run the traffic light system.
-  14           *      - The system will run in a loop:
-  15           *        1. Red for some seconds, then
-  16           *        2. Red-Amber for some seconds, then
-  17           *        3. Green for some seconds, then
-  18           *        4. Amberfor some seconds, then
-  19           *        5. Repeat from step 1.
-  20           *      The duration of each state is defined in the enum 
-  21           *      \ref TRAFFIC_SEQUENCE_DURATION_t in \ref traffic_cfg.h file.  
-  22           *      
-  23           *      Code explanation:
-  24           *      1. Initialize the Cute OS.
+  11           * @details     Application usage:
+  12           *                      - Run the application.
+  13           *                      - The application will run the traffic light system.
+  14           *                      - The system will run in a loop:
+  15           *                              1. Red for some seconds, then
+  16           *                              2. Red-Amber for some seconds, then
+  17           *                              3. Green for some seconds, then
+  18           *                              4. Amberfor some seconds, then
+  19           *                              5. Repeat from step 1.
+  20           *                      The duration of each state is defined in the enum 
+  21           *                      \ref TRAFFIC_SEQUENCE_DURATION_t in \ref traffic_cfg.h file.    
+  22           *                      
+  23           *                      Code explanation:
+  24           *                      1. Initialize the Cute OS.
   25           *              @code cuteOS_Init();    @endcode
   26           *          2. Initialize the tasks.
-  27           *        @code TRAFFIC_Init(); @endcode
-  28           *        See \ref TRAFFIC_Init() for more details.
-  29           *      3. Create the tasks.
+  27           *                              @code TRAFFIC_Init();   @endcode
+  28           *                              See \ref TRAFFIC_Init() for more details.
+  29           *                      3. Create the tasks.
   30           *              @code cuteOS_TaskCreate(task1, 1000); // task1 will run every 1 second  @endcode
   31           *              @code cuteOS_TaskCreate(task2, 2000); // task2 will run every 2 seconds @endcode
   32           *          4. Start the Cute OS scheduler.
@@ -51,37 +51,37 @@ line level    source
   41          #include "traffic.h"
   42          
   43          /*------------------------------------------------------------------------------*/
-  44          /*  THE FOLLOWING ARE ONLY FOR TESTING THE SIMPLE OS.               */
-  45          /*  DO NOT USE THEM IN YOUR APPLICATION.                      */
+  44          /*      THE FOLLOWING ARE ONLY FOR TESTING THE SIMPLE OS.                                                       */
+  45          /*      DO NOT USE THEM IN YOUR APPLICATION.                                                                            */
   46          /*------------------------------------------------------------------------------*/
   47          void led1_toggle(void){
-  48   1        led1Pin = !led1Pin;
+  48   1              led1Pin = !led1Pin;
   49   1      }
   50          
   51          void led2_toggle(void){
-  52   1        led2Pin = !led2Pin;
+  52   1              led2Pin = !led2Pin;
   53   1      }
   54          
-C51 COMPILER V9.60.0.0   MAIN                                                              03/26/2022 18:33:57 PAGE 2   
+C51 COMPILER V9.60.0.0   MAIN                                                              04/14/2022 16:34:57 PAGE 2   
 
   55          void led3_toggle(void){
-  56   1        led3Pin = !led3Pin;
+  56   1              led3Pin = !led3Pin;
   57   1      }
   58          
   59          void motor_toggle(void){
-  60   1        motorPin = !motorPin;
+  60   1              motorPin = !motorPin;
   61   1      }
   62          
   63          void buzzer_toggle(void){
-  64   1        buzzerPin = !buzzerPin;
+  64   1              buzzerPin = !buzzerPin;
   65   1      }
   66          
   67          void Init_Others(void) {
-  68   1        led1Pin = 1;
-  69   1        led2Pin = 0;
-  70   1        led3Pin = 0;
-  71   1        motorPin = 1;
-  72   1        buzzerPin = 0;
+  68   1              led1Pin = 1;
+  69   1              led2Pin = 0;
+  70   1              led3Pin = 0;
+  71   1              motorPin = 1;
+  72   1              buzzerPin = 0;
   73   1      }
   74          
   75          
@@ -90,34 +90,31 @@ line level    source
   78          
   79          
   80          /*------------------------------------------------------------------------------*/
-  81          /*          APPLICATION MAIN FUNCTION                   */
+  81          /*                                      APPLICATION MAIN FUNCTION                                                                       */
   82          /*------------------------------------------------------------------------------*/
   83          void main(void) {
-  84   1        /* Initialize the system */
-  85   1        cuteOS_Init();          /*!< Initialize Cute OS           */
-  86   1        TRAFFIC_Init();         /*!< Initialize the traffic light system  */
-  87   1        Init_Others();          /*!< Initialize other peripherals     */
+  84   1              /* Initialize the system */
+  85   1              cuteOS_Init();                                  /*!< Initialize Cute OS                                         */
+  86   1              TRAFFIC_Init();                                 /*!< Initialize the traffic light system        */
+  87   1              Init_Others();                                  /*!< Initialize other peripherals                       */
   88   1      
-  89   1        /*!< Create the tasks */
-  90   1        cuteOS_TaskCreate(TRAFFIC_Update, 1000);  /*!< Create a task to run the traffic light system */
-  91   1        cuteOS_TaskCreate(led1_toggle , 1000);  /*!< Create a task to toggle the first LED */
-  92   1        cuteOS_TaskCreate(led2_toggle , 2000);  /*!< Create a task to toggle the second LED */
-  93   1        cuteOS_TaskCreate(led3_toggle , 4000);  /*!< Create a task to toggle the third LED */
-  94   1        cuteOS_TaskCreate(buzzer_toggle , 1000);  /*!< Create a task to toggle the buzzer */
-  95   1        cuteOS_TaskCreate(motor_toggle  , 5000);  /*!< Create a task to toggle the motor */
-  96   1        
-  97   1        cuteOS_TaskRemove(buzzer_toggle); /*!< Remove the task to toggle the buzzer */
+  89   1              /*!< Create the tasks */
+  90   1              cuteOS_TaskCreate(TRAFFIC_Update, 1000);        /*!< Create a task to run the traffic light system */
+  91   1              cuteOS_TaskCreate(led1_toggle   , 1000);        /*!< Create a task to toggle the first LED */
+  92   1              cuteOS_TaskCreate(led2_toggle   , 2000);        /*!< Create a task to toggle the second LED */
+  93   1              cuteOS_TaskCreate(led3_toggle   , 4000);        /*!< Create a task to toggle the third LED */
+  94   1              cuteOS_TaskCreate(buzzer_toggle , 2000);        /*!< Create a task to toggle the buzzer */
+  95   1              cuteOS_TaskCreate(motor_toggle  , 5000);        /*!< Create a task to toggle the motor */
+  96   1              
+  97   1              cuteOS_TaskRemove(buzzer_toggle);       /*!< Remove the task to toggle the buzzer */
   98   1      
-  99   1        /*!< Start the Cute OS scheduler  */
- 100   1        cuteOS_Start();
- 101   1      
- 102   1        /*!< The scheduler will never return from here  */
- 103   1        while(1);
- 104   1      }
+  99   1              cuteOS_Start();
+ 100   1      }
+*** WARNING C316 IN LINE 100 OF src\main.c: unterminated conditionals
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    127    ----
+   CODE SIZE        =    125    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
@@ -127,4 +124,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

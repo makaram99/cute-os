@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['osc_5ffreq_70',['OSC_FREQ',['../main_8h.html#a91ed25b07bdff25ce25e42c2fb36f655',1,'main.h']]],
-  ['osc_5fper_5finst_71',['OSC_PER_INST',['../main_8h.html#a711dc0d0e45a9f32cd1adb066c654b42',1,'main.h']]]
+  ['normal_66',['NORMAL',['../_s_t_d___t_y_p_e_s_8h.html#a1291f416b069313021b519eea62d5bf1',1,'STD_TYPES.h']]],
+  ['null_67',['NULL',['../_s_t_d___t_y_p_e_s_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4',1,'STD_TYPES.h']]],
+  ['null_5fbyte_68',['NULL_BYTE',['../_s_t_d___t_y_p_e_s_8h.html#a7611128d4caa5aac09259e2e22142b3d',1,'STD_TYPES.h']]]
 ];

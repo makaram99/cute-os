@@ -1,10 +1,10 @@
-C51 COMPILER V9.60.0.0   TRAFFIC_CFG                                                       03/26/2022 01:01:29 PAGE 1   
+C51 COMPILER V9.60.0.0   TRAFFIC_CFG                                                       04/14/2022 16:34:58 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TRAFFIC_CFG
 OBJECT MODULE PLACED IN .\Objects\traffic_cfg.obj
 COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE src\traffic_cfg.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\include) DEBUG OBJEC
-                    -TEXTEND PRINT(.\Listings\traffic_cfg.lst) TABS(2) OBJECT(.\Objects\traffic_cfg.obj)
+                    -TEXTEND PRINT(.\Listings\traffic_cfg.lst) OBJECT(.\Objects\traffic_cfg.obj)
 
 line level    source
 
@@ -23,7 +23,7 @@ line level    source
   13          
   14          
   15          /*-------------------------------------------------------------------------*/
-  16          /*                YOU CAN CHANGE THE FOLLOWING PARAMETERS          */
+  16          /*                YOU CAN CHANGE THE FOLLOWING PARAMETERS                                  */
   17          /*-------------------------------------------------------------------------*/
   18          /***************************************************************************
   19           * @brief   Traffic Light System pins connections.

@@ -91,14 +91,10 @@ void main(void) {
 	cuteOS_TaskCreate(led1_toggle	, 1000);	/*!< Create a task to toggle the first LED */
 	cuteOS_TaskCreate(led2_toggle	, 2000);	/*!< Create a task to toggle the second LED */
 	cuteOS_TaskCreate(led3_toggle	, 4000);	/*!< Create a task to toggle the third LED */
-	cuteOS_TaskCreate(buzzer_toggle	, 1000);	/*!< Create a task to toggle the buzzer */
+	cuteOS_TaskCreate(buzzer_toggle	, 2000);	/*!< Create a task to toggle the buzzer */
 	cuteOS_TaskCreate(motor_toggle	, 5000);	/*!< Create a task to toggle the motor */
 	
 	cuteOS_TaskRemove(buzzer_toggle);	/*!< Remove the task to toggle the buzzer */
 
-	/*!< Start the Cute OS scheduler	*/
 	cuteOS_Start();
-
-	/*!< The scheduler will never return from here	*/
-	while(1);
 }

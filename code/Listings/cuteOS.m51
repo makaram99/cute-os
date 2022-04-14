@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/26/2022  18:33:57  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/14/2022  19:34:37  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -20,8 +20,18 @@ INPUT MODULES INCLUDED:
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULCMP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDIDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LSTIDATA)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ICALL)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LIMUL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDXDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDPDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LSTXDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LSTPDATA)
 
 
 LINK MAP OF MODULE:  .\Objects\cuteOS (?C_STARTUP)
@@ -32,50 +42,50 @@ LINK MAP OF MODULE:  .\Objects\cuteOS (?C_STARTUP)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     0040H     UNIT         ?DT?CUTEOS
-            DATA    0048H     0008H     UNIT         _DATA_GROUP_
-            DATA    0050H     0004H     UNIT         ?DT?TRAFFIC_CFG
-            DATA    0054H     0003H     UNIT         ?DT?_CUTEOS_GETTICKTIME?CUTEOS
-            DATA    0057H     0003H     UNIT         ?DT?TRAFFIC
-            DATA    005AH     0001H     UNIT         ?DT?_TRAFFIC_SETCOLOR?TRAFFIC
-            IDATA   005BH     0001H     UNIT         ?STACK
+            DATA    0008H     0054H     UNIT         ?DT?CUTEOS
+            DATA    005CH     0019H     UNIT         _DATA_GROUP_
+            DATA    0075H     0004H     UNIT         ?DT?TRAFFIC_CFG
+            DATA    0079H     0003H     UNIT         ?DT?TRAFFIC
+            DATA    007CH     0001H     UNIT         ?DT?_TRAFFIC_SETCOLOR?TRAFFIC
+            IDATA   007DH     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     0028H                  *** GAP ***
             CODE    002BH     0003H     ABSOLUTE     
                     002EH     07D2H                  *** GAP ***
-            CODE    0800H     025EH     UNIT         ?C?LIB_CODE
-            CODE    0A5EH     0092H     UNIT         ?PR?CUTEOS_ISR?CUTEOS
-            CODE    0AF0H     008CH     UNIT         ?C_C51STARTUP
-            CODE    0B7CH     0087H     UNIT         ?PR?_CUTEOS_TASKREMOVE?CUTEOS
-            CODE    0C03H     0069H     UNIT         ?PR?_TRAFFIC_GENERICSEQUENCE?TRAFFIC
-            CODE    0C6CH     0065H     UNIT         ?PR?MAIN?MAIN
-            CODE    0CD1H     005BH     UNIT         ?PR?_CUTEOS_TASKCREATE?CUTEOS
-            CODE    0D2CH     0057H     UNIT         ?C_INITSEG
-            CODE    0D83H     003AH     UNIT         ?PR?CUTEOS_INIT?CUTEOS
-            CODE    0DBDH     002FH     UNIT         ?PR?TRAFFIC_UPDATE?TRAFFIC
-            CODE    0DECH     0016H     UNIT         ?PR?_CUTEOS_GETTICKTIME?CUTEOS
-            CODE    0E02H     0014H     UNIT         ?PR?_CUTEOS_SETTICKTIME?CUTEOS
-            CODE    0E16H     0014H     UNIT         ?PR?TRAFFIC_REDAMBERSEQUENCE?TRAFFIC
-            CODE    0E2AH     0013H     UNIT         ?PR?TRAFFIC_REDSEQUENCE?TRAFFIC
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 2
+            CODE    0800H     0301H     UNIT         ?C?LIB_CODE
+            CODE    0B01H     00FFH     UNIT         ?PR?_CUTEOS_GCD?CUTEOS
+            CODE    0C00H     008FH     UNIT         ?PR?CUTEOS_ISR?CUTEOS
+            CODE    0C8FH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0D1BH     0089H     UNIT         ?PR?_CUTEOS_TASKREMOVE?CUTEOS
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 2
 
 
-            CODE    0E3DH     0013H     UNIT         ?PR?TRAFFIC_GREENSEQUENCE?TRAFFIC
-            CODE    0E50H     0013H     UNIT         ?PR?TRAFFIC_AMBERSEQUENCE?TRAFFIC
-            CODE    0E63H     000FH     UNIT         ?PR?TRAFFIC_INIT?TRAFFIC
-            CODE    0E72H     000EH     UNIT         ?PR?_TRAFFIC_SETCOLOR?TRAFFIC
-            CODE    0E80H     000BH     UNIT         ?PR?INIT_OTHERS?MAIN
-            CODE    0E8BH     0009H     UNIT         ?PR?TRAFFIC_DEINIT?TRAFFIC
-            CODE    0E94H     0007H     UNIT         ?PR?_TRAFFIC_GETCOLOR?TRAFFIC
-            CODE    0E9BH     0005H     UNIT         ?PR?CUTEOS_START?CUTEOS
-            CODE    0EA0H     0004H     UNIT         ?PR?CUTEOS_SLEEP?CUTEOS
-            CODE    0EA4H     0003H     UNIT         ?PR?LED1_TOGGLE?MAIN
-            CODE    0EA7H     0003H     UNIT         ?PR?LED2_TOGGLE?MAIN
-            CODE    0EAAH     0003H     UNIT         ?PR?LED3_TOGGLE?MAIN
-            CODE    0EADH     0003H     UNIT         ?PR?MOTOR_TOGGLE?MAIN
-            CODE    0EB0H     0003H     UNIT         ?PR?BUZZER_TOGGLE?MAIN
+            CODE    0DA4H     006BH     UNIT         ?C_INITSEG
+            CODE    0E0FH     0069H     UNIT         ?PR?_TRAFFIC_GENERICSEQUENCE?TRAFFIC
+            CODE    0E78H     0063H     UNIT         ?PR?MAIN?MAIN
+            CODE    0EDBH     0055H     UNIT         ?PR?_CUTEOS_TASKCREATE?CUTEOS
+            CODE    0F30H     004CH     UNIT         ?PR?CUTEOS_UPDATETICKS?CUTEOS
+            CODE    0F7CH     003EH     UNIT         ?PR?CUTEOS_INIT?CUTEOS
+            CODE    0FBAH     002FH     UNIT         ?PR?TRAFFIC_UPDATE?TRAFFIC
+            CODE    0FE9H     002EH     UNIT         ?PR?_CUTEOS_SETTICKTIME?CUTEOS
+            CODE    1017H     0023H     UNIT         ?PR?_CUTEOS_GETTICKTIME?CUTEOS
+            CODE    103AH     0014H     UNIT         ?PR?TRAFFIC_REDAMBERSEQUENCE?TRAFFIC
+            CODE    104EH     0013H     UNIT         ?PR?TRAFFIC_REDSEQUENCE?TRAFFIC
+            CODE    1061H     0013H     UNIT         ?PR?TRAFFIC_GREENSEQUENCE?TRAFFIC
+            CODE    1074H     0013H     UNIT         ?PR?TRAFFIC_AMBERSEQUENCE?TRAFFIC
+            CODE    1087H     000FH     UNIT         ?PR?TRAFFIC_INIT?TRAFFIC
+            CODE    1096H     000EH     UNIT         ?PR?_TRAFFIC_SETCOLOR?TRAFFIC
+            CODE    10A4H     000BH     UNIT         ?PR?INIT_OTHERS?MAIN
+            CODE    10AFH     0009H     UNIT         ?PR?TRAFFIC_DEINIT?TRAFFIC
+            CODE    10B8H     0008H     UNIT         ?PR?CUTEOS_START?CUTEOS
+            CODE    10C0H     0007H     UNIT         ?PR?_TRAFFIC_GETCOLOR?TRAFFIC
+            CODE    10C7H     0003H     UNIT         ?PR?LED1_TOGGLE?MAIN
+            CODE    10CAH     0003H     UNIT         ?PR?LED2_TOGGLE?MAIN
+            CODE    10CDH     0003H     UNIT         ?PR?LED3_TOGGLE?MAIN
+            CODE    10D0H     0003H     UNIT         ?PR?MOTOR_TOGGLE?MAIN
+            CODE    10D3H     0003H     UNIT         ?PR?BUZZER_TOGGLE?MAIN
 
 
 
@@ -103,41 +113,54 @@ SEGMENT                                        DATA_GROUP
   +--> ?PR?_CUTEOS_TASKREMOVE?CUTEOS
   +--> ?PR?CUTEOS_START?CUTEOS
 
-?PR?CUTEOS_INIT?CUTEOS                       0048H    0005H
+?PR?CUTEOS_INIT?CUTEOS                       0068H    0002H
+  +--> ?PR?_CUTEOS_GETTICKTIME?CUTEOS
 
-?PR?TRAFFIC_UPDATE?TRAFFIC                   0048H    0001H
+?PR?_CUTEOS_GETTICKTIME?CUTEOS               006AH    0003H
+
+?PR?TRAFFIC_UPDATE?TRAFFIC                   005CH    0001H
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 3
+
+
   +--> ?PR?TRAFFIC_REDSEQUENCE?TRAFFIC
   +--> ?PR?TRAFFIC_REDAMBERSEQUENCE?TRAFFIC
   +--> ?PR?TRAFFIC_GREENSEQUENCE?TRAFFIC
   +--> ?PR?TRAFFIC_AMBERSEQUENCE?TRAFFIC
 
-?PR?TRAFFIC_REDSEQUENCE?TRAFFIC              0049H    0001H
+?PR?TRAFFIC_REDSEQUENCE?TRAFFIC              005DH    0001H
   +--> ?PR?_TRAFFIC_GENERICSEQUENCE?TRAFFIC
 
-?PR?_TRAFFIC_GENERICSEQUENCE?TRAFFIC         004AH    0005H
+?PR?_TRAFFIC_GENERICSEQUENCE?TRAFFIC         005EH    0005H
 
-?PR?TRAFFIC_REDAMBERSEQUENCE?TRAFFIC         0049H    0001H
+?PR?TRAFFIC_REDAMBERSEQUENCE?TRAFFIC         005DH    0001H
   +--> ?PR?_TRAFFIC_GENERICSEQUENCE?TRAFFIC
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 3
-
-
-?PR?TRAFFIC_GREENSEQUENCE?TRAFFIC            0049H    0001H
+?PR?TRAFFIC_GREENSEQUENCE?TRAFFIC            005DH    0001H
   +--> ?PR?_TRAFFIC_GENERICSEQUENCE?TRAFFIC
 
-?PR?TRAFFIC_AMBERSEQUENCE?TRAFFIC            0049H    0001H
+?PR?TRAFFIC_AMBERSEQUENCE?TRAFFIC            005DH    0001H
   +--> ?PR?_TRAFFIC_GENERICSEQUENCE?TRAFFIC
 
-?PR?_CUTEOS_TASKCREATE?CUTEOS                0048H    0004H
+?PR?_CUTEOS_TASKCREATE?CUTEOS                005CH    0004H
 
-?PR?_CUTEOS_TASKREMOVE?CUTEOS                0048H    0005H
+?PR?_CUTEOS_TASKREMOVE?CUTEOS                005CH    0005H
+  +--> ?PR?CUTEOS_UPDATETICKS?CUTEOS
+
+?PR?CUTEOS_UPDATETICKS?CUTEOS                0061H    0006H
+  +--> ?PR?_CUTEOS_GCD?CUTEOS
+  +--> ?PR?_CUTEOS_SETTICKTIME?CUTEOS
+
+?PR?_CUTEOS_GCD?CUTEOS                       0067H    000DH
+
+?PR?_CUTEOS_SETTICKTIME?CUTEOS               0067H    0001H
+  +--> ?PR?CUTEOS_INIT?CUTEOS
 
 ?PR?CUTEOS_START?CUTEOS                      -----    -----
-  +--> ?PR?CUTEOS_SLEEP?CUTEOS
+  +--> ?PR?CUTEOS_UPDATETICKS?CUTEOS
 
 *** NEW ROOT ***************************************************
 
-?PR?CUTEOS_ISR?CUTEOS                        004FH    0001H
+?PR?CUTEOS_ISR?CUTEOS                        0074H    0001H
 
 
 
@@ -147,8 +170,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\cuteOS (?C_STARTUP)
   ----------------------------------
 
   -------         MODULE        ?C_STARTUP
-  C:0AF0H         SEGMENT       ?C_C51STARTUP
-  I:005BH         SEGMENT       ?STACK
+  C:0C8FH         SEGMENT       ?C_C51STARTUP
+  I:007DH         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
@@ -156,8 +179,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\cuteOS (?C_STARTUP)
   D:0082H         SYMBOL        DPL
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 4
+
+
   N:0080H         SYMBOL        IDATALEN
-  C:0AF3H         SYMBOL        IDATALOOP
+  C:0C92H         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -166,263 +192,308 @@ SYMBOL TABLE OF MODULE:  .\Objects\cuteOS (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:0AF0H         SYMBOL        STARTUP1
+  C:0C8FH         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:0AF0H         LINE#         133
-  C:0AF2H         LINE#         134
-  C:0AF3H         LINE#         135
-  C:0AF4H         LINE#         136
-  C:0AF6H         LINE#         185
-  C:0AF9H         LINE#         196
+  C:0C8FH         LINE#         133
+  C:0C91H         LINE#         134
+  C:0C92H         LINE#         135
+  C:0C93H         LINE#         136
+  C:0C95H         LINE#         185
+  C:0C98H         LINE#         196
   -------         ENDMOD        ?C_STARTUP
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 4
-
-
 
   -------         MODULE        CUTEOS
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
-  C:0E02H         PUBLIC        _cuteOS_SetTickTime
+  C:0FE9H         SYMBOL        _cuteOS_SetTickTime
+  C:0B01H         SYMBOL        _cuteOS_GCD
   B:00A8H.7       PUBLIC        EA
   D:00A8H         PUBLIC        IE
-  D:0008H         SYMBOL        cuteOS_TickTimeMs
   D:00B8H         PUBLIC        IP
+  C:0F30H         SYMBOL        cuteOS_UpdateTicks
   D:00CBH         PUBLIC        RCAP2H
-  C:0CD1H         PUBLIC        _cuteOS_TaskCreate
-  C:0A5EH         SYMBOL        cuteOS_ISR
+  C:0EDBH         PUBLIC        _cuteOS_TaskCreate
+  C:0C00H         SYMBOL        cuteOS_ISR
   D:00CAH         PUBLIC        RCAP2L
-  D:0009H         PUBLIC        tasks
+  D:0008H         PUBLIC        tasks
   D:0087H         PUBLIC        PCON
-  D:0045H         SYMBOL        cuteOS_TaskCounter
-  C:0EA0H         SYMBOL        cuteOS_Sleep
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:0B7CH         PUBLIC        _cuteOS_TaskRemove
-  C:0E9BH         PUBLIC        cuteOS_Start
+  D:0058H         SYMBOL        cuteOS_tick_time_ms
+  C:0D1BH         PUBLIC        _cuteOS_TaskRemove
+  C:10B8H         PUBLIC        cuteOS_Start
   B:00A8H.5       PUBLIC        ET2
   B:00C8H.7       PUBLIC        TF2
-  C:0D83H         PUBLIC        cuteOS_Init
+  C:0F7CH         PUBLIC        cuteOS_Init
   D:00CDH         PUBLIC        TH2
-  D:0046H         SYMBOL        cuteOS_TickCount
+  D:0059H         SYMBOL        cuteOS_task_counter
   D:00CCH         PUBLIC        TL2
   B:00C8H.2       PUBLIC        TR2
   D:00C8H         PUBLIC        T2CON
-  C:0DECH         PUBLIC        _cuteOS_GetTickTime
+  D:005AH         SYMBOL        cuteOS_tick_count
+  C:1017H         PUBLIC        _cuteOS_GetTickTime
   D:00D0H         PUBLIC        PSW
-  -------         PROC          CUTEOS_ISR
-  -------         DO            
-  D:004FH         SYMBOL        i
-  -------         ENDDO         
-  C:0A5EH         LINE#         81
-  C:0A7BH         LINE#         82
-  C:0A7EH         LINE#         85
-  C:0A80H         LINE#         88
-  C:0A88H         LINE#         91
-  C:0A92H         LINE#         92
-  C:0AABH         LINE#         97
-  C:0ABFH         LINE#         98
-  C:0AD1H         LINE#         99
-  C:0AD1H         LINE#         100
-  C:0AD1H         LINE#         101
-  C:0AD5H         LINE#         102
-  -------         ENDPROC       CUTEOS_ISR
-  -------         PROC          CUTEOS_SLEEP
-  C:0EA0H         LINE#         110
-  C:0EA0H         LINE#         112
-  C:0EA3H         LINE#         113
-  -------         ENDPROC       CUTEOS_SLEEP
   -------         PROC          _CUTEOS_TASKCREATE
-  D:0048H         SYMBOL        callback
-  D:0006H         SYMBOL        TICK_MS
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 5
 
 
+  D:005CH         SYMBOL        callback
+  D:0004H         SYMBOL        TICK_TIME_MS
   -------         DO            
-  D:004BH         SYMBOL        error
+  D:005FH         SYMBOL        error
   -------         ENDDO         
-  C:0CD1H         LINE#         126
-  C:0CDBH         LINE#         127
-  C:0CDEH         LINE#         129
-  C:0CE0H         LINE#         131
-  C:0CEBH         LINE#         132
-  C:0CEEH         LINE#         133
-  C:0CF0H         LINE#         134
-  C:0CFFH         LINE#         135
-  C:0D14H         LINE#         136
-  C:0D29H         LINE#         137
-  C:0D29H         LINE#         139
-  C:0D2BH         LINE#         140
+  C:0EDBH         LINE#         91
+  C:0EE1H         LINE#         92
+  C:0EE4H         LINE#         94
+  C:0EEFH         LINE#         95
+  C:0EF1H         LINE#         96
+  C:0F00H         LINE#         97
+  C:0F13H         LINE#         98
+  C:0F28H         LINE#         101
+  C:0F2AH         LINE#         102
+  C:0F2DH         LINE#         103
+  C:0F2DH         LINE#         105
+  C:0F2FH         LINE#         106
   -------         ENDPROC       _CUTEOS_TASKCREATE
   -------         PROC          _CUTEOS_TASKREMOVE
-  D:0048H         SYMBOL        callback
+  D:005CH         SYMBOL        callback
   -------         DO            
-  D:004BH         SYMBOL        error
-  D:004CH         SYMBOL        i
+  D:005FH         SYMBOL        error
+  D:0060H         SYMBOL        i
   -------         ENDDO         
-  C:0B7CH         LINE#         152
-  C:0B82H         LINE#         153
-  C:0B85H         LINE#         154
-  C:0B88H         LINE#         157
-  C:0B91H         LINE#         158
-  C:0BB7H         LINE#         159
-  C:0BB9H         LINE#         161
-  C:0BC3H         LINE#         162
-  C:0BE3H         LINE#         163
-  C:0BE7H         LINE#         165
-  C:0BF8H         LINE#         168
-  C:0BFAH         LINE#         169
-  C:0BFCH         LINE#         170
-  C:0BFCH         LINE#         171
-  C:0C00H         LINE#         173
-  C:0C02H         LINE#         174
+  C:0D1BH         LINE#         118
+  C:0D21H         LINE#         119
+  C:0D24H         LINE#         123
+  C:0D2EH         LINE#         124
+  C:0D54H         LINE#         125
+  C:0D54H         LINE#         128
+  C:0D5EH         LINE#         129
+  C:0D7EH         LINE#         130
+  C:0D82H         LINE#         132
+  C:0D84H         LINE#         133
+  C:0D95H         LINE#         135
+  C:0D9BH         LINE#         137
+  C:0D9DH         LINE#         138
+  C:0D9DH         LINE#         139
+  C:0DA1H         LINE#         141
+  C:0DA3H         LINE#         142
   -------         ENDPROC       _CUTEOS_TASKREMOVE
   -------         PROC          CUTEOS_START
-  C:0E9BH         LINE#         179
-  C:0E9BH         LINE#         181
-  C:0E9BH         LINE#         182
-  C:0E9EH         LINE#         183
+  C:10B8H         LINE#         149
+  C:10B8H         LINE#         150
+  C:10BBH         LINE#         151
+  C:10BBH         LINE#         152
+  C:10BEH         LINE#         153
   -------         ENDPROC       CUTEOS_START
-  -------         PROC          _CUTEOS_SETTICKTIME
-  D:0007H         SYMBOL        TICK_MS
-  -------         DO            
-  D:0006H         SYMBOL        error
-  -------         ENDDO         
-  C:0E02H         LINE#         191
-  C:0E02H         LINE#         192
-  C:0E02H         LINE#         194
-  C:0E04H         LINE#         196
-  C:0E0EH         LINE#         197
-  C:0E0EH         LINE#         198
-  C:0E10H         LINE#         200
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 6
-
-
-  C:0E13H         LINE#         201
-  C:0E13H         LINE#         203
-  C:0E15H         LINE#         204
-  -------         ENDPROC       _CUTEOS_SETTICKTIME
   -------         PROC          _CUTEOS_GETTICKTIME
-  D:0054H         SYMBOL        tickTimeInMsPtr
+  D:006AH         SYMBOL        ptr_tick_time_ms
   -------         DO            
   D:0007H         SYMBOL        error
   -------         ENDDO         
-  C:0DECH         LINE#         209
-  C:0DF2H         LINE#         210
-  C:0DF4H         LINE#         212
-  C:0DF9H         LINE#         213
-  C:0DFEH         LINE#         214
-  C:0DFEH         LINE#         215
-  C:0E01H         LINE#         216
-  C:0E01H         LINE#         218
-  C:0E01H         LINE#         219
+  C:1017H         LINE#         156
+  C:101DH         LINE#         157
+  C:101FH         LINE#         159
+  C:1024H         LINE#         160
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 6
+
+
+  C:1028H         LINE#         161
+  C:102BH         LINE#         162
+  C:102BH         LINE#         164
+  C:1036H         LINE#         165
+  C:1036H         LINE#         166
+  C:1039H         LINE#         167
+  C:1039H         LINE#         169
+  C:1039H         LINE#         170
   -------         ENDPROC       _CUTEOS_GETTICKTIME
   -------         PROC          CUTEOS_INIT
   -------         DO            
-  D:0048H         SYMBOL        error
-  D:0049H         SYMBOL        Inc
-  D:0004H         SYMBOL        Reload_16
-  D:0007H         SYMBOL        Reload_08H
-  D:0006H         SYMBOL        Reload_08L
+  D:0068H         SYMBOL        error
+  D:0006H         SYMBOL        increments
+  D:0004H         SYMBOL        reload_16
+  D:0069H         SYMBOL        tick_time_ms
   -------         ENDDO         
-  C:0D83H         LINE#         228
-  C:0D83H         LINE#         229
-  C:0D86H         LINE#         234
-  C:0D88H         LINE#         240
-  C:0D8BH         LINE#         248
-  C:0DA6H         LINE#         251
-  C:0DACH         LINE#         254
-  C:0DACH         LINE#         255
-  C:0DACH         LINE#         260
-  C:0DB0H         LINE#         261
-  C:0DB4H         LINE#         263
-  C:0DB6H         LINE#         264
-  C:0DB8H         LINE#         265
-  C:0DBAH         LINE#         267
-  C:0DBCH         LINE#         268
+  C:0F7CH         LINE#         179
+  C:0F7CH         LINE#         180
+  C:0F7FH         LINE#         184
+  C:0F81H         LINE#         190
+  C:0F84H         LINE#         198
+  C:0F8FH         LINE#         199
+  C:0FA3H         LINE#         201
+  C:0FA9H         LINE#         202
+  C:0FADH         LINE#         203
+  C:0FB1H         LINE#         205
+  C:0FB3H         LINE#         206
+  C:0FB5H         LINE#         207
+  C:0FB7H         LINE#         209
+  C:0FB9H         LINE#         210
   -------         ENDPROC       CUTEOS_INIT
+  -------         PROC          CUTEOS_ISR
+  -------         DO            
+  D:0074H         SYMBOL        i
+  -------         ENDDO         
+  C:0C00H         LINE#         222
+  C:0C1DH         LINE#         226
+  C:0C1FH         LINE#         229
+  C:0C27H         LINE#         232
+  C:0C31H         LINE#         233
+  C:0C4AH         LINE#         234
+  C:0C5EH         LINE#         235
+  C:0C70H         LINE#         236
+  C:0C70H         LINE#         237
+  C:0C70H         LINE#         238
+  C:0C74H         LINE#         242
+  -------         ENDPROC       CUTEOS_ISR
+  -------         PROC          CUTEOS_UPDATETICKS
+  -------         DO            
+  D:0061H         SYMBOL        error
+  D:0062H         SYMBOL        gcd_delay_ms
+  D:0066H         SYMBOL        i
+  -------         ENDDO         
+  C:0F30H         LINE#         244
+  C:0F30H         LINE#         245
+  C:0F33H         LINE#         250
+  C:0F3EH         LINE#         252
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 7
+
+
+  C:0F46H         LINE#         255
+  C:0F50H         LINE#         256
+  C:0F75H         LINE#         257
+  C:0F79H         LINE#         259
+  C:0F7BH         LINE#         260
+  -------         ENDPROC       CUTEOS_UPDATETICKS
+  -------         PROC          _CUTEOS_GCD
+  D:0067H         SYMBOL        gcd
+  -------         DO            
+  D:006AH         SYMBOL        error
+  D:006BH         SYMBOL        remainder
+  D:006FH         SYMBOL        y
+  D:0073H         SYMBOL        i
+  -------         ENDDO         
+  C:0B01H         LINE#         262
+  C:0B07H         LINE#         263
+  C:0B0AH         LINE#         268
+  C:0B15H         LINE#         269
+  C:0B1FH         LINE#         270
+  C:0B33H         LINE#         271
+  C:0B46H         LINE#         272
+  C:0B6AH         LINE#         273
+  C:0B7BH         LINE#         274
+  C:0B87H         LINE#         275
+  C:0B89H         LINE#         276
+  C:0B8DH         LINE#         279
+  C:0B90H         LINE#         280
+  C:0BA5H         LINE#         281
+  C:0BD0H         LINE#         282
+  C:0BD2H         LINE#         283
+  C:0BD4H         LINE#         284
+  C:0BFBH         LINE#         285
+  C:0BFDH         LINE#         287
+  C:0BFFH         LINE#         288
+  -------         ENDPROC       _CUTEOS_GCD
+  -------         PROC          _CUTEOS_SETTICKTIME
+  D:0007H         SYMBOL        TICK_TIME_MS
+  -------         DO            
+  D:0067H         SYMBOL        error
+  -------         ENDDO         
+  C:0FE9H         LINE#         295
+  C:0FE9H         LINE#         296
+  C:0FECH         LINE#         298
+  C:0FF9H         LINE#         299
+  C:1002H         LINE#         300
+  C:1005H         LINE#         301
+  C:1007H         LINE#         302
+  C:1009H         LINE#         303
+  C:1009H         LINE#         304
+  C:100FH         LINE#         305
+  C:1011H         LINE#         306
+  C:1014H         LINE#         307
+  C:1014H         LINE#         309
+  C:1016H         LINE#         310
+  -------         ENDPROC       _CUTEOS_SETTICKTIME
   -------         ENDMOD        CUTEOS
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 8
+
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
-  C:0EB0H         PUBLIC        buzzer_toggle
+  C:10D3H         PUBLIC        buzzer_toggle
   D:00A8H         PUBLIC        IE
   B:0090H.3       PUBLIC        led1Pin
   B:0090H.4       PUBLIC        led2Pin
   B:0090H.5       PUBLIC        led3Pin
   D:00B8H         PUBLIC        IP
-  C:0EADH         PUBLIC        motor_toggle
-  C:0C6CH         PUBLIC        main
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 7
-
-
+  C:10D0H         PUBLIC        motor_toggle
+  C:0E78H         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:0EA4H         PUBLIC        led1_toggle
-  C:0EA7H         PUBLIC        led2_toggle
+  C:10C7H         PUBLIC        led1_toggle
+  C:10CAH         PUBLIC        led2_toggle
   B:0090H.7       PUBLIC        buzzerPin
-  C:0EAAH         PUBLIC        led3_toggle
+  C:10CDH         PUBLIC        led3_toggle
   B:0090H.6       PUBLIC        motorPin
   D:00C8H         PUBLIC        T2CON
-  C:0E80H         PUBLIC        Init_Others
+  C:10A4H         PUBLIC        Init_Others
   D:00D0H         PUBLIC        PSW
   -------         PROC          LED1_TOGGLE
-  C:0EA4H         LINE#         47
-  C:0EA4H         LINE#         48
-  C:0EA6H         LINE#         49
+  C:10C7H         LINE#         47
+  C:10C7H         LINE#         48
+  C:10C9H         LINE#         49
   -------         ENDPROC       LED1_TOGGLE
   -------         PROC          LED2_TOGGLE
-  C:0EA7H         LINE#         51
-  C:0EA7H         LINE#         52
-  C:0EA9H         LINE#         53
+  C:10CAH         LINE#         51
+  C:10CAH         LINE#         52
+  C:10CCH         LINE#         53
   -------         ENDPROC       LED2_TOGGLE
   -------         PROC          LED3_TOGGLE
-  C:0EAAH         LINE#         55
-  C:0EAAH         LINE#         56
-  C:0EACH         LINE#         57
+  C:10CDH         LINE#         55
+  C:10CDH         LINE#         56
+  C:10CFH         LINE#         57
   -------         ENDPROC       LED3_TOGGLE
   -------         PROC          MOTOR_TOGGLE
-  C:0EADH         LINE#         59
-  C:0EADH         LINE#         60
-  C:0EAFH         LINE#         61
+  C:10D0H         LINE#         59
+  C:10D0H         LINE#         60
+  C:10D2H         LINE#         61
   -------         ENDPROC       MOTOR_TOGGLE
   -------         PROC          BUZZER_TOGGLE
-  C:0EB0H         LINE#         63
-  C:0EB0H         LINE#         64
-  C:0EB2H         LINE#         65
+  C:10D3H         LINE#         63
+  C:10D3H         LINE#         64
+  C:10D5H         LINE#         65
   -------         ENDPROC       BUZZER_TOGGLE
   -------         PROC          INIT_OTHERS
-  C:0E80H         LINE#         67
-  C:0E80H         LINE#         68
-  C:0E82H         LINE#         69
-  C:0E84H         LINE#         70
-  C:0E86H         LINE#         71
-  C:0E88H         LINE#         72
-  C:0E8AH         LINE#         73
+  C:10A4H         LINE#         67
+  C:10A4H         LINE#         68
+  C:10A6H         LINE#         69
+  C:10A8H         LINE#         70
+  C:10AAH         LINE#         71
+  C:10ACH         LINE#         72
+  C:10AEH         LINE#         73
   -------         ENDPROC       INIT_OTHERS
   -------         PROC          MAIN
-  C:0C6CH         LINE#         83
-  C:0C6CH         LINE#         85
-  C:0C6FH         LINE#         86
-  C:0C72H         LINE#         87
-  C:0C75H         LINE#         90
-  C:0C82H         LINE#         91
-  C:0C8FH         LINE#         92
-  C:0C9CH         LINE#         93
-  C:0CA9H         LINE#         94
-  C:0CB6H         LINE#         95
-  C:0CC3H         LINE#         97
-  C:0CCCH         LINE#         100
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 8
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 9
 
 
-  C:0CCFH         LINE#         103
+  C:0E78H         LINE#         83
+  C:0E78H         LINE#         85
+  C:0E7BH         LINE#         86
+  C:0E7EH         LINE#         87
+  C:0E81H         LINE#         90
+  C:0E8EH         LINE#         91
+  C:0E9BH         LINE#         92
+  C:0EA8H         LINE#         93
+  C:0EB5H         LINE#         94
+  C:0EC2H         LINE#         95
+  C:0ECFH         LINE#         97
+  C:0ED8H         LINE#         99
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
@@ -430,205 +501,205 @@ SYMBOL TABLE OF MODULE:  .\Objects\cuteOS (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
-  C:0E94H         PUBLIC        _TRAFFIC_GetColor
-  C:0E50H         SYMBOL        TRAFFIC_AmberSequence
+  C:10C0H         PUBLIC        _TRAFFIC_GetColor
+  C:1074H         SYMBOL        TRAFFIC_AmberSequence
   D:00A8H         PUBLIC        IE
-  C:0E72H         PUBLIC        _TRAFFIC_SetColor
-  C:0E3DH         SYMBOL        TRAFFIC_GreenSequence
+  C:1096H         PUBLIC        _TRAFFIC_SetColor
+  C:1061H         SYMBOL        TRAFFIC_GreenSequence
   D:00B8H         PUBLIC        IP
-  C:0E8BH         PUBLIC        TRAFFIC_DeInit
-  C:0E16H         SYMBOL        TRAFFIC_RedAmberSequence
+  C:10AFH         PUBLIC        TRAFFIC_DeInit
+  C:103AH         SYMBOL        TRAFFIC_RedAmberSequence
   B:0090H.1       PUBLIC        amberPin
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   B:0090H.2       PUBLIC        greenPin
-  C:0E2AH         SYMBOL        TRAFFIC_RedSequence
-  C:0DBDH         PUBLIC        TRAFFIC_Update
-  D:0057H         SYMBOL        colorSequence
-  C:0C03H         SYMBOL        _TRAFFIC_GenericSequence
+  C:104EH         SYMBOL        TRAFFIC_RedSequence
+  C:0FBAH         PUBLIC        TRAFFIC_Update
+  D:0079H         SYMBOL        colorSequence
+  C:0E0FH         SYMBOL        _TRAFFIC_GenericSequence
   B:0090H.0       PUBLIC        redPin
   D:00C8H         PUBLIC        T2CON
-  D:0058H         SYMBOL        timeInState
-  C:0E63H         PUBLIC        TRAFFIC_Init
+  D:007AH         SYMBOL        timeInState
+  C:1087H         PUBLIC        TRAFFIC_Init
   D:00D0H         PUBLIC        PSW
   -------         PROC          TRAFFIC_INIT
   -------         DO            
   D:0007H         SYMBOL        error
   -------         ENDDO         
-  C:0E63H         LINE#         128
-  C:0E63H         LINE#         129
-  C:0E65H         LINE#         132
-  C:0E69H         LINE#         135
-  C:0E6BH         LINE#         136
-  C:0E6DH         LINE#         137
-  C:0E6FH         LINE#         138
-  C:0E71H         LINE#         140
-  C:0E71H         LINE#         141
+  C:1087H         LINE#         122
+  C:1087H         LINE#         123
+  C:1089H         LINE#         126
+  C:108DH         LINE#         129
+  C:108FH         LINE#         130
+  C:1091H         LINE#         131
+  C:1093H         LINE#         132
+  C:1095H         LINE#         134
+  C:1095H         LINE#         135
   -------         ENDPROC       TRAFFIC_INIT
   -------         PROC          TRAFFIC_DEINIT
   -------         DO            
   D:0007H         SYMBOL        error
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 10
+
+
   -------         ENDDO         
-  C:0E8BH         LINE#         148
-  C:0E8BH         LINE#         149
-  C:0E8DH         LINE#         152
-  C:0E8FH         LINE#         153
-  C:0E91H         LINE#         154
-  C:0E93H         LINE#         159
-  C:0E93H         LINE#         160
+  C:10AFH         LINE#         142
+  C:10AFH         LINE#         143
+  C:10B1H         LINE#         146
+  C:10B3H         LINE#         147
+  C:10B5H         LINE#         148
+  C:10B7H         LINE#         153
+  C:10B7H         LINE#         154
   -------         ENDPROC       TRAFFIC_DEINIT
   -------         PROC          _TRAFFIC_SETCOLOR
   D:0007H         SYMBOL        Copy_color
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 9
-
-
   -------         DO            
-  D:005AH         SYMBOL        error
+  D:007CH         SYMBOL        error
   -------         ENDDO         
-  C:0E72H         LINE#         162
-  C:0E72H         LINE#         163
-  C:0E75H         LINE#         164
-  C:0E77H         LINE#         166
-  C:0E7DH         LINE#         168
-  C:0E7FH         LINE#         169
+  C:1096H         LINE#         156
+  C:1096H         LINE#         157
+  C:1099H         LINE#         158
+  C:109BH         LINE#         160
+  C:10A1H         LINE#         162
+  C:10A3H         LINE#         163
   -------         ENDPROC       _TRAFFIC_SETCOLOR
   -------         PROC          _TRAFFIC_GETCOLOR
   D:0001H         SYMBOL        Copy_color
   -------         DO            
   D:0007H         SYMBOL        error
   -------         ENDDO         
-  C:0E94H         LINE#         171
-  C:0E94H         LINE#         172
-  C:0E96H         LINE#         174
+  C:10C0H         LINE#         165
+  C:10C0H         LINE#         166
+  C:10C2H         LINE#         168
   -------         ENDPROC       _TRAFFIC_GETCOLOR
   -------         PROC          TRAFFIC_UPDATE
   -------         DO            
-  D:0048H         SYMBOL        error
+  D:005CH         SYMBOL        error
   -------         ENDDO         
-  C:0DBDH         LINE#         195
-  C:0DBDH         LINE#         196
-  C:0DC0H         LINE#         199
-  C:0DCFH         LINE#         200
-  C:0DCFH         LINE#         201
-  C:0DD2H         LINE#         202
-  C:0DD4H         LINE#         203
-  C:0DD4H         LINE#         204
-  C:0DD7H         LINE#         205
-  C:0DD9H         LINE#         206
-  C:0DD9H         LINE#         207
-  C:0DDCH         LINE#         208
-  C:0DDEH         LINE#         209
-  C:0DDEH         LINE#         210
-  C:0DE4H         LINE#         211
-  C:0DE6H         LINE#         212
-  C:0DE6H         LINE#         213
-  C:0DE9H         LINE#         214
-  C:0DE9H         LINE#         215
-  C:0DE9H         LINE#         217
-  C:0DEBH         LINE#         218
+  C:0FBAH         LINE#         189
+  C:0FBAH         LINE#         190
+  C:0FBDH         LINE#         193
+  C:0FCCH         LINE#         194
+  C:0FCCH         LINE#         195
+  C:0FCFH         LINE#         196
+  C:0FD1H         LINE#         197
+  C:0FD1H         LINE#         198
+  C:0FD4H         LINE#         199
+  C:0FD6H         LINE#         200
+  C:0FD6H         LINE#         201
+  C:0FD9H         LINE#         202
+  C:0FDBH         LINE#         203
+  C:0FDBH         LINE#         204
+  C:0FE1H         LINE#         205
+  C:0FE3H         LINE#         206
+  C:0FE3H         LINE#         207
+  C:0FE6H         LINE#         208
+  C:0FE6H         LINE#         209
+  C:0FE6H         LINE#         211
+  C:0FE8H         LINE#         212
   -------         ENDPROC       TRAFFIC_UPDATE
   -------         PROC          TRAFFIC_REDSEQUENCE
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 11
+
+
   -------         DO            
-  D:0049H         SYMBOL        error
+  D:005DH         SYMBOL        error
   -------         ENDDO         
-  C:0E2AH         LINE#         220
-  C:0E2AH         LINE#         221
-  C:0E2DH         LINE#         223
-  C:0E3AH         LINE#         225
-  C:0E3CH         LINE#         226
+  C:104EH         LINE#         214
+  C:104EH         LINE#         215
+  C:1051H         LINE#         217
+  C:105EH         LINE#         219
+  C:1060H         LINE#         220
   -------         ENDPROC       TRAFFIC_REDSEQUENCE
   -------         PROC          TRAFFIC_REDAMBERSEQUENCE
   -------         DO            
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 10
-
-
-  D:0049H         SYMBOL        error
+  D:005DH         SYMBOL        error
   -------         ENDDO         
-  C:0E16H         LINE#         228
-  C:0E16H         LINE#         229
-  C:0E19H         LINE#         231
-  C:0E27H         LINE#         233
-  C:0E29H         LINE#         234
+  C:103AH         LINE#         222
+  C:103AH         LINE#         223
+  C:103DH         LINE#         225
+  C:104BH         LINE#         227
+  C:104DH         LINE#         228
   -------         ENDPROC       TRAFFIC_REDAMBERSEQUENCE
   -------         PROC          TRAFFIC_GREENSEQUENCE
   -------         DO            
-  D:0049H         SYMBOL        error
+  D:005DH         SYMBOL        error
   -------         ENDDO         
-  C:0E3DH         LINE#         236
-  C:0E3DH         LINE#         237
-  C:0E40H         LINE#         239
-  C:0E4DH         LINE#         241
-  C:0E4FH         LINE#         242
+  C:1061H         LINE#         230
+  C:1061H         LINE#         231
+  C:1064H         LINE#         233
+  C:1071H         LINE#         235
+  C:1073H         LINE#         236
   -------         ENDPROC       TRAFFIC_GREENSEQUENCE
   -------         PROC          TRAFFIC_AMBERSEQUENCE
   -------         DO            
-  D:0049H         SYMBOL        error
+  D:005DH         SYMBOL        error
   -------         ENDDO         
-  C:0E50H         LINE#         244
-  C:0E50H         LINE#         245
-  C:0E53H         LINE#         247
-  C:0E60H         LINE#         249
-  C:0E62H         LINE#         250
+  C:1074H         LINE#         238
+  C:1074H         LINE#         239
+  C:1077H         LINE#         241
+  C:1084H         LINE#         243
+  C:1086H         LINE#         244
   -------         ENDPROC       TRAFFIC_AMBERSEQUENCE
   -------         PROC          _TRAFFIC_GENERICSEQUENCE
-  D:004AH         SYMBOL        redState
+  D:005EH         SYMBOL        redState
   D:0001H         SYMBOL        amberState
   D:0003H         SYMBOL        greenState
-  D:004DH         SYMBOL        duration
+  D:0061H         SYMBOL        duration
   -------         DO            
   D:0007H         SYMBOL        error
-  D:004EH         SYMBOL        tickTime
+  D:0062H         SYMBOL        tickTime
   -------         ENDDO         
-  C:0C03H         LINE#         260
-  C:0C07H         LINE#         261
-  C:0C09H         LINE#         262
-  C:0C0BH         LINE#         265
-  C:0C1EH         LINE#         266
-  C:0C23H         LINE#         267
-  C:0C32H         LINE#         268
-  C:0C32H         LINE#         269
-  C:0C35H         LINE#         270
-  C:0C37H         LINE#         271
-  C:0C37H         LINE#         272
-  C:0C37H         LINE#         273
-  C:0C39H         LINE#         274
-  C:0C39H         LINE#         275
-  C:0C3CH         LINE#         276
-  C:0C3EH         LINE#         277
-  C:0C40H         LINE#         278
-  C:0C42H         LINE#         279
-  C:0C43H         LINE#         280
-  C:0C43H         LINE#         281
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 11
+  C:0E0FH         LINE#         254
+  C:0E13H         LINE#         255
+  C:0E15H         LINE#         256
+  C:0E17H         LINE#         259
+  C:0E2AH         LINE#         260
+  C:0E2FH         LINE#         261
+  C:0E3EH         LINE#         262
+  C:0E3EH         LINE#         263
+  C:0E41H         LINE#         264
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 12
 
 
-  C:0C46H         LINE#         282
-  C:0C48H         LINE#         283
-  C:0C4AH         LINE#         284
-  C:0C4CH         LINE#         285
-  C:0C4DH         LINE#         286
-  C:0C4DH         LINE#         287
-  C:0C50H         LINE#         288
-  C:0C52H         LINE#         289
-  C:0C54H         LINE#         290
-  C:0C56H         LINE#         291
-  C:0C57H         LINE#         292
-  C:0C57H         LINE#         293
-  C:0C5AH         LINE#         294
-  C:0C5BH         LINE#         295
-  C:0C5BH         LINE#         296
-  C:0C5BH         LINE#         297
-  C:0C61H         LINE#         298
-  C:0C66H         LINE#         299
-  C:0C6BH         LINE#         300
-  C:0C6BH         LINE#         302
-  C:0C6BH         LINE#         303
+  C:0E43H         LINE#         265
+  C:0E43H         LINE#         266
+  C:0E43H         LINE#         267
+  C:0E45H         LINE#         268
+  C:0E45H         LINE#         269
+  C:0E48H         LINE#         270
+  C:0E4AH         LINE#         271
+  C:0E4CH         LINE#         272
+  C:0E4EH         LINE#         273
+  C:0E4FH         LINE#         274
+  C:0E4FH         LINE#         275
+  C:0E52H         LINE#         276
+  C:0E54H         LINE#         277
+  C:0E56H         LINE#         278
+  C:0E58H         LINE#         279
+  C:0E59H         LINE#         280
+  C:0E59H         LINE#         281
+  C:0E5CH         LINE#         282
+  C:0E5EH         LINE#         283
+  C:0E60H         LINE#         284
+  C:0E62H         LINE#         285
+  C:0E63H         LINE#         286
+  C:0E63H         LINE#         287
+  C:0E66H         LINE#         288
+  C:0E67H         LINE#         289
+  C:0E67H         LINE#         290
+  C:0E67H         LINE#         291
+  C:0E6DH         LINE#         292
+  C:0E72H         LINE#         293
+  C:0E77H         LINE#         294
+  C:0E77H         LINE#         296
+  C:0E77H         LINE#         297
   -------         ENDPROC       _TRAFFIC_GENERICSEQUENCE
   -------         ENDMOD        TRAFFIC
 
   -------         MODULE        TRAFFIC_CFG
   C:0000H         SYMBOL        _ICE_DUMMY_
-  D:0050H         PUBLIC        TRAFFIC_Configs
+  D:0075H         PUBLIC        TRAFFIC_Configs
   -------         ENDMOD        TRAFFIC_CFG
 
   -------         MODULE        ?C?COPY
@@ -647,23 +718,57 @@ SYMBOL TABLE OF MODULE:  .\Objects\cuteOS (?C_STARTUP)
   C:0999H         PUBLIC        ?C?ULDIV
   -------         ENDMOD        ?C?ULDIV
 
+  -------         MODULE        ?C?ULCMP
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 13
+
+
+  C:0A2BH         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+  -------         MODULE        ?C?LLDPTR
+  C:0A3CH         PUBLIC        ?C?LLDPTR
+  -------         ENDMOD        ?C?LLDPTR
+
+  -------         MODULE        ?C?LSTPTR
+  C:0A5CH         PUBLIC        ?C?LSTPTR
+  -------         ENDMOD        ?C?LSTPTR
+
+  -------         MODULE        ?C?LLDIDATA
+  C:0A76H         PUBLIC        ?C?LLDIDATA
+  -------         ENDMOD        ?C?LLDIDATA
+
+  -------         MODULE        ?C?LSTIDATA
+  C:0A82H         PUBLIC        ?C?LSTIDATA
+  -------         ENDMOD        ?C?LSTIDATA
+
   -------         MODULE        ?C?ICALL
-  C:0A2BH         PUBLIC        ?C?ICALL
-  C:0A2FH         PUBLIC        ?C?ICALL2
+  C:0A8EH         PUBLIC        ?C?ICALL
+  C:0A92H         PUBLIC        ?C?ICALL2
   -------         ENDMOD        ?C?ICALL
 
   -------         MODULE        ?C?LIMUL
-  C:0A31H         PUBLIC        ?C?LIMUL
+  C:0A94H         PUBLIC        ?C?LIMUL
   -------         ENDMOD        ?C?LIMUL
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CUTEOS_SETTICKTIME?CUTEOS
+  -------         MODULE        ?C?LLDXDATA
+  C:0AC1H         PUBLIC        ?C?LLDXDATA
+  -------         ENDMOD        ?C?LLDXDATA
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/26/2022  18:33:57  PAGE 12
+  -------         MODULE        ?C?LLDPDATA
+  C:0ACDH         PUBLIC        ?C?LLDPDATA
+  -------         ENDMOD        ?C?LLDPDATA
 
+  -------         MODULE        ?C?LLDCODE
+  C:0AD9H         PUBLIC        ?C?LLDCODE
+  -------         ENDMOD        ?C?LLDCODE
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CUTEOS_GETTICKTIME?CUTEOS
+  -------         MODULE        ?C?LSTXDATA
+  C:0AE9H         PUBLIC        ?C?LSTXDATA
+  -------         ENDMOD        ?C?LSTXDATA
+
+  -------         MODULE        ?C?LSTPDATA
+  C:0AF5H         PUBLIC        ?C?LSTPDATA
+  -------         ENDMOD        ?C?LSTPDATA
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?TRAFFIC_DEINIT?TRAFFIC
@@ -674,9 +779,12 @@ SYMBOL TABLE OF MODULE:  .\Objects\cuteOS (?C_STARTUP)
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_TRAFFIC_GETCOLOR?TRAFFIC
 
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/14/2022  19:34:37  PAGE 14
+
+
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 03DAH BYTE (48%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 055AH BYTE (66%) *
 ******************************************************************************
 
-Program Size: data=92.0 xdata=0 code=1721
-LINK/LOCATE RUN COMPLETE.  5 WARNING(S),  0 ERROR(S)
+Program Size: data=126.0 xdata=0 code=2268
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

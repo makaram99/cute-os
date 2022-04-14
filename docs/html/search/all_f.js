@@ -1,24 +1,10 @@
 var searchData=
 [
-  ['tasks_85',['tasks',['../cute_o_s_8c.html#a69a2dd048673d77404365a337ae98486',1,'cuteOS.c']]],
-  ['ticks_86',['ticks',['../structcute_o_s___t_a_s_k__t.html#afe7a80281ab293cd2692d4701778992a',1,'cuteOS_TASK_t']]],
-  ['tog_5fbit_87',['TOG_BIT',['../_b_i_t___m_a_t_h_8h.html#a57d2403dc501b81376600c70ba3f9c42',1,'BIT_MATH.h']]],
-  ['traffic_2ec_88',['traffic.c',['../traffic_8c.html',1,'']]],
-  ['traffic_2eh_89',['traffic.h',['../traffic_8h.html',1,'']]],
-  ['traffic_5fcfg_2ec_90',['traffic_cfg.c',['../traffic__cfg_8c.html',1,'']]],
-  ['traffic_5fcfg_2eh_91',['traffic_cfg.h',['../traffic__cfg_8h.html',1,'']]],
-  ['traffic_5fconfigs_92',['TRAFFIC_Configs',['../traffic__cfg_8h.html#a536457ebe8c80a8e6a053fe7952e442b',1,'TRAFFIC_Configs():&#160;traffic_cfg.c'],['../traffic__cfg_8c.html#a536457ebe8c80a8e6a053fe7952e442b',1,'TRAFFIC_Configs():&#160;traffic_cfg.c']]],
-  ['traffic_5fconfigs_5ft_93',['TRAFFIC_CONFIGS_t',['../struct_t_r_a_f_f_i_c___c_o_n_f_i_g_s__t.html',1,'']]],
-  ['traffic_5fdeinit_94',['TRAFFIC_DeInit',['../traffic_8h.html#a18e76d0f14a41f57567645e6297c658a',1,'TRAFFIC_DeInit(void):&#160;traffic.c'],['../traffic_8c.html#a18e76d0f14a41f57567645e6297c658a',1,'TRAFFIC_DeInit(void):&#160;traffic.c']]],
-  ['traffic_5fduration_5famber_95',['TRAFFIC_DURATION_AMBER',['../traffic__cfg_8h.html#aec88567a76515e7a4bc2d300531c6308a8b636e452fd078800c95051a0a73d18f',1,'traffic_cfg.h']]],
-  ['traffic_5fduration_5fgreen_96',['TRAFFIC_DURATION_GREEN',['../traffic__cfg_8h.html#aec88567a76515e7a4bc2d300531c6308a6541bea54ac77c8080c7895fcbc63721',1,'traffic_cfg.h']]],
-  ['traffic_5fduration_5fred_97',['TRAFFIC_DURATION_RED',['../traffic__cfg_8h.html#aec88567a76515e7a4bc2d300531c6308a749077371c76056669e99732cd6718a6',1,'traffic_cfg.h']]],
-  ['traffic_5fduration_5fred_5famber_98',['TRAFFIC_DURATION_RED_AMBER',['../traffic__cfg_8h.html#aec88567a76515e7a4bc2d300531c6308a6fefdb9c7aacae8f9ca6e9fbd4cd565a',1,'traffic_cfg.h']]],
-  ['traffic_5fgetcolor_99',['TRAFFIC_GetColor',['../traffic_8h.html#a65dc64ad3e0eb4ffe6452232f9566f19',1,'TRAFFIC_GetColor(TRAFFIC_SEQUENCE_t *const Copy_color):&#160;traffic.c'],['../traffic_8c.html#a65dc64ad3e0eb4ffe6452232f9566f19',1,'TRAFFIC_GetColor(TRAFFIC_SEQUENCE_t *const Copy_color):&#160;traffic.c']]],
-  ['traffic_5finit_100',['TRAFFIC_Init',['../traffic_8h.html#aec307edaf66438346ef2f2a23e961ccb',1,'TRAFFIC_Init(void):&#160;traffic.c'],['../traffic_8c.html#aec307edaf66438346ef2f2a23e961ccb',1,'TRAFFIC_Init(void):&#160;traffic.c']]],
-  ['traffic_5fsequence_5fduration_5ft_101',['TRAFFIC_SEQUENCE_DURATION_t',['../traffic__cfg_8h.html#aec88567a76515e7a4bc2d300531c6308',1,'traffic_cfg.h']]],
-  ['traffic_5fsequence_5ft_102',['TRAFFIC_SEQUENCE_t',['../traffic_8h.html#a00e0e3324d15be77df026e35644b6457',1,'traffic.h']]],
-  ['traffic_5fsetcolor_103',['TRAFFIC_SetColor',['../traffic_8h.html#ac816059d21ec1dbdecd72a1d6a600ed4',1,'TRAFFIC_SetColor(const TRAFFIC_SEQUENCE_t Copy_color):&#160;traffic.c'],['../traffic_8c.html#ac816059d21ec1dbdecd72a1d6a600ed4',1,'TRAFFIC_SetColor(const TRAFFIC_SEQUENCE_t Copy_color):&#160;traffic.c']]],
-  ['traffic_5fupdate_104',['TRAFFIC_Update',['../traffic_8h.html#aac30159179227db868e8343ffc3ba333',1,'traffic.c']]],
-  ['true_105',['TRUE',['../_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67deaa82764c3079aea4e60c80e45befbb839',1,'STD_TYPES.h']]]
+  ['s16_5ft_77',['s16_t',['../_s_t_d___t_y_p_e_s_8h.html#a8f384db74f5c37e8815a728036b87b24',1,'STD_TYPES.h']]],
+  ['s32_5ft_78',['s32_t',['../_s_t_d___t_y_p_e_s_8h.html#ac8662b16b8214b6a04e7e8781d23847f',1,'STD_TYPES.h']]],
+  ['s8_5ft_79',['s8_t',['../_s_t_d___t_y_p_e_s_8h.html#ac94561f8204ddeac10e706b2be080619',1,'STD_TYPES.h']]],
+  ['set_5fbit_80',['SET_BIT',['../_b_i_t___m_a_t_h_8h.html#a369f3fccb27e49bc7faeb3875786b322',1,'BIT_MATH.h']]],
+  ['size_5ft_81',['size_t',['../_s_t_d___t_y_p_e_s_8h.html#a602053cbe971e712572c60b634ef30df',1,'STD_TYPES.h']]],
+  ['state_5ft_82',['STATE_t',['../_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa',1,'STD_TYPES.h']]],
+  ['std_5ftypes_2eh_83',['STD_TYPES.h',['../_s_t_d___t_y_p_e_s_8h.html',1,'']]]
 ];
