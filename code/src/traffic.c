@@ -22,7 +22,7 @@
 /*                          PRIVATE DATA                              */
 /*--------------------------------------------------------------------*/
 static TRAFFIC_SEQUENCE_t   colorSequence       = RED;  /*!< Initial colorSequence */
-static u16                  timeInState = 0;    /*!< Time counter */
+static u16_t                  timeInState = 0;    /*!< Time counter */
 
 
 /*--------------------------------------------------------------------*/
@@ -119,12 +119,6 @@ static ERROR_t TRAFFIC_GenericSequence(const STATE_t red, const STATE_t amber, c
 /*--------------------------------------------------------------------*/
 /*                          PUBLIC FUNCTIONS                          */
 /*--------------------------------------------------------------------*/
-/***************************************************************************
- * @details This function does the following:
- *          - Initialize the traffic light system to \ref RED sequence.
- *          - Set the callback function of the OS delay to the function 
- *            \ref TRAFFIC_Update.
- ***************************************************************************/
 ERROR_t TRAFFIC_Init(void) {
     ERROR_t error = ERROR_NO;
 
@@ -259,7 +253,7 @@ static ERROR_t TRAFFIC_AmberSequence(void) {
  **********************************************************************/
 static ERROR_t TRAFFIC_GenericSequence(const STATE_t redState, const STATE_t amberState, const STATE_t greenState, TRAFFIC_SEQUENCE_DURATION_t duration) {
     ERROR_t error = ERROR_NO;
-    u8 tickTime = 0;
+    u8_t tickTime = 0;
 
     /*!< Update the time counter */
     if(++timeInState >= duration) {

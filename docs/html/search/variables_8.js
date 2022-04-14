@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tasks_155',['tasks',['../cute_o_s_8c.html#a69a2dd048673d77404365a337ae98486',1,'cuteOS.c']]],
-  ['ticks_156',['ticks',['../structcute_o_s___t_a_s_k__t.html#afe7a80281ab293cd2692d4701778992a',1,'cuteOS_TASK_t']]],
-  ['traffic_5fconfigs_157',['TRAFFIC_Configs',['../traffic__cfg_8h.html#a536457ebe8c80a8e6a053fe7952e442b',1,'TRAFFIC_Configs():&#160;traffic_cfg.c'],['../traffic__cfg_8c.html#a536457ebe8c80a8e6a053fe7952e442b',1,'TRAFFIC_Configs():&#160;traffic_cfg.c']]]
+  ['red_5famber_5fduration_150',['red_amber_duration',['../struct_t_r_a_f_f_i_c___c_o_n_f_i_g_s__t.html#a47b277ff22543e91b43185852f48edeb',1,'TRAFFIC_CONFIGS_t']]],
+  ['red_5fduration_151',['red_duration',['../struct_t_r_a_f_f_i_c___c_o_n_f_i_g_s__t.html#ae9a591a58ec8faef164e9791d921336a',1,'TRAFFIC_CONFIGS_t']]],
+  ['redpin_152',['redPin',['../port_8h.html#ab3dd12717bc68c0e34f762e0770a7964',1,'port.h']]]
 ];

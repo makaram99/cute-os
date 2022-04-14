@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Cute OS
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.0.1</span>
    </div>
    <div id="projectbrief">Operating System for Embedded Systems (8051 microcontroller)</div>
   </td>
@@ -107,7 +107,7 @@ Include dependency graph for main.c:</div>
 <map name="acode_2src_2main_8c" id="acode_2src_2main_8c">
 <area shape="rect" title="Testing cute OS." alt="" coords="414,5,573,37"/>
 <area shape="rect" title=" " alt="" coords="5,85,93,117"/>
-<area shape="rect" href="_s_t_d___t_y_p_e_s_8h.html" title="Standard data types For AVR Microcontrollers." alt="" coords="117,85,269,117"/>
+<area shape="rect" href="_s_t_d___t_y_p_e_s_8h.html" title="Standard data types For 8051 Microcontrollers." alt="" coords="117,85,269,117"/>
 <area shape="rect" href="_b_i_t___m_a_t_h_8h.html" title="Common bit manipulation operations." alt="" coords="294,85,429,117"/>
 <area shape="rect" href="main_8h.html" title="Project Header for main.c." alt="" coords="453,85,533,117"/>
 <area shape="rect" href="port_8h.html" title="Port Header file for the milk pasteurization example." alt="" coords="558,85,631,117"/>
@@ -157,19 +157,19 @@ Functions</h2></td></tr>
 </ul>
 <p>Code explanation:</p><ol type="1">
 <li>Initialize the Cute OS. <div class="fragment"><div class="line"><a class="code" href="cute_o_s_8h.html#a538cb1529929abdc516dbc5a23bf41fd">cuteOS_Init</a>();    </div>
-<div class="ttc" id="acute_o_s_8h_html_a538cb1529929abdc516dbc5a23bf41fd"><div class="ttname"><a href="cute_o_s_8h.html#a538cb1529929abdc516dbc5a23bf41fd">cuteOS_Init</a></div><div class="ttdeci">ERROR_t cuteOS_Init(void)</div><div class="ttdoc">Sets up Timer 2 to drive the simple EOS.</div><div class="ttdef"><b>Definition:</b> <a href="cute_o_s_8c_source.html#l00228">cuteOS.c:228</a></div></div>
+<div class="ttc" id="acute_o_s_8h_html_a538cb1529929abdc516dbc5a23bf41fd"><div class="ttname"><a href="cute_o_s_8h.html#a538cb1529929abdc516dbc5a23bf41fd">cuteOS_Init</a></div><div class="ttdeci">ERROR_t cuteOS_Init(void)</div><div class="ttdoc">Sets up Timer 2 to drive the simple EOS.</div><div class="ttdef"><b>Definition:</b> <a href="cute_o_s_8c_source.html#l00179">cuteOS.c:179</a></div></div>
 </div><!-- fragment --></li>
 </ol>
 <p>Initialize the tasks. </p><div class="fragment"><div class="line"><a class="code" href="traffic_8h.html#aec307edaf66438346ef2f2a23e961ccb">TRAFFIC_Init</a>();   </div>
-<div class="ttc" id="atraffic_8h_html_aec307edaf66438346ef2f2a23e961ccb"><div class="ttname"><a href="traffic_8h.html#aec307edaf66438346ef2f2a23e961ccb">TRAFFIC_Init</a></div><div class="ttdeci">ERROR_t TRAFFIC_Init(void)</div><div class="ttdoc">Initialize the traffic light system to RED state.</div><div class="ttdef"><b>Definition:</b> <a href="traffic_8c_source.html#l00128">traffic.c:128</a></div></div>
+<div class="ttc" id="atraffic_8h_html_aec307edaf66438346ef2f2a23e961ccb"><div class="ttname"><a href="traffic_8h.html#aec307edaf66438346ef2f2a23e961ccb">TRAFFIC_Init</a></div><div class="ttdeci">ERROR_t TRAFFIC_Init(void)</div><div class="ttdoc">Initialize the traffic light system to RED state.</div><div class="ttdef"><b>Definition:</b> <a href="traffic_8c_source.html#l00122">traffic.c:122</a></div></div>
 </div><!-- fragment --><p> See <a class="el" href="traffic_8h.html#aec307edaf66438346ef2f2a23e961ccb">TRAFFIC_Init()</a> for more details.</p><ol type="1">
-<li>Create the tasks. <div class="fragment"><div class="line"><a class="code" href="cute_o_s_8h.html#a7d3052acc66fae6a67b7cf7ccbf3d8d4">cuteOS_TaskCreate</a>(task1, 1000); <span class="comment">// task1 will run every 1 second  </span></div>
-<div class="ttc" id="acute_o_s_8h_html_a7d3052acc66fae6a67b7cf7ccbf3d8d4"><div class="ttname"><a href="cute_o_s_8h.html#a7d3052acc66fae6a67b7cf7ccbf3d8d4">cuteOS_TaskCreate</a></div><div class="ttdeci">ERROR_t cuteOS_TaskCreate(ERROR_t(*const taskPtr)(void), const u16 TICK_MS)</div><div class="ttdoc">Create a task with the given task function and the given tick time.</div><div class="ttdef"><b>Definition:</b> <a href="cute_o_s_8c_source.html#l00126">cuteOS.c:126</a></div></div>
-</div><!-- fragment --> <div class="fragment"><div class="line"><a class="code" href="cute_o_s_8h.html#a7d3052acc66fae6a67b7cf7ccbf3d8d4">cuteOS_TaskCreate</a>(task2, 2000); <span class="comment">// task2 will run every 2 seconds </span></div>
+<li>Create the tasks. <div class="fragment"><div class="line"><a class="code" href="cute_o_s_8h.html#a6f7a3d693a5e483f152283c9eadde8e1">cuteOS_TaskCreate</a>(task1, 1000); <span class="comment">// task1 will run every 1 second  </span></div>
+<div class="ttc" id="acute_o_s_8h_html_a6f7a3d693a5e483f152283c9eadde8e1"><div class="ttname"><a href="cute_o_s_8h.html#a6f7a3d693a5e483f152283c9eadde8e1">cuteOS_TaskCreate</a></div><div class="ttdeci">ERROR_t cuteOS_TaskCreate(ERROR_t(*const task_ptr)(void), const u16_t TICK_TIME_MS)</div><div class="ttdoc">Create a task with the given task function and the given tick time.</div><div class="ttdef"><b>Definition:</b> <a href="cute_o_s_8c_source.html#l00091">cuteOS.c:91</a></div></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><a class="code" href="cute_o_s_8h.html#a6f7a3d693a5e483f152283c9eadde8e1">cuteOS_TaskCreate</a>(task2, 2000); <span class="comment">// task2 will run every 2 seconds </span></div>
 </div><!-- fragment --></li>
 </ol>
 <p>Start the Cute OS scheduler. </p><div class="fragment"><div class="line"><a class="code" href="cute_o_s_8h.html#a90f66f4ffbd452ceb65c8968caada76f">cuteOS_Start</a>();   </div>
-<div class="ttc" id="acute_o_s_8h_html_a90f66f4ffbd452ceb65c8968caada76f"><div class="ttname"><a href="cute_o_s_8h.html#a90f66f4ffbd452ceb65c8968caada76f">cuteOS_Start</a></div><div class="ttdeci">void cuteOS_Start(void)</div><div class="ttdoc">The OS enters 'idle mode' between clock ticks to save power.</div><div class="ttdef"><b>Definition:</b> <a href="cute_o_s_8c_source.html#l00179">cuteOS.c:179</a></div></div>
+<div class="ttc" id="acute_o_s_8h_html_a90f66f4ffbd452ceb65c8968caada76f"><div class="ttname"><a href="cute_o_s_8h.html#a90f66f4ffbd452ceb65c8968caada76f">cuteOS_Start</a></div><div class="ttdeci">void cuteOS_Start(void)</div><div class="ttdoc">The OS enters 'idle mode' between clock ticks to save power.</div><div class="ttdef"><b>Definition:</b> <a href="cute_o_s_8c_source.html#l00149">cuteOS.c:149</a></div></div>
 </div><!-- fragment --> 
 <p class="definition">Definition in file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -347,9 +347,6 @@ Here is the caller graph for this function:</div>
 <p>&lt; Create a task to toggle the buzzer</p>
 <p>&lt; Create a task to toggle the motor</p>
 <p>&lt; Remove the task to toggle the buzzer</p>
-<p>&lt; Start the Cute OS scheduler <br  />
-</p>
-<p>&lt; The scheduler will never return from here</p>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00083">83</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
@@ -361,8 +358,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="main_8c.html#a6c976f7ac0ffb00b38efc557b4c019ec" title=" " alt="" coords="152,5,297,37"/>
 <area shape="rect" href="cute_o_s_8h.html#a538cb1529929abdc516dbc5a23bf41fd" title="Sets up Timer 2 to drive the simple EOS." alt="" coords="163,61,286,93"/>
 <area shape="rect" href="cute_o_s_8h.html#a90f66f4ffbd452ceb65c8968caada76f" title="The OS enters &#39;idle mode&#39; between clock ticks to save power." alt="" coords="155,117,294,149"/>
-<area shape="rect" href="cute_o_s_8h.html#a7d3052acc66fae6a67b7cf7ccbf3d8d4" title="Create a task with the given task function and the given tick time." alt="" coords="125,173,324,205"/>
-<area shape="rect" href="cute_o_s_8h.html#a29a8d320c73b798551f37a26b03cab71" title="Remove a task from the tasks array." alt="" coords="117,229,332,261"/>
+<area shape="rect" href="cute_o_s_8h.html#a6f7a3d693a5e483f152283c9eadde8e1" title="Create a task with the given task function and the given tick time." alt="" coords="125,173,324,205"/>
+<area shape="rect" href="cute_o_s_8h.html#a0d277d07e6ff6857d3ba5af4a5b53fe4" title="Remove a task from the tasks array." alt="" coords="117,229,332,261"/>
 <area shape="rect" href="main_8c.html#a1997966c7114e418ca8a5cca191d1f88" title=" " alt="" coords="167,285,283,317"/>
 <area shape="rect" href="main_8c.html#a6fa8e7c693565ded0ab5ee29fa5de791" title=" " alt="" coords="163,341,286,373"/>
 <area shape="rect" href="main_8c.html#a47b506b62b06e2e85e62520338abe72e" title=" " alt="" coords="163,397,286,429"/>
@@ -370,6 +367,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="main_8c.html#a4cad5dd5dd4488af1f611c046b28b517" title=" " alt="" coords="157,509,292,541"/>
 <area shape="rect" href="traffic_8h.html#aec307edaf66438346ef2f2a23e961ccb" title="Initialize the traffic light system to RED state." alt="" coords="155,565,295,597"/>
 <area shape="rect" href="traffic_8h.html#aac30159179227db868e8343ffc3ba333" title=" " alt="" coords="135,621,314,653"/>
+<area shape="rect" href="cute_o_s_8c.html#ad9628a52c9ba2892d6b13f3fc55abffd" title=" " alt="" coords="380,61,588,93"/>
 </map>
 </div>
 

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Cute OS
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.0.1</span>
    </div>
    <div id="projectbrief">Operating System for Embedded Systems (8051 microcontroller)</div>
   </td>
@@ -86,21 +86,20 @@ $(document).ready(function(){initNavTree('_s_t_d___t_y_p_e_s_8h.html',''); initR
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">STD_TYPES.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Standard data types For AVR Microcontrollers.  
+<p>Standard data types For 8051 Microcontrollers.  
 <a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_s_t_d___t_y_p_e_s_8h__dep__incl.png" border="0" usemap="#acode_2include_2_s_t_d___t_y_p_e_s_8hdep" alt=""/></div>
 <map name="acode_2include_2_s_t_d___t_y_p_e_s_8hdep" id="acode_2include_2_s_t_d___t_y_p_e_s_8hdep">
-<area shape="rect" title="Standard data types For AVR Microcontrollers." alt="" coords="249,5,516,37"/>
+<area shape="rect" title="Standard data types For 8051 Microcontrollers." alt="" coords="249,5,516,37"/>
 <area shape="rect" href="cute_o_s_8c.html" title="Main file for Cute Embedded Operating System (cuteOS) for 8051." alt="" coords="5,85,187,117"/>
 <area shape="rect" href="main_8c.html" title="Testing cute OS." alt="" coords="211,85,370,117"/>
 <area shape="rect" href="traffic_8c.html" title="This is a traffic Light project (Chapter 8 &#45; Embedded C by Professor j. Pont)." alt="" coords="395,85,557,117"/>
@@ -112,6 +111,36 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ab811d8c6ff3a505312d3276590444289"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab811d8c6ff3a505312d3276590444289">LOW</a>&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa">STATE_t</a>)0)</td></tr>
+<tr class="separator:ab811d8c6ff3a505312d3276590444289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa">STATE_t</a>)1)</td></tr>
+<tr class="separator:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1291f416b069313021b519eea62d5bf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a1291f416b069313021b519eea62d5bf1">NORMAL</a>&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa">STATE_t</a>)2)</td></tr>
+<tr class="separator:a1291f416b069313021b519eea62d5bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8906c0208cd948e4f5fe79a920a3b7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ad8906c0208cd948e4f5fe79a920a3b7d">ACTIVE_LOW</a>&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa258cdbfe93acc501be255c43a62d0ec">ACTIVATION_STATUS_t</a>)0)</td></tr>
+<tr class="separator:ad8906c0208cd948e4f5fe79a920a3b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80c342b08fadc7974d3a31817aafaf06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a80c342b08fadc7974d3a31817aafaf06">ACTIVE_HIGH</a>&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa258cdbfe93acc501be255c43a62d0ec">ACTIVATION_STATUS_t</a>)1)</td></tr>
+<tr class="separator:a80c342b08fadc7974d3a31817aafaf06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93f0eb578d23995850d61f7d61c55c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a0a5c66ef020f813b88faba5888e92a00">BOOL_t</a>)0)</td></tr>
+<tr class="separator:aa93f0eb578d23995850d61f7d61c55c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a0a5c66ef020f813b88faba5888e92a00">BOOL_t</a>)1)</td></tr>
+<tr class="separator:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e537466d7029353e207af831498b7f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a2e537466d7029353e207af831498b7f8">ERROR_NO</a>&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0     )</td></tr>
+<tr class="separator:a2e537466d7029353e207af831498b7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac804fdda39e617c8699964c7b8e363d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ac804fdda39e617c8699964c7b8e363d9">ERROR_YES</a>&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x1   )</td></tr>
+<tr class="separator:ac804fdda39e617c8699964c7b8e363d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58fd51c3e56b5d9555ce48be5cc53bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ad58fd51c3e56b5d9555ce48be5cc53bd">ERROR_TIMEOUT</a>&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x2   )</td></tr>
+<tr class="separator:ad58fd51c3e56b5d9555ce48be5cc53bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab42bd75b80154413643a683d091f1224"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab42bd75b80154413643a683d091f1224">ERROR_NULL_POINTER</a>&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x4   )</td></tr>
+<tr class="separator:ab42bd75b80154413643a683d091f1224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a5124474a705e6cf7e43f113ac10fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa5a5124474a705e6cf7e43f113ac10fb">ERROR_BUSY</a>&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x8   )</td></tr>
+<tr class="separator:aa5a5124474a705e6cf7e43f113ac10fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605e0ff46555922872461535eca0d0b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a605e0ff46555922872461535eca0d0b9">ERROR_NOT_INITIALIZED</a>&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x10  )</td></tr>
+<tr class="separator:a605e0ff46555922872461535eca0d0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb1d42f0ea0b554fbc07047128e0b14b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#afb1d42f0ea0b554fbc07047128e0b14b">ERROR_ILLEGAL_PARAM</a>&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x20  )</td></tr>
+<tr class="separator:afb1d42f0ea0b554fbc07047128e0b14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7102651296c0417a05f0117c66c18de5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a7102651296c0417a05f0117c66c18de5">ERROR_OUT_OF_RANGE</a>&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x40  )</td></tr>
+<tr class="separator:a7102651296c0417a05f0117c66c18de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>&#160;&#160;&#160;((void *)0)</td></tr>
 <tr class="separator:a070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7611128d4caa5aac09259e2e22142b3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a7611128d4caa5aac09259e2e22142b3d">NULL_BYTE</a>&#160;&#160;&#160;('\0')</td></tr>
@@ -119,62 +148,278 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aba045a0b8c912badb14f00167aae5417"><td class="memItemLeft" align="right" valign="top">typedef signed long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aba045a0b8c912badb14f00167aae5417">s32</a></td></tr>
-<tr class="separator:aba045a0b8c912badb14f00167aae5417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cb19f4a3324cfe0938ddfbfabaa825b"><td class="memItemLeft" align="right" valign="top">typedef signed short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a4cb19f4a3324cfe0938ddfbfabaa825b">s16</a></td></tr>
-<tr class="separator:a4cb19f4a3324cfe0938ddfbfabaa825b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a151f780fb455885061d3b77ec1c90c03"><td class="memItemLeft" align="right" valign="top">typedef signed char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a151f780fb455885061d3b77ec1c90c03">s8</a></td></tr>
-<tr class="separator:a151f780fb455885061d3b77ec1c90c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ceed739f3b2b55ee8d4d2a79a82cdea"><td class="memItemLeft" align="right" valign="top">typedef unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a0ceed739f3b2b55ee8d4d2a79a82cdea">u32</a></td></tr>
-<tr class="separator:a0ceed739f3b2b55ee8d4d2a79a82cdea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0b167025ed1eead1300bc4dbdfb230e"><td class="memItemLeft" align="right" valign="top">typedef unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa0b167025ed1eead1300bc4dbdfb230e">u16</a></td></tr>
-<tr class="separator:aa0b167025ed1eead1300bc4dbdfb230e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed742c436da53c1080638ce6ef7d13de"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></td></tr>
-<tr class="separator:aed742c436da53c1080638ce6ef7d13de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8662b16b8214b6a04e7e8781d23847f"><td class="memItemLeft" align="right" valign="top">typedef signed long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ac8662b16b8214b6a04e7e8781d23847f">s32_t</a></td></tr>
+<tr class="separator:ac8662b16b8214b6a04e7e8781d23847f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f384db74f5c37e8815a728036b87b24"><td class="memItemLeft" align="right" valign="top">typedef signed short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a8f384db74f5c37e8815a728036b87b24">s16_t</a></td></tr>
+<tr class="separator:a8f384db74f5c37e8815a728036b87b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac94561f8204ddeac10e706b2be080619"><td class="memItemLeft" align="right" valign="top">typedef signed char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ac94561f8204ddeac10e706b2be080619">s8_t</a></td></tr>
+<tr class="separator:ac94561f8204ddeac10e706b2be080619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f89886f260d4feee6b3a01d5b4d2e4a"><td class="memItemLeft" align="right" valign="top">typedef unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a8f89886f260d4feee6b3a01d5b4d2e4a">u32_t</a></td></tr>
+<tr class="separator:a8f89886f260d4feee6b3a01d5b4d2e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f2044e80549923fce3e32ea0bf2eba"><td class="memItemLeft" align="right" valign="top">typedef unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#af0f2044e80549923fce3e32ea0bf2eba">u16_t</a></td></tr>
+<tr class="separator:af0f2044e80549923fce3e32ea0bf2eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae081489b4906f65a3cb18e9fbe9f8d23"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a></td></tr>
+<tr class="separator:ae081489b4906f65a3cb18e9fbe9f8d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f6906312a689f27d70e9d086649d3fd"><td class="memItemLeft" align="right" valign="top">typedef float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a></td></tr>
 <tr class="separator:a5f6906312a689f27d70e9d086649d3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94dab5770726ccbef8c7d026cfbdf8e5"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a94dab5770726ccbef8c7d026cfbdf8e5">f64</a></td></tr>
 <tr class="separator:a94dab5770726ccbef8c7d026cfbdf8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8349b442964397c54406385a5bcf3f1c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa0b167025ed1eead1300bc4dbdfb230e">u16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a8349b442964397c54406385a5bcf3f1c">size_t</a></td></tr>
-<tr class="separator:a8349b442964397c54406385a5bcf3f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a3e0065a73e029c82cbea66a3785490c7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7">STATE_t</a> { <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7a6a226f4143ca3b18999551694cdb72a8">LOW</a>
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7a0c3a1dacf94061154b3ee354359c5893">HIGH</a>
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7a50d1448013c6f17125caee18aa418af7">NORMAL</a>
- }</td></tr>
-<tr class="separator:a3e0065a73e029c82cbea66a3785490c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0b164adcf6f9d41e3f63015bf4f6e32"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae0b164adcf6f9d41e3f63015bf4f6e32">ACTIVATION_STATUS_t</a> { <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae0b164adcf6f9d41e3f63015bf4f6e32a43ad983a1a6a3c04a137ec0471cdfe85">ACTIVE_LOW</a>
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae0b164adcf6f9d41e3f63015bf4f6e32afe240f1952811db0c18b4355fb28190f">ACTIVE_HIGH</a>
- }</td></tr>
-<tr class="separator:ae0b164adcf6f9d41e3f63015bf4f6e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cb9b2fd33bff75a223b35dd2e7b67de"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67de">BOOL_t</a> { <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67deaa1e095cc966dbecf6a0d8aad75348d1a">FALSE</a>
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67deaa82764c3079aea4e60c80e45befbb839">TRUE</a>
- }</td></tr>
-<tr class="separator:a4cb9b2fd33bff75a223b35dd2e7b67de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecc54e7bb223450c39e49a6b89d7dbd0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0">ERROR_t</a> { <br />
-&#160;&#160;<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386">ERROR_NO</a> = 0
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0af969f1757e97a9d2af755759dfc738e5">ERROR_YES</a> = 0x1
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a4d0f7be53b837f004379ac6bbd56f1e2">ERROR_TIMEOUT</a> = 0x2
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a3d37cbe00af5e55b2ab0cfac2a5b4b0e">ERROR_NULL_POINTER</a> = 0x4
-, <br />
-&#160;&#160;<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a16dfa19f264bab0dda915180788d5025">ERROR_BUSY</a> = 0x8
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a1828f808506ac0f1fa7cf7a9a659210d">ERROR_NOT_INITIALIZED</a> = 0x10
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a96013d9bd3adab401107ff0e3e8f62fc">ERROR_ILLEGAL_PARAM</a> = 0x20
-, <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a796107c17e41c601d633f670e5e29800">ERROR_OUT_OF_RANGE</a> = 0x40
-<br />
- }</td></tr>
-<tr class="separator:aecc54e7bb223450c39e49a6b89d7dbd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602053cbe971e712572c60b634ef30df"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#af0f2044e80549923fce3e32ea0bf2eba">u16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a602053cbe971e712572c60b634ef30df">size_t</a></td></tr>
+<tr class="separator:a602053cbe971e712572c60b634ef30df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb9b478e2cfe92e127519569521f6baa"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa">STATE_t</a></td></tr>
+<tr class="separator:acb9b478e2cfe92e127519569521f6baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa258cdbfe93acc501be255c43a62d0ec"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa258cdbfe93acc501be255c43a62d0ec">ACTIVATION_STATUS_t</a></td></tr>
+<tr class="separator:aa258cdbfe93acc501be255c43a62d0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5c66ef020f813b88faba5888e92a00"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a0a5c66ef020f813b88faba5888e92a00">BOOL_t</a></td></tr>
+<tr class="separator:a0a5c66ef020f813b88faba5888e92a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e1f6a25bfc1b579842f3e54c2b1cd0"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a></td></tr>
+<tr class="separator:ab0e1f6a25bfc1b579842f3e54c2b1cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Standard data types For AVR Microcontrollers. </p>
+<div class="textblock"><p>Standard data types For 8051 Microcontrollers. </p>
 <dl class="section author"><dt>Author</dt><dd>Mahmoud Karam (<a href="#" onclick="location.href='mai'+'lto:'+'ma.'+'ka'+'ram'+'27'+'2@g'+'ma'+'il.'+'co'+'m'; return false;">ma.ka<span style="display: none;">.nosp@m.</span>ram2<span style="display: none;">.nosp@m.</span>72@gm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a>) </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-03-20 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a80c342b08fadc7974d3a31817aafaf06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80c342b08fadc7974d3a31817aafaf06">&#9670;&nbsp;</a></span>ACTIVE_HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACTIVE_HIGH&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa258cdbfe93acc501be255c43a62d0ec">ACTIVATION_STATUS_t</a>)1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The pin is low when it is pulled high <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00038">38</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8906c0208cd948e4f5fe79a920a3b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8906c0208cd948e4f5fe79a920a3b7d">&#9670;&nbsp;</a></span>ACTIVE_LOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACTIVE_LOW&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa258cdbfe93acc501be255c43a62d0ec">ACTIVATION_STATUS_t</a>)0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The pin is high when it is pulled low <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00037">37</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5a5124474a705e6cf7e43f113ac10fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5a5124474a705e6cf7e43f113ac10fb">&#9670;&nbsp;</a></span>ERROR_BUSY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_BUSY&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x8   )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Busy state occured </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00050">50</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="afb1d42f0ea0b554fbc07047128e0b14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb1d42f0ea0b554fbc07047128e0b14b">&#9670;&nbsp;</a></span>ERROR_ILLEGAL_PARAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_ILLEGAL_PARAM&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x20  )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Invalid input state occured </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00052">52</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="a2e537466d7029353e207af831498b7f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e537466d7029353e207af831498b7f8">&#9670;&nbsp;</a></span>ERROR_NO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_NO&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0     )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>No error occured </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00046">46</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="a605e0ff46555922872461535eca0d0b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a605e0ff46555922872461535eca0d0b9">&#9670;&nbsp;</a></span>ERROR_NOT_INITIALIZED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_NOT_INITIALIZED&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x10  )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Not initialized state occured </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00051">51</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="ab42bd75b80154413643a683d091f1224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42bd75b80154413643a683d091f1224">&#9670;&nbsp;</a></span>ERROR_NULL_POINTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_NULL_POINTER&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x4   )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Null pointer occured </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00049">49</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="a7102651296c0417a05f0117c66c18de5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7102651296c0417a05f0117c66c18de5">&#9670;&nbsp;</a></span>ERROR_OUT_OF_RANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_OUT_OF_RANGE&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x40  )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Out of range state occured </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00053">53</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="ad58fd51c3e56b5d9555ce48be5cc53bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58fd51c3e56b5d9555ce48be5cc53bd">&#9670;&nbsp;</a></span>ERROR_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_TIMEOUT&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x2   )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Timeout occured </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00048">48</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="ac804fdda39e617c8699964c7b8e363d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac804fdda39e617c8699964c7b8e363d9">&#9670;&nbsp;</a></span>ERROR_YES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_YES&#160;&#160;&#160;( (<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a>)0x1   )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error occured </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00047">47</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="aa93f0eb578d23995850d61f7d61c55c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93f0eb578d23995850d61f7d61c55c1">&#9670;&nbsp;</a></span>FALSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FALSE&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a0a5c66ef020f813b88faba5888e92a00">BOOL_t</a>)0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00042">42</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="a5bb885982ff66a2e0a0a45a8ee9c35e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb885982ff66a2e0a0a45a8ee9c35e2">&#9670;&nbsp;</a></span>HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HIGH&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa">STATE_t</a>)1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00033">33</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="ab811d8c6ff3a505312d3276590444289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab811d8c6ff3a505312d3276590444289">&#9670;&nbsp;</a></span>LOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOW&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa">STATE_t</a>)0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00032">32</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="a1291f416b069313021b519eea62d5bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1291f416b069313021b519eea62d5bf1">&#9670;&nbsp;</a></span>NORMAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NORMAL&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa">STATE_t</a>)2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Used for any normal state </p>
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00034">34</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
 <a id="a070d2ce7b6bb7e5c05602aa8c308d0c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a070d2ce7b6bb7e5c05602aa8c308d0c4">&#9670;&nbsp;</a></span>NULL</h2>
 
@@ -188,7 +433,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p>NULL pointer </p>
 
-<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00061">61</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00057">57</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
 
 </div>
 </div>
@@ -204,11 +449,75 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00064">64</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00060">60</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="aa8cecfc5c5c054d2875c03e77b7be15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cecfc5c5c054d2875c03e77b7be15d">&#9670;&nbsp;</a></span>TRUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRUE&#160;&#160;&#160;((<a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a0a5c66ef020f813b88faba5888e92a00">BOOL_t</a>)1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00043">43</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="aa258cdbfe93acc501be255c43a62d0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa258cdbfe93acc501be255c43a62d0ec">&#9670;&nbsp;</a></span>ACTIVATION_STATUS_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a> <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa258cdbfe93acc501be255c43a62d0ec">ACTIVATION_STATUS_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00036">36</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a5c66ef020f813b88faba5888e92a00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5c66ef020f813b88faba5888e92a00">&#9670;&nbsp;</a></span>BOOL_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a> <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a0a5c66ef020f813b88faba5888e92a00">BOOL_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00041">41</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="ab0e1f6a25bfc1b579842f3e54c2b1cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e1f6a25bfc1b579842f3e54c2b1cd0">&#9670;&nbsp;</a></span>ERROR_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a> <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0">ERROR_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00045">45</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
 <a id="a5f6906312a689f27d70e9d086649d3fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f6906312a689f27d70e9d086649d3fd">&#9670;&nbsp;</a></span>f32</h2>
 
@@ -241,14 +550,14 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a4cb19f4a3324cfe0938ddfbfabaa825b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cb19f4a3324cfe0938ddfbfabaa825b">&#9670;&nbsp;</a></span>s16</h2>
+<a id="a8f384db74f5c37e8815a728036b87b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f384db74f5c37e8815a728036b87b24">&#9670;&nbsp;</a></span>s16_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef signed short int <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a4cb19f4a3324cfe0938ddfbfabaa825b">s16</a></td>
+          <td class="memname">typedef signed short int <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a8f384db74f5c37e8815a728036b87b24">s16_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -257,14 +566,14 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="aba045a0b8c912badb14f00167aae5417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba045a0b8c912badb14f00167aae5417">&#9670;&nbsp;</a></span>s32</h2>
+<a id="ac8662b16b8214b6a04e7e8781d23847f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8662b16b8214b6a04e7e8781d23847f">&#9670;&nbsp;</a></span>s32_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef signed long int <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aba045a0b8c912badb14f00167aae5417">s32</a></td>
+          <td class="memname">typedef signed long int <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ac8662b16b8214b6a04e7e8781d23847f">s32_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -273,14 +582,14 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a151f780fb455885061d3b77ec1c90c03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a151f780fb455885061d3b77ec1c90c03">&#9670;&nbsp;</a></span>s8</h2>
+<a id="ac94561f8204ddeac10e706b2be080619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94561f8204ddeac10e706b2be080619">&#9670;&nbsp;</a></span>s8_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef signed char <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a151f780fb455885061d3b77ec1c90c03">s8</a></td>
+          <td class="memname">typedef signed char <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ac94561f8204ddeac10e706b2be080619">s8_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -289,31 +598,47 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a8349b442964397c54406385a5bcf3f1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8349b442964397c54406385a5bcf3f1c">&#9670;&nbsp;</a></span>size_t</h2>
+<a id="a602053cbe971e712572c60b634ef30df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a602053cbe971e712572c60b634ef30df">&#9670;&nbsp;</a></span>size_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa0b167025ed1eead1300bc4dbdfb230e">u16</a> <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a8349b442964397c54406385a5bcf3f1c">size_t</a></td>
+          <td class="memname">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#af0f2044e80549923fce3e32ea0bf2eba">u16_t</a> <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a602053cbe971e712572c60b634ef30df">size_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>&lt; This is a macro defined in the C standard library &lt;stddef.h&gt; for the size_t type size_t is an unsigned integer type of the result of the sizeof operator </p>
+<p>&lt; This macro is defined in &lt;stddef.h&gt; for the size_t type </p>
 
 <p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00027">27</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
 
 </div>
 </div>
-<a id="aa0b167025ed1eead1300bc4dbdfb230e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0b167025ed1eead1300bc4dbdfb230e">&#9670;&nbsp;</a></span>u16</h2>
+<a id="acb9b478e2cfe92e127519569521f6baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9b478e2cfe92e127519569521f6baa">&#9670;&nbsp;</a></span>STATE_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef unsigned short int <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aa0b167025ed1eead1300bc4dbdfb230e">u16</a></td>
+          <td class="memname">typedef <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a> <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa">STATE_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00031">31</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
+
+</div>
+</div>
+<a id="af0f2044e80549923fce3e32ea0bf2eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f2044e80549923fce3e32ea0bf2eba">&#9670;&nbsp;</a></span>u16_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned short int <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#af0f2044e80549923fce3e32ea0bf2eba">u16_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -322,14 +647,14 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a0ceed739f3b2b55ee8d4d2a79a82cdea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ceed739f3b2b55ee8d4d2a79a82cdea">&#9670;&nbsp;</a></span>u32</h2>
+<a id="a8f89886f260d4feee6b3a01d5b4d2e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f89886f260d4feee6b3a01d5b4d2e4a">&#9670;&nbsp;</a></span>u32_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef unsigned long int <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a0ceed739f3b2b55ee8d4d2a79a82cdea">u32</a></td>
+          <td class="memname">typedef unsigned long int <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a8f89886f260d4feee6b3a01d5b4d2e4a">u32_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -338,117 +663,19 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="aed742c436da53c1080638ce6ef7d13de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed742c436da53c1080638ce6ef7d13de">&#9670;&nbsp;</a></span>u8</h2>
+<a id="ae081489b4906f65a3cb18e9fbe9f8d23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae081489b4906f65a3cb18e9fbe9f8d23">&#9670;&nbsp;</a></span>u8_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef unsigned char <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></td>
+          <td class="memname">typedef unsigned char <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23">u8_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00019">19</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ae0b164adcf6f9d41e3f63015bf4f6e32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0b164adcf6f9d41e3f63015bf4f6e32">&#9670;&nbsp;</a></span>ACTIVATION_STATUS_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#ae0b164adcf6f9d41e3f63015bf4f6e32">ACTIVATION_STATUS_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae0b164adcf6f9d41e3f63015bf4f6e32a43ad983a1a6a3c04a137ec0471cdfe85"></a>ACTIVE_LOW&#160;</td><td class="fielddoc"><p>Active low means that the pin is pulled low when the pin is set to high </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ae0b164adcf6f9d41e3f63015bf4f6e32afe240f1952811db0c18b4355fb28190f"></a>ACTIVE_HIGH&#160;</td><td class="fielddoc"><p>Active high means that the pin is pulled high when the pin is set to low </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00037">37</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
-
-</div>
-</div>
-<a id="a4cb9b2fd33bff75a223b35dd2e7b67de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cb9b2fd33bff75a223b35dd2e7b67de">&#9670;&nbsp;</a></span>BOOL_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67de">BOOL_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4cb9b2fd33bff75a223b35dd2e7b67deaa1e095cc966dbecf6a0d8aad75348d1a"></a>FALSE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4cb9b2fd33bff75a223b35dd2e7b67deaa82764c3079aea4e60c80e45befbb839"></a>TRUE&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00043">43</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
-
-</div>
-</div>
-<a id="aecc54e7bb223450c39e49a6b89d7dbd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecc54e7bb223450c39e49a6b89d7dbd0">&#9670;&nbsp;</a></span>ERROR_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0">ERROR_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386"></a>ERROR_NO&#160;</td><td class="fielddoc"><p>No error occured </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc54e7bb223450c39e49a6b89d7dbd0af969f1757e97a9d2af755759dfc738e5"></a>ERROR_YES&#160;</td><td class="fielddoc"><p>Error occured </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc54e7bb223450c39e49a6b89d7dbd0a4d0f7be53b837f004379ac6bbd56f1e2"></a>ERROR_TIMEOUT&#160;</td><td class="fielddoc"><p>Timeout occured </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc54e7bb223450c39e49a6b89d7dbd0a3d37cbe00af5e55b2ab0cfac2a5b4b0e"></a>ERROR_NULL_POINTER&#160;</td><td class="fielddoc"><p>Null pointer occured </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc54e7bb223450c39e49a6b89d7dbd0a16dfa19f264bab0dda915180788d5025"></a>ERROR_BUSY&#160;</td><td class="fielddoc"><p>Busy state occured </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc54e7bb223450c39e49a6b89d7dbd0a1828f808506ac0f1fa7cf7a9a659210d"></a>ERROR_NOT_INITIALIZED&#160;</td><td class="fielddoc"><p>Not initialized state occured </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc54e7bb223450c39e49a6b89d7dbd0a96013d9bd3adab401107ff0e3e8f62fc"></a>ERROR_ILLEGAL_PARAM&#160;</td><td class="fielddoc"><p>Invalid input state occured </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aecc54e7bb223450c39e49a6b89d7dbd0a796107c17e41c601d633f670e5e29800"></a>ERROR_OUT_OF_RANGE&#160;</td><td class="fielddoc"><p>Out of range state occured </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00048">48</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
-
-</div>
-</div>
-<a id="a3e0065a73e029c82cbea66a3785490c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e0065a73e029c82cbea66a3785490c7">&#9670;&nbsp;</a></span>STATE_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7">STATE_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3e0065a73e029c82cbea66a3785490c7a6a226f4143ca3b18999551694cdb72a8"></a>LOW&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3e0065a73e029c82cbea66a3785490c7a0c3a1dacf94061154b3ee354359c5893"></a>HIGH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3e0065a73e029c82cbea66a3785490c7a50d1448013c6f17125caee18aa418af7"></a>NORMAL&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html#l00031">31</a> of file <a class="el" href="_s_t_d___t_y_p_e_s_8h_source.html">STD_TYPES.h</a>.</p>
 
 </div>
 </div>

@@ -3,10 +3,10 @@
         {
             "name": "8051",
             "includePath": [
-                "f:\\career\\myStuff\\myStuff_ES\\projects\\microcontrollers\\projects\\8051\\cuteOS\\code\\include",
+                "f:\\career\\my_stuff\\projects\\embedded\\projects\\cuteOS\\code\\include",
                 "C:\\Keil_v5\\C51\\INC",
-                "f:\\career\\myStuff\\myStuff_ES\\projects\\microcontrollers\\projects\\8051\\cuteOS\\code",
-                "f:\\career\\myStuff\\myStuff_ES\\projects\\microcontrollers\\projects\\8051\\cuteOS\\code\\src"
+                "f:\\career\\my_stuff\\projects\\embedded\\projects\\cuteOS\\code",
+                "f:\\career\\my_stuff\\projects\\embedded\\projects\\cuteOS\\code\\src"
             ],
             "defines": [
                 "__C51__",

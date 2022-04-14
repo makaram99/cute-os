@@ -1,1 +1,1 @@
-"src\traffic_cfg.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\include) DEBUG OBJECTEXTEND PRINT(.\Listings\traffic_cfg.lst) TABS (2) OBJECT(.\Objects\traffic_cfg.obj)
+"src\traffic_cfg.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\include) DEBUG OBJECTEXTEND PRINT(.\Listings\traffic_cfg.lst) OBJECT(.\Objects\traffic_cfg.obj)

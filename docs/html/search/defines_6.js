@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['osc_5ffreq_214',['OSC_FREQ',['../main_8h.html#a91ed25b07bdff25ce25e42c2fb36f655',1,'main.h']]],
-  ['osc_5fper_5finst_215',['OSC_PER_INST',['../main_8h.html#a711dc0d0e45a9f32cd1adb066c654b42',1,'main.h']]]
+  ['high_201',['HIGH',['../_s_t_d___t_y_p_e_s_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2',1,'STD_TYPES.h']]]
 ];

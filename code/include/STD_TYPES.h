@@ -9,52 +9,48 @@
 #define STD_TYPES_H
 
 /* Signed integers	*/
-typedef     signed long int   	        s32;		
-typedef     signed short int 	        s16;		
-typedef     signed char                 s8;
+typedef     signed long int   	        s32_t;		
+typedef     signed short int 	        s16_t;		
+typedef     signed char                 s8_t;
   
 /* Unsigned integers	*/
-typedef 	unsigned long int	        u32;
-typedef 	unsigned short int          u16;
-typedef 	unsigned char 		        u8;
+typedef 	unsigned long int	        u32_t;
+typedef 	unsigned short int          u16_t;
+typedef 	unsigned char 		        u8_t;
 
 /* Float numbers	*/        
 typedef 	float 				        f32;
 typedef 	double 				        f64;
 
 /* Special types	*/        
- #undef __SIZE_TYPE__      /*!< This is a macro defined in the C standard library <stddef.h> for the size_t type */   
-typedef 	u16   size_t;   /*!< size_t is an unsigned integer type of the result of the sizeof operator */
+ #undef __SIZE_TYPE__       /*!< This macro is defined in <stddef.h> for the size_t type */   
+typedef 	u16_t   size_t;  
 
 #undef HIGH
 #undef LOW
-typedef enum{
-  LOW,
-  HIGH,
-  NORMAL,             /* Used for any normal state */
-}STATE_t;
+typedef     u8_t      STATE_t;
+#define     LOW         ((STATE_t)0)
+#define     HIGH        ((STATE_t)1)
+#define     NORMAL      ((STATE_t)2)                /*!< Used for any normal state */
 
-typedef enum{
-    ACTIVE_LOW,       /*!< Active low means that the pin is pulled low when the pin is set to high */
-    ACTIVE_HIGH,      /*!< Active high means that the pin is pulled high when the pin is set to low */
-}ACTIVATION_STATUS_t;
+typedef     u8_t      ACTIVATION_STATUS_t;
+#define     ACTIVE_LOW              ((ACTIVATION_STATUS_t)0)    /*!< The pin is high when it is pulled low  */
+#define     ACTIVE_HIGH             ((ACTIVATION_STATUS_t)1)    /*!< The pin is low when it is pulled high  */
 
 /* Boolean type	*/
-typedef enum{
-    FALSE,
-    TRUE
-}BOOL_t;
+typedef     u8_t      BOOL_t;
+#define     FALSE       ((BOOL_t)0)
+#define     TRUE        ((BOOL_t)1)
 
-typedef enum{
-    ERROR_NO                = 0,            /*!< No error occured */
-    ERROR_YES               = 0x1,          /*!< Error occured */
-    ERROR_TIMEOUT           = 0x2,          /*!< Timeout occured */
-    ERROR_NULL_POINTER      = 0x4,          /*!< Null pointer occured */
-    ERROR_BUSY              = 0x8,          /*!< Busy state occured */
-    ERROR_NOT_INITIALIZED   = 0x10,         /*!< Not initialized state occured */
-    ERROR_ILLEGAL_PARAM     = 0x20,         /*!< Invalid input state occured */   
-    ERROR_OUT_OF_RANGE      = 0x40,         /*!< Out of range state occured */ 
-}ERROR_t;
+typedef     u8_t      ERROR_t;
+#define     ERROR_NO                ( (ERROR_t)0     )       /*!< No error occured */
+#define     ERROR_YES               ( (ERROR_t)0x1   )       /*!< Error occured */
+#define     ERROR_TIMEOUT           ( (ERROR_t)0x2   )       /*!< Timeout occured */
+#define     ERROR_NULL_POINTER      ( (ERROR_t)0x4   )       /*!< Null pointer occured */
+#define     ERROR_BUSY              ( (ERROR_t)0x8   )       /*!< Busy state occured */
+#define     ERROR_NOT_INITIALIZED   ( (ERROR_t)0x10  )       /*!< Not initialized state occured */
+#define     ERROR_ILLEGAL_PARAM     ( (ERROR_t)0x20  )       /*!< Invalid input state occured */   
+#define     ERROR_OUT_OF_RANGE      ( (ERROR_t)0x40  )       /*!< Out of range state occured */ 
 
 /* Pointers	*/
 #undef NULL 

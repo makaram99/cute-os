@@ -1,37 +1,33 @@
 var _s_t_d___t_y_p_e_s_8h =
 [
+    [ "ACTIVE_HIGH", "_s_t_d___t_y_p_e_s_8h.html#a80c342b08fadc7974d3a31817aafaf06", null ],
+    [ "ACTIVE_LOW", "_s_t_d___t_y_p_e_s_8h.html#ad8906c0208cd948e4f5fe79a920a3b7d", null ],
+    [ "ERROR_BUSY", "_s_t_d___t_y_p_e_s_8h.html#aa5a5124474a705e6cf7e43f113ac10fb", null ],
+    [ "ERROR_ILLEGAL_PARAM", "_s_t_d___t_y_p_e_s_8h.html#afb1d42f0ea0b554fbc07047128e0b14b", null ],
+    [ "ERROR_NO", "_s_t_d___t_y_p_e_s_8h.html#a2e537466d7029353e207af831498b7f8", null ],
+    [ "ERROR_NOT_INITIALIZED", "_s_t_d___t_y_p_e_s_8h.html#a605e0ff46555922872461535eca0d0b9", null ],
+    [ "ERROR_NULL_POINTER", "_s_t_d___t_y_p_e_s_8h.html#ab42bd75b80154413643a683d091f1224", null ],
+    [ "ERROR_OUT_OF_RANGE", "_s_t_d___t_y_p_e_s_8h.html#a7102651296c0417a05f0117c66c18de5", null ],
+    [ "ERROR_TIMEOUT", "_s_t_d___t_y_p_e_s_8h.html#ad58fd51c3e56b5d9555ce48be5cc53bd", null ],
+    [ "ERROR_YES", "_s_t_d___t_y_p_e_s_8h.html#ac804fdda39e617c8699964c7b8e363d9", null ],
+    [ "FALSE", "_s_t_d___t_y_p_e_s_8h.html#aa93f0eb578d23995850d61f7d61c55c1", null ],
+    [ "HIGH", "_s_t_d___t_y_p_e_s_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2", null ],
+    [ "LOW", "_s_t_d___t_y_p_e_s_8h.html#ab811d8c6ff3a505312d3276590444289", null ],
+    [ "NORMAL", "_s_t_d___t_y_p_e_s_8h.html#a1291f416b069313021b519eea62d5bf1", null ],
     [ "NULL", "_s_t_d___t_y_p_e_s_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4", null ],
     [ "NULL_BYTE", "_s_t_d___t_y_p_e_s_8h.html#a7611128d4caa5aac09259e2e22142b3d", null ],
+    [ "TRUE", "_s_t_d___t_y_p_e_s_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d", null ],
+    [ "ACTIVATION_STATUS_t", "_s_t_d___t_y_p_e_s_8h.html#aa258cdbfe93acc501be255c43a62d0ec", null ],
+    [ "BOOL_t", "_s_t_d___t_y_p_e_s_8h.html#a0a5c66ef020f813b88faba5888e92a00", null ],
+    [ "ERROR_t", "_s_t_d___t_y_p_e_s_8h.html#ab0e1f6a25bfc1b579842f3e54c2b1cd0", null ],
     [ "f32", "_s_t_d___t_y_p_e_s_8h.html#a5f6906312a689f27d70e9d086649d3fd", null ],
     [ "f64", "_s_t_d___t_y_p_e_s_8h.html#a94dab5770726ccbef8c7d026cfbdf8e5", null ],
-    [ "s16", "_s_t_d___t_y_p_e_s_8h.html#a4cb19f4a3324cfe0938ddfbfabaa825b", null ],
-    [ "s32", "_s_t_d___t_y_p_e_s_8h.html#aba045a0b8c912badb14f00167aae5417", null ],
-    [ "s8", "_s_t_d___t_y_p_e_s_8h.html#a151f780fb455885061d3b77ec1c90c03", null ],
-    [ "size_t", "_s_t_d___t_y_p_e_s_8h.html#a8349b442964397c54406385a5bcf3f1c", null ],
-    [ "u16", "_s_t_d___t_y_p_e_s_8h.html#aa0b167025ed1eead1300bc4dbdfb230e", null ],
-    [ "u32", "_s_t_d___t_y_p_e_s_8h.html#a0ceed739f3b2b55ee8d4d2a79a82cdea", null ],
-    [ "u8", "_s_t_d___t_y_p_e_s_8h.html#aed742c436da53c1080638ce6ef7d13de", null ],
-    [ "ACTIVATION_STATUS_t", "_s_t_d___t_y_p_e_s_8h.html#ae0b164adcf6f9d41e3f63015bf4f6e32", [
-      [ "ACTIVE_LOW", "_s_t_d___t_y_p_e_s_8h.html#ae0b164adcf6f9d41e3f63015bf4f6e32a43ad983a1a6a3c04a137ec0471cdfe85", null ],
-      [ "ACTIVE_HIGH", "_s_t_d___t_y_p_e_s_8h.html#ae0b164adcf6f9d41e3f63015bf4f6e32afe240f1952811db0c18b4355fb28190f", null ]
-    ] ],
-    [ "BOOL_t", "_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67de", [
-      [ "FALSE", "_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67deaa1e095cc966dbecf6a0d8aad75348d1a", null ],
-      [ "TRUE", "_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67deaa82764c3079aea4e60c80e45befbb839", null ]
-    ] ],
-    [ "ERROR_t", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0", [
-      [ "ERROR_NO", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a18bbd975653ed24f2333c30c9f7f7386", null ],
-      [ "ERROR_YES", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0af969f1757e97a9d2af755759dfc738e5", null ],
-      [ "ERROR_TIMEOUT", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a4d0f7be53b837f004379ac6bbd56f1e2", null ],
-      [ "ERROR_NULL_POINTER", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a3d37cbe00af5e55b2ab0cfac2a5b4b0e", null ],
-      [ "ERROR_BUSY", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a16dfa19f264bab0dda915180788d5025", null ],
-      [ "ERROR_NOT_INITIALIZED", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a1828f808506ac0f1fa7cf7a9a659210d", null ],
-      [ "ERROR_ILLEGAL_PARAM", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a96013d9bd3adab401107ff0e3e8f62fc", null ],
-      [ "ERROR_OUT_OF_RANGE", "_s_t_d___t_y_p_e_s_8h.html#aecc54e7bb223450c39e49a6b89d7dbd0a796107c17e41c601d633f670e5e29800", null ]
-    ] ],
-    [ "STATE_t", "_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7", [
-      [ "LOW", "_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7a6a226f4143ca3b18999551694cdb72a8", null ],
-      [ "HIGH", "_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7a0c3a1dacf94061154b3ee354359c5893", null ],
-      [ "NORMAL", "_s_t_d___t_y_p_e_s_8h.html#a3e0065a73e029c82cbea66a3785490c7a50d1448013c6f17125caee18aa418af7", null ]
-    ] ]
+    [ "s16_t", "_s_t_d___t_y_p_e_s_8h.html#a8f384db74f5c37e8815a728036b87b24", null ],
+    [ "s32_t", "_s_t_d___t_y_p_e_s_8h.html#ac8662b16b8214b6a04e7e8781d23847f", null ],
+    [ "s8_t", "_s_t_d___t_y_p_e_s_8h.html#ac94561f8204ddeac10e706b2be080619", null ],
+    [ "size_t", "_s_t_d___t_y_p_e_s_8h.html#a602053cbe971e712572c60b634ef30df", null ],
+    [ "STATE_t", "_s_t_d___t_y_p_e_s_8h.html#acb9b478e2cfe92e127519569521f6baa", null ],
+    [ "u16_t", "_s_t_d___t_y_p_e_s_8h.html#af0f2044e80549923fce3e32ea0bf2eba", null ],
+    [ "u32_t", "_s_t_d___t_y_p_e_s_8h.html#a8f89886f260d4feee6b3a01d5b4d2e4a", null ],
+    [ "u8_t", "_s_t_d___t_y_p_e_s_8h.html#ae081489b4906f65a3cb18e9fbe9f8d23", null ]
 ];

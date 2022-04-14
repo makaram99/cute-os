@@ -1,10 +1,10 @@
-C51 COMPILER V9.60.0.0   CUTEOS                                                            03/26/2022 01:01:28 PAGE 1   
+C51 COMPILER V9.60.0.0   CUTEOS                                                            04/14/2022 16:34:57 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE CUTEOS
 OBJECT MODULE PLACED IN .\Objects\cuteOS.obj
 COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE src\cuteOS.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\include) DEBUG OBJECTEXTE
-                    -ND PRINT(.\Listings\cuteOS.lst) TABS(2) OBJECT(.\Objects\cuteOS.obj)
+                    -ND PRINT(.\Listings\cuteOS.lst) OBJECT(.\Objects\cuteOS.obj)
 
 line level    source
 
@@ -15,9 +15,9 @@ line level    source
    5           * @details cuteOS schedules the tasks in a cooperative manner.
    6           *          It invokes te scheduler (\ref cuteOS_ISR()) periodically by Timer 
    7           *          overflow. So, the timing of the tasks is determined by the 
-   8           *      frequency of Timer overflow defined by the variable \ref cuteOS_TICK_TIME.
+   8           *                      frequency of Timer overflow defined by the variable \ref cuteOS_TICK_TIME.
    9           * @note    cuteOS uses the timer2 for scheduling.
-  10           * @version 1.0.0
+  10           * @version 1.0.1
   11           * @date    2022-03-22
   12           * @copyright Copyright (c) 2022
   13           * @details Application usage:
@@ -35,268 +35,312 @@ line level    source
   25          #include "main.H"
   26          #include "cuteOS.h"
   27          
-  28          
-  29          /*--------------------------------------------------------------------*/
-  30          /*                          PRIVATE DATA                              */
-  31          /*--------------------------------------------------------------------*/
-  32          /**********************************************************************
-  33           * @brief   Maximum tick time in milliseconds.
-  34           * @details This variable is used to set the maximum tick time in milliseconds.
-  35           *          The maximum tick time is used to set the maximum time of the tasks.
-  36           *          It has a maximum value of 65 ms because:
-  37           *          1. The maximum value of the timer 2 is 65535 (16-bit timer).
-  38           *          2. The 8051 microcontroller has 1 MIPS (1 million instructions per second),
-  39           *             with 12MHz clock, and 12 clock cycles per instruction.
-  40           *          So, the maximum tick time = (65535 * 12) / 12000000 = 65 ms. 
-  41           *********************************************************************/
-  42          #define MAX_TICK_TIME_MS  65         
-  43          
-  44          /*!< Tick time in ms (must be less than MAX_TICK_TIME_MS). */
-  45          static u8 cuteOS_TickTimeMs = 50; 
-  46          
-  47          /*!< Number of ticks, which is incremented by 1 at each Timer 2 overflow. */
-  48          static u16 cuteOS_TickCount = 0;
-  49          
-  50          /**********************************************************************
-  51           * @brief   Maximum number of tasks the OS can handle.
-  52           *********************************************************************/
-  53          #define MAX_TASKS_NUM   10   
-  54          
-C51 COMPILER V9.60.0.0   CUTEOS                                                            03/26/2022 01:01:28 PAGE 2   
+  28          /*--------------------------------------------------------------------*/
+  29          /* PRIVATE FUNCTIONS DECLARATION                                      */
+  30          /*--------------------------------------------------------------------*/
+  31          static ERROR_t cuteOS_SetTickTime(const u8_t TICK_TIME_MS);
+  32          static ERROR_t cuteOS_GCD(u32_t *gcd);
+  33          static ERROR_t cuteOS_UpdateTicks(void);
+  34          static void cuteOS_Sleep(void);
+  35          static void cuteOS_ISR();
+  36          
+  37          
+  38          /*--------------------------------------------------------------------*/
+  39          /*                          PRIVATE DATA                              */
+  40          /*--------------------------------------------------------------------*/
+  41          /**********************************************************************
+  42           * @brief   Maximum tick time in milliseconds.
+  43           * @details This variable is used to set the maximum tick time in milliseconds.
+  44           *          The maximum tick time is used to set the maximum time of the tasks.
+  45           *          It has a maximum value of 65 ms because:
+  46           *          1. The maximum value of the timer 2 is 65535 (16-bit timer).
+  47           *          2. The 8051 microcontroller has 1 MIPS (1 million instructions per second),
+  48           *             with 12MHz clock, and 12 clock cycles per instruction.
+  49           *          So, the maximum tick time = (65535 * 12) / 12000000 = 65 ms. 
+  50           *********************************************************************/
+  51          #define MAX_TICK_TIME_MS  65         
+  52          
+  53          /*!< Tick time in ms (must be less than MAX_TICK_TIME_MS). */
+  54          static u8_t cuteOS_tick_time_ms = 0; 
+C51 COMPILER V9.60.0.0   CUTEOS                                                            04/14/2022 16:34:57 PAGE 2   
 
-  55          /*!< Number of tasks created by the user. */
-  56          static u8 cuteOS_TaskCounter = 0;         /*!< Counter for the number of tasks created */
-  57          
-  58          /*!< Task Information Structure. */
-  59          typedef struct {
-  60              ERROR_t (*callback)(void);    /*!< Pointer to the task function */
-  61              u16 ticks;    /*!< Number of ticks after which the task will run */
-  62              u8  id;       /*!< Task ID */    
-  63          }cuteOS_TASK_t;
-  64          
-  65          /*!< Tasks array containing tasks information. */
-  66          cuteOS_TASK_t tasks[MAX_TASKS_NUM] = {0};
-  67          
-  68          
-  69          
-  70          
+  55          
+  56          /*!< Number of ticks, which is incremented by 1 at each Timer 2 overflow. */
+  57          static u16_t cuteOS_tick_count = 0;
+  58          
+  59          #define MAX_TASKS_NUM   8
+  60          
+  61          /*!< Number of tasks created by the user. */
+  62          static u8_t cuteOS_task_counter = 0;         /*!< Counter for the number of tasks created */
+  63          
+  64          /*!< Task Information Structure. */
+  65          typedef struct {
+  66              ERROR_t (*callback)(void);    /*!< Pointer to the task function */
+  67              u32_t delay_ms;                    /*!< Delay in ms */
+  68              u16_t ticks;    /*!< Number of ticks after which the task will run */
+  69              u8_t  id;       /*!< Task ID */    
+  70          }cuteOS_TASK_t;
   71          
-  72          
-  73          
-  74          /*--------------------------------------------------------------------*/
-  75          /*                          PRIVATE FUNCTIONS                         */
-  76          /*--------------------------------------------------------------------*/
-  77          /**********************************************************************
-  78           * @brief   cuteOS_ISR() is invoked periodically by Timer 2 overflow
-  79           * @note    See cuteOS_Init() for timing details.
-  80           *********************************************************************/
-  81          static void cuteOS_ISR() interrupt INTERRUPT_Timer_2_Overflow {
-  82   1          u8 i = 0;
-  83   1      
-  84   1          /*!< Must manually reset the timer 2 interrupt flag    */
-  85   1          TF2 = 0;       
-  86   1      
-  87   1          /*!< Increment the tick time counter */
-  88   1          ++cuteOS_TickCount;
-  89   1      
-  90   1          /*!< Check if the tick time counter has reached the required tick time */
-  91   1          for(i = 0; i < cuteOS_TaskCounter; ++i) {
-  92   2              if( (cuteOS_TickCount % tasks[i].ticks) == 0) {
-  93   3                  /*!< Reset the tick time counter */
-  94   3                  // cuteOS_TickCount = 0;
-  95   3      
-  96   3                  /*!< Call the Cute OS callback function */
-  97   3                  if(tasks[i].callback != NULL) {
-  98   4                      tasks[i].callback();
-  99   4                  }
- 100   3              }
- 101   2          }
- 102   1      }
- 103          
- 104          /**********************************************************************
- 105           * @brief   The OS enters 'idle mode' between clock ticks to save power.
- 106           * @details Go to idle mode for some time = tickTimeInMs by disabling
- 107           *          all interrupts and setting the sleep mode to Idle.
- 108           * @note    The next clock tick will return the processor to the normal operating state.
- 109           *********************************************************************/
- 110          static void cuteOS_Sleep(void) {
- 111   1          /*!< Enter idle mode to save power */
- 112   1          PCON |= 0x01;
- 113   1      }
- 114          
- 115          
- 116          /*--------------------------------------------------------------------*/
-C51 COMPILER V9.60.0.0   CUTEOS                                                            03/26/2022 01:01:28 PAGE 3   
+  72          /*!< Tasks array containing tasks information. */
+  73          cuteOS_TASK_t tasks[MAX_TASKS_NUM] = {0};
+  74          
+  75          
+  76          
+  77          
+  78          
+  79          
+  80          
+  81          /*--------------------------------------------------------------------*/
+  82          /*                          PUBLIC FUNCTIONS                          */
+  83          /*--------------------------------------------------------------------*/
+  84          /**********************************************************************
+  85           * @details This function does the following:
+  86           *          - Increment the task counter.
+  87           *          - Set the task ID.
+  88           *          - Set the pointer to the task function.
+  89           *          - Set the number of schedular ticks after which the task will run.
+  90           *********************************************************************/
+  91          ERROR_t cuteOS_TaskCreate(ERROR_t (* const callback)(void), const u16_t TICK_TIME_MS) {
+  92   1          ERROR_t error = ERROR_NO;
+  93   1      
+  94   1          if(cuteOS_task_counter < MAX_TASKS_NUM) {
+  95   2              ++cuteOS_task_counter;
+  96   2              tasks[cuteOS_task_counter - 1].id = cuteOS_task_counter - 1;
+  97   2              tasks[cuteOS_task_counter - 1].delay_ms = TICK_TIME_MS;
+  98   2              tasks[cuteOS_task_counter - 1].callback = callback;
+  99   2      
+ 100   2              // error |= cuteOS_UpdateTicks();
+ 101   2          } else {
+ 102   2              error |= ERROR_OUT_OF_RANGE;
+ 103   2          }
+ 104   1      
+ 105   1          return error;
+ 106   1      }
+ 107          
+ 108          /**********************************************************************
+ 109           * @details This function does the following:
+ 110           *          - Search for the task in the tasks array.
+ 111           *          - If found, remove the task from the tasks array.
+ 112           *          - Rearrange the tasks array.
+ 113           *          - Decrement the task counter.
+ 114           *          - If the task is not available, an error is returned.
+ 115           * @param[in] callback: Pointer to the task function.
+ 116           * @return  \c ERROR_t: Check the options in the global enum \ref ERROR_t.
+C51 COMPILER V9.60.0.0   CUTEOS                                                            04/14/2022 16:34:57 PAGE 3   
 
- 117          /*                          PUBLIC FUNCTIONS                          */
- 118          /*--------------------------------------------------------------------*/
- 119          /**********************************************************************
- 120           * @details This function does the following:
- 121           *          - Increment the task counter.
- 122           *          - Set the task ID.
- 123           *          - Set the pointer to the task function.
- 124           *          - Set the number of schedular ticks after which the task will run.
- 125           *********************************************************************/
- 126          ERROR_t cuteOS_TaskCreate(ERROR_t (* const callback)(void), const u16 TICK_MS) {
- 127   1          ERROR_t error = ERROR_NO;
- 128   1      
- 129   1          ++cuteOS_TaskCounter;
- 130   1      
- 131   1          if(cuteOS_TaskCounter > MAX_TASKS_NUM) {
- 132   2              error = ERROR_OUT_OF_RANGE;
- 133   2          } else {
- 134   2              tasks[cuteOS_TaskCounter - 1].id = cuteOS_TaskCounter - 1;
- 135   2              tasks[cuteOS_TaskCounter - 1].ticks = TICK_MS / cuteOS_TickTimeMs;
- 136   2              tasks[cuteOS_TaskCounter - 1].callback = callback;
- 137   2          }
- 138   1      
- 139   1          return error;
- 140   1      }
- 141          
- 142          /**********************************************************************
- 143           * @details This function does the following:
- 144           *          - Search for the task in the tasks array.
- 145           *          - If found, remove the task from the tasks array.
- 146           *          - Rearrange the tasks array.
- 147           *          - Decrement the task counter.
- 148           *          - If the task is not available, an error is returned.
- 149           * @param[in] callback: Pointer to the task function.
- 150           * @return  ERROR Status: Check the options in the global enum \ref ERROR_t.
- 151           *********************************************************************/
- 152          ERROR_t cuteOS_TaskRemove(ERROR_t (* const callback)(void)) {
- 153   1          ERROR_t error = ERROR_YES;
- 154   1          u8 i = 0;
- 155   1      
- 156   1          /*!< Find the task in the task array */
- 157   1          for(i = 0; i < cuteOS_TaskCounter; ++i) {
- 158   2              if(tasks[i].callback == callback) {
- 159   3                  error = ERROR_NO;   /*!< Task found */
- 160   3      
- 161   3                  for(; i < cuteOS_TaskCounter - 1; ++i) {
- 162   4                      tasks[i] = tasks[i + 1];
- 163   4                  }
- 164   3                  /*!< Assign NULL pointer to the last task to avoid calling it */
- 165   3                  tasks[cuteOS_TaskCounter - 1].callback = NULL;
- 166   3                  
- 167   3                  /*!< Decrement the number of tasks */
- 168   3                  --cuteOS_TaskCounter;
- 169   3                  break;
- 170   3              }
- 171   2          }
- 172   1      
- 173   1          return error;
- 174   1      }
- 175          
- 176          /**********************************************************************
- 177           * @brief   Start the Cute Embedded Operating System (cuteOS)
+ 117           *********************************************************************/
+ 118          ERROR_t cuteOS_TaskRemove(ERROR_t (* const callback)(void)) {
+ 119   1          ERROR_t error = ERROR_YES;
+ 120   1          u8_t i;
+ 121   1      
+ 122   1          /*!< Find the task in the task array */
+ 123   1          for(i = 0; i < cuteOS_task_counter; ++i) {
+ 124   2              if(tasks[i].callback == callback) {
+ 125   3                  error |= ERROR_NO;   /*!< Task found */
+ 126   3      
+ 127   3                  /*!< Rearrange the tasks array */
+ 128   3                  for(; i < cuteOS_task_counter - 1; ++i) {
+ 129   4                      tasks[i] = tasks[i + 1];
+ 130   4                  }
+ 131   3      
+ 132   3                  --cuteOS_task_counter;
+ 133   3                  tasks[cuteOS_task_counter].callback = NULL;            
+ 134   3      
+ 135   3                  error |= cuteOS_UpdateTicks();
+ 136   3      
+ 137   3                  break;
+ 138   3              }
+ 139   2          }
+ 140   1      
+ 141   1          return error;
+ 142   1      }
+ 143          
+ 144          /**********************************************************************
+ 145           * @details Go to idle mode for some time = tickTimeInMs by disabling
+ 146           *          all interrupts and setting the sleep mode to Idle.
+ 147           * @note    The next clock tick will return the processor to the normal operating state.
+ 148           *********************************************************************/
+ 149          void cuteOS_Start(void) {
+ 150   1          cuteOS_UpdateTicks();
+ 151   1              while(1) {
+ 152   2              PCON |= 0x01;   /*!< Enter idle mode to save power */
+ 153   2              }
+ 154   1      }
+ 155          
+ 156          ERROR_t cuteOS_GetTickTime(u8_t * const ptr_tick_time_ms){
+ 157   1          ERROR_t error = ERROR_NO;
+ 158   1      
+ 159   1          if(ptr_tick_time_ms != NULL) {
+ 160   2              if(0 == cuteOS_tick_time_ms) {
+ 161   3                  cuteOS_tick_time_ms = MAX_TICK_TIME_MS;
+ 162   3              }
+ 163   2      
+ 164   2              *ptr_tick_time_ms = cuteOS_tick_time_ms;
+ 165   2          } else {
+ 166   2              error |= ERROR_NULL_POINTER;
+ 167   2          }
+ 168   1      
+ 169   1          return error;
+ 170   1      }
+ 171          
+ 172          /**********************************************************************
+ 173           * @details Initialize the Cute OS using Timer 2 overflow:
+ 174           *          - Timer mode
+ 175           *          - Tick time
+ 176           *          - Interrupt enable
+ 177           *          - Auto-reload mode
  178           *********************************************************************/
-C51 COMPILER V9.60.0.0   CUTEOS                                                            03/26/2022 01:01:28 PAGE 4   
+C51 COMPILER V9.60.0.0   CUTEOS                                                            04/14/2022 16:34:57 PAGE 4   
 
- 179          void cuteOS_Start(void) {
- 180   1        /*!< Super loop */
- 181   1        while(1) {
- 182   2          cuteOS_Sleep();     /*!< Enter idle mode to save power */
- 183   2        }
- 184   1      }
- 185          
- 186          /**********************************************************************
- 187           * @details Set the value of the tick time in milliseconds. So, the
- 188           *          timing of the tasks is determined by the frequency of Timer 2
- 189           *          overflow. Overflow occurs every tickTimeInMs milliseconds.
- 190           *********************************************************************/
- 191          ERROR_t cuteOS_SetTickTime(const u8 TICK_MS){
- 192   1          ERROR_t error = ERROR_NO;
- 193   1      
- 194   1          cuteOS_TickTimeMs = TICK_MS;
- 195   1          
- 196   1          if(cuteOS_TickTimeMs > MAX_TICK_TIME_MS) {
- 197   2              error = ERROR_OUT_OF_RANGE;
- 198   2          } else {
- 199   2              /*!< Set the value of the tick time in ms */
- 200   2              cuteOS_Init();
- 201   2          }
- 202   1      
- 203   1          return ERROR_NO;
- 204   1      }
- 205          
- 206          /**********************************************************************
- 207           * @brief Get the value of the tick time in milliseconds.
- 208           *********************************************************************/
- 209          ERROR_t cuteOS_GetTickTime(u8 * const tickTimeInMsPtr){
- 210   1          ERROR_t error = ERROR_NO;
- 211   1      
- 212   1          if(tickTimeInMsPtr != NULL) {
- 213   2              *tickTimeInMsPtr = cuteOS_TickTimeMs;
- 214   2          } else {
- 215   2              error |= ERROR_NULL_POINTER;
- 216   2          }
- 217   1      
- 218   1          return error;
- 219   1      }
- 220          
- 221          /**********************************************************************
- 222           * @details Initialize the Cute OS using Timer 2 overflow:
- 223           *          - Timer mode
- 224           *          - Tick time
- 225           *          - Interrupt enable
- 226           *          - Auto-reload mode
- 227           *********************************************************************/
- 228          ERROR_t cuteOS_Init(void) {
- 229   1          ERROR_t error = ERROR_NO;
- 230   1          u32 Inc;
- 231   1          u16 Reload_16;
- 232   1          u8 Reload_08H, Reload_08L;
- 233   1      
- 234   1          TR2 = 0;                                 /*!< Disable Timer 2 */
- 235   1      
- 236   1          /******************************************************************
- 237   1           * Enable Timer 2 (16-bit timer) and configure it as a timer and automatically 
- 238   1           * reloaded its value at overflow and 
- 239   1           ******************************************************************/
- 240   1          T2CON = 0x04;   /*!< Load Timer 2 control register  */
-C51 COMPILER V9.60.0.0   CUTEOS                                                            03/26/2022 01:01:28 PAGE 5   
-
- 241   1      
- 242   1          /*!< Number of timer increments required (max 65536)    */
- 243   1          /*!< Inc = (Number of mSec) * (Number of Instructions per mSec)       */
- 244   1          /*!< Number of mSec = cuteOS_TickTimeMs                                */
- 245   1          /*!< Number of Instructions per mSec = (Number of Oscillations per mSec) * (Number of Instructions per
+ 179          ERROR_t cuteOS_Init(void) {
+ 180   1          ERROR_t error = ERROR_NO;
+ 181   1          u16_t increments, reload_16;
+ 182   1          u8_t tick_time_ms;
+ 183   1      
+ 184   1          TR2 = 0;                                 /*!< Disable Timer 2 */
+ 185   1      
+ 186   1          /******************************************************************
+ 187   1           * Enable Timer 2 (16-bit timer) and configure it as a timer and automatically 
+ 188   1           * reloaded its value at overflow and 
+ 189   1           ******************************************************************/
+ 190   1          T2CON = 0x04;   /*!< Load Timer 2 control register  */
+ 191   1      
+ 192   1          /*!< Number of timer increments required (max 65536)    */
+ 193   1          /*!< increments = (Number of mSec) * (Number of Instructions per mSec)       */
+ 194   1          /*!< Number of mSec = tick_time_ms                                */
+ 195   1          /*!< Number of Instructions per mSec = (Number of Oscillations per mSec) * (Number of Instructions per
              - Oscillation) */  
- 246   1          /*!< Number of Oscillations per mSec = OSC_FREQ(MHz) / 1000 */   
- 247   1          /*!< Number of Instructions per Oscillation = 1 / OSC_PER_INST */    
- 248   1          Inc = ((u32)cuteOS_TickTimeMs * (OSC_FREQ/1000)) / (u32)OSC_PER_INST;
- 249   1      
- 250   1          /*!< 16-bit reload value    */
- 251   1          Reload_16 = (u16) (65536UL - Inc);
- 252   1      
- 253   1          /*!< 8-bit reload values (High & Low)   */
- 254   1          Reload_08H = (u8)(Reload_16 / 256);  /*!< High byte    */
- 255   1          Reload_08L = (u8)(Reload_16 % 256);  /*!< Low byte     */
- 256   1      
- 257   1          // Used for manually checking timing (in simulator)
- 258   1          //P2 = Reload_08H;
- 259   1          //P3 = Reload_08L;
- 260   1          RCAP2H = TH2 = Reload_08H;              /*!< Load T2 and reload capt. reg. high bytes   */
- 261   1          RCAP2L = TL2 = Reload_08L;              /*!< Load T2 and reload capt. reg. low bytes    */
- 262   1      
- 263   1          ET2 = 1;                                /*!< Enable Timer 2 interrupt    */
- 264   1          TR2 = 1;                                /*!< Start Timer 2    */
- 265   1          EA = 1;                                 /*!< Globally enable interrupts   */
- 266   1      
- 267   1          return error;
- 268   1      }
- 269          
+ 196   1          /*!< Number of Oscillations per mSec = OSC_FREQ(MHz) / 1000 */   
+ 197   1          /*!< Number of Instructions per Oscillation = 1 / OSC_PER_INST */
+ 198   1          error |= cuteOS_GetTickTime(&tick_time_ms);
+ 199   1          increments = (u16_t) ( ((u32_t)tick_time_ms * (OSC_FREQ/1000)) / (u32_t)OSC_PER_INST );
+ 200   1      
+ 201   1          reload_16 = (u16_t)(65536UL - increments);
+ 202   1          RCAP2H = TH2 = (u8_t)(reload_16 / 256);   /*!< Load T2 and reload capt. reg. high bytes   */
+ 203   1          RCAP2L = TL2 = (u8_t)(reload_16 % 256);   /*!< Load T2 and reload capt. reg. low bytes    */
+ 204   1      
+ 205   1          ET2 = 1;                                /*!< Enable Timer 2 interrupt    */
+ 206   1          TR2 = 1;                                /*!< Start Timer 2    */
+ 207   1          EA = 1;                                 /*!< Globally enable interrupts   */
+ 208   1      
+ 209   1          return error;
+ 210   1      }
+ 211          
+ 212          
+ 213          
+ 214          
+ 215          /*--------------------------------------------------------------------*/
+ 216          /*  PRIVATE FUNCTIONS DEFINITIONS                                     */
+ 217          /*--------------------------------------------------------------------*/
+ 218          /**********************************************************************
+ 219           * @brief   cuteOS_ISR() is invoked periodically by Timer 2 overflow
+ 220           * @note    See cuteOS_Init() for timing details.
+ 221           *********************************************************************/
+ 222          static void cuteOS_ISR() interrupt INTERRUPT_Timer_2_Overflow {
+ 223   1          u8_t i;
+ 224   1      
+ 225   1          /*!< Must manually reset the timer 2 interrupt flag    */
+ 226   1          TF2 = 0;       
+ 227   1      
+ 228   1          /*!< Increment the tick time counter */
+ 229   1          ++cuteOS_tick_count;
+ 230   1      
+ 231   1          /*!< Check if the tick time counter has reached the required tick time */
+ 232   1          for(i = 0; i < cuteOS_task_counter; ++i) {
+ 233   2              if( (cuteOS_tick_count % tasks[i].ticks) == 0) {
+ 234   3                  if(tasks[i].callback != NULL) {
+ 235   4                      tasks[i].callback();
+ 236   4                  }
+ 237   3              }
+ 238   2          }
+ 239   1              
+C51 COMPILER V9.60.0.0   CUTEOS                                                            04/14/2022 16:34:57 PAGE 5   
+
+ 240   1          /*!< Reset the tick time counter */
+ 241   1          // cuteOS_tick_count = 0;
+ 242   1      }
+ 243          
+ 244          static ERROR_t cuteOS_UpdateTicks(void) {
+ 245   1          ERROR_t error = ERROR_NO;
+ 246   1          u32_t gcd_delay_ms;
+ 247   1          u8_t i;
+ 248   1      
+ 249   1          /*!< Find the maximum tick time among all the tasks */
+ 250   1          error |= cuteOS_GCD(&gcd_delay_ms);
+ 251   1      
+ 252   1          error |= cuteOS_SetTickTime(gcd_delay_ms);
+ 253   1      
+ 254   1          /*!< Update the number of ticks for each task */
+ 255   1          for(i = 0; i < cuteOS_task_counter; ++i) {
+ 256   2              tasks[i].ticks = tasks[i].delay_ms / gcd_delay_ms;
+ 257   2          }
+ 258   1      
+ 259   1          return error;
+ 260   1      }
+ 261          
+ 262          static ERROR_t cuteOS_GCD(u32_t *gcd) {
+ 263   1          ERROR_t error = ERROR_NO;
+ 264   1          u32_t remainder;
+ 265   1          u32_t y;
+ 266   1          u8_t i;
+ 267   1      
+ 268   1          *gcd = tasks[0].delay_ms;
+ 269   1          for(i = 1; i < cuteOS_task_counter; ++i) {
+ 270   2              y = tasks[i].delay_ms;
+ 271   2              while(y != 0) {
+ 272   3                  remainder = *gcd % y;
+ 273   3                  *gcd = y;
+ 274   3                  y = remainder;
+ 275   3              }
+ 276   2          }
+ 277   1      
+ 278   1          /*!< Check if the tick time is greater than the maximum tick time */
+ 279   1          i = 2;
+ 280   1          while(*gcd > MAX_TICK_TIME_MS) {
+ 281   2              while( (*gcd % i) != 0) {
+ 282   3                  ++i;
+ 283   3              }
+ 284   2              *gcd /= i;
+ 285   2          }
+ 286   1      
+ 287   1          return error;
+ 288   1      }
+ 289          
+ 290          /**********************************************************************
+ 291           * @details Set the value of the tick time in milliseconds. So, the
+ 292           *          timing of the tasks is determined by the frequency of Timer 2
+ 293           *          overflow. Overflow occurs every tickTimeInMs milliseconds.
+ 294           *********************************************************************/
+ 295          static ERROR_t cuteOS_SetTickTime(const u8_t TICK_TIME_MS){
+ 296   1          ERROR_t error = ERROR_NO;
+ 297   1          
+ 298   1          if(TICK_TIME_MS <= MAX_TICK_TIME_MS) {
+ 299   2                      if(TICK_TIME_MS <= 5) {
+ 300   3                              cuteOS_tick_time_ms = 5;
+ 301   3                      } else {
+C51 COMPILER V9.60.0.0   CUTEOS                                                            04/14/2022 16:34:57 PAGE 6   
+
+ 302   3                              cuteOS_tick_time_ms = TICK_TIME_MS;
+ 303   3                      }
+ 304   2              error |= cuteOS_Init();
+ 305   2          } else {
+ 306   2              error |= ERROR_OUT_OF_RANGE;
+ 307   2          }
+ 308   1      
+ 309   1          return error;
+ 310   1      }
+*** WARNING C316 IN LINE 310 OF src\cuteOS.c: unterminated conditionals
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    481    ----
+   CODE SIZE        =    847    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     64      18
+   DATA SIZE        =     84      35
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

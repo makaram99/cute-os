@@ -1,6 +1,6 @@
 <h1 align="center">Cute OS</h1>
 
-<img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" height="20"/>  <img src="https://img.shields.io/badge/license-Mit%20-blue" alt="license"/>  <img src="https://img.shields.io/github/v/release/makaram99/cute-os" alt="release"/>  <img src="https://img.shields.io/github/last-commit/makaram99/cute-os" alt="last commit"/>
+<img alt="Creative Commons Licence" style="border-width:0" src="docs/logo.png" height="20"/>  <img src="https://img.shields.io/badge/license-Mit%20-blue" alt="license"/>  <img src="https://img.shields.io/github/v/release/makaram99/cute-os" alt="release"/>  <img src="https://img.shields.io/github/last-commit/makaram99/cute-os" alt="last commit"/>
 
 <p align="center">
   <img height="300" src="https://freepikpsd.com/file/2019/10/cute-stickers-transparent-Png-Transparent-Images.png" alt="cute">
@@ -34,56 +34,30 @@ You can test it **without any Hardware**, it can be simulated as will be discuss
 
 ## Table of Contents
 
-* [🔑 Introduction](#introduction)
-* [Table of Contents](#-table-of-contents)
-* [🛠️ Development Tools Required](#️development-tools-required)
-* [Project Hierarchy](#project-hierarchy)
-  * [Directories](#directories)
-  * [Files](#files)
-* [⚙ Working](#working)
-  * [Code](#code)
-  * [Simulation](#simulation)
-* [🎯 Results](#results)
-* [📑 Generate Documentation](#-generate-documentation)
-* [🔬 What is next?](#what-is-next)
-* [💁‍♂️ Contribute](#️contribute)
-* [📞 Contact me](#contact-me)
-* [📖 References](#references)
-* [🔓 Licenses](#licenses)
-* [🔏 Credits](#credits)
+- [🔑 Introduction](#-introduction)
+- [Table of Contents](#table-of-contents)
+- [🛠️ Development Tools Required](#️-development-tools-required)
+- [Project Hierarchy](#project-hierarchy)
+  - [Directories](#directories)
+  - [Files](#files)
+- [⚙ Working](#-working)
+  - [System Behaviour](#system-behaviour)
+  - [Code](#code)
+  - [Simulation](#simulation)
+- [🎯 Results](#-results)
+- [📑 Generate Documentation](#-generate-documentation)
+- [🔬 What is next?](#-what-is-next)
+- [💁‍♂️ Contribute](#️-contribute)
+- [📞 Contact me](#-contact-me)
+- [📖 References](#-references)
+- [🔓 Licenses](#-licenses)
+- [🔏 Credits](#-credits)
 
 ---
 
 ## 🛠️ Development Tools Required
 
-* **Toolchain**: <u>Keil-uVision5 C51 Compiler (C51)</u> <img src="https://www.arabicprogrammer.com/images/70/efb41dec0aabd42ea1ce2a35416f181e.png" alt="Keil" height="40"/>
-
-  Keil-uVision5 is used for code development, debugging, compiling, and simulating the system. It has a free version with limited features such as code size cannot exceed 2 KB.
-  
-  Download: [https://www.keil.com/c51/](https://www.keil.com/c51/)
-* **Text Editor**: <u>Visual Studio Code</u> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="VSCode" height="40"/>
-  
-  VS Code is used for code development the system. It is **free**.
-  
-  Download: [https://code.visualstudio.com/](https://code.visualstudio.com/)
-* **Hardware Simulator**: <u>Proteus8.9 8.9</u> <img src="https://1.bp.blogspot.com/-yrbxmeKwaI0/YBSLA5BGzuI/AAAAAAAAAdk/VsBKD-yajHUzeuTWI7F7gTqJx5nZqZ9GgCLcBGAsYHQ/s611/labcenter-electronics-logo.jpg" alt="Proteus8.9" height="40"/>
-  
-  Proteus8.9 is used to simulate the hardware. So, no need to purchase any hardware.
-  
-  Download: [https://www.Proteus8.9.co.jp/](https://www.Proteus8.9.co.jp/)
-* **Documents Generator**: <u>doxygen</u> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0YOJrMuJqx2hxsbkXZ7e3xytN-ATyuJJOjg&usqp=CAU" alt="doxygen" height="40"/>
-  
-  Doxygen is used to generate documentations of the code in html, latex, pdf, and other formats.
-  
-  Download: [https://www.doxygen.nl/download.html](https://www.doxygen.nl/download.html)
-* **Command Line Automation Tool**: <u>make</u> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Heckert_GNU_white.png" alt="make" height="40"/>
-  
-  Make is used to automate kernel commands.
-  I've used it to automate the generation of documents from doxygen.
-  
-  Download:
-  * Linux or MacOS: [https://www.gnu.org/software/make/](https://www.gnu.org/software/make/)
-  * Windows: [http://gnuwin32.sourceforge.net/packages/make.htm](http://gnuwin32.sourceforge.net/packages/make.htm)
+Read this [guide](https://github.com/makaram99/8051-projects/blob/master/tools.md) to know what tools are required to develop this project.
 
 ---
 
@@ -103,10 +77,30 @@ The project contains some files and directories:
 * **[LICENSE](LICENSE)**: The license description of the project.
 * **[Doxyfile](Doxyfile)**: The configuration of doxygen application (Documentation generator).
 * **[doxygen.mk](doxygen.mk)**: Contains the configuration and rules to be run using make to generate documents.
+* **[tools.md](tools.md)**: Contains HOW-TO-SETUP the tools required to run this project.
+* **[version_log.md](version_log.md)**: Contains the history of the project.
 
 ---
 
 ## ⚙ Working
+
+### System Behaviour
+
+The Systems has 4 blocks, with overall of 6 tasks. These blocks are:
+
+1. Traffic Lights: This block has only one task (```TRAFFIC_Update```).
+   And it runs every second.
+   The working of this block is shown in the following figure:
+   <img height="300" src="docs/block_traffic_lights.BMP" alt="logo">
+2. LEDs: This block has 3 tasks, one task for each LED (```led1_toggle, led2_toggle, led3_toggle```).
+   The working of this block is shown in the following figure:
+   <img height="300" src="docs/block_leds.BMP" alt="logo">
+3. Motor: This block has only one task (```motor_toggle```).
+   The working of this block is shown in the following figure:
+   <img height="300" src="docs/block_motor.BMP" alt="logo">
+4. Buzzer: This block has only one task (```buzzer_toggle```).
+   The working of this block is shown in the following figure:
+   <img height="300" src="docs/block_buzzer.BMP" alt="logo">
 
 ### Code
 
@@ -120,7 +114,7 @@ To develop the project, you need to:
 * You can build the project by clicking on **F7** key on keyboard.
 NOTE: The scheduler is the function called **cuteOS_ISR** which is periodically to run new tasks.
 
-**NOTE**: The scheduler is the function called **cuteOS_ISR** which is executed periodically to check whether to run new tasks or not.
+**NOTE**: The scheduler is the function called ```cuteOS_ISR``` which is executed periodically to check whether to run new tasks or not.
 
 **NOTE**: I've documented the code as much as I can. So, I hope you will understand the code.
 
@@ -132,11 +126,9 @@ To simulate the project, you need to:
 * Proteus8.9 has **compatibility issues** with its version, and the project may not be opened if you have a different version of Proteus8.9. So, you need to install **Proteus8.9 8.9** to be able to simulate the project.
 * Open the [simulation](simulation/) directory.
 * Click twice on [simulation.pdsprj](simulation/simulation.pdsprj) file.
-* It will open with Proteus8.9 as shown here:
-    <img src="docs/simulation_proteus.bmp" alt="simulation"/>
-* As shown in the image, the projects is divided into blocks such as Traffic Lights, Buzzer, and Motor blocks, each block is a **task**, except the Microcontroller block.
-* Before simulation, read the **Working** section of each block to know how the simulation will work  
-* To run simulation, click on **F12** from the keyboard.
+* It will open with Proteus8.9.
+* The simulation works as the following:
+    <img src="docs/simulation.gif" alt="simulation"/>
 * Enjoy the simulation.
 * To stop the simulation: Press twice on **ESC** key from the keyboard.
 
@@ -163,7 +155,7 @@ After running the simulator on Keil-uVision5, the power consumption of the CPU d
     * Normal mode: **11 mA**
 3. After simulating the code using uVision simulator, and profiling the execution time of function, the result is shown here:
     <img src="docs/functions_time_profiling.png" alt="Proteus8.9"/>
-5. So, the power consumption can be calculated as follow:
+4. So, the power consumption can be calculated as follow:
     * The 8051 microcontroller uses 5V Logic level.
     * The average current consumption of the CPU is:
       1. <u>Without cute OS</u>: the code is always running in **normal mode** and the current consumption is **11mA**.

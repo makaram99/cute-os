@@ -13,9 +13,9 @@
 /*                YOU CAN CHANGE THE FOLLOWING PARAMETERS				   */
 /*-------------------------------------------------------------------------*/
 typedef enum {
-    TRAFFIC_DURATION_RED = 10,          /*!< Red light duration in seconds */
+    TRAFFIC_DURATION_RED = 4,          /*!< Red light duration in seconds */
     TRAFFIC_DURATION_RED_AMBER = 2,     /*!< Red-Amber light duration in seconds */
-    TRAFFIC_DURATION_GREEN = 10,        /*!< Green light duration in seconds */
+    TRAFFIC_DURATION_GREEN = 4,        /*!< Green light duration in seconds */
     TRAFFIC_DURATION_AMBER = 2,         /*!< Amber light duration in seconds */
 }TRAFFIC_SEQUENCE_DURATION_t;
 

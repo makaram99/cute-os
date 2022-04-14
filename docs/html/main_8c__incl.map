@@ -1,7 +1,7 @@
 <map id="code/src/main.c" name="code/src/main.c">
 <area shape="rect" id="node1" title="Testing cute OS." alt="" coords="414,5,573,37"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,85,93,117"/>
-<area shape="rect" id="node3" href="$_s_t_d___t_y_p_e_s_8h.html" title="Standard data types For AVR Microcontrollers." alt="" coords="117,85,269,117"/>
+<area shape="rect" id="node3" href="$_s_t_d___t_y_p_e_s_8h.html" title="Standard data types For 8051 Microcontrollers." alt="" coords="117,85,269,117"/>
 <area shape="rect" id="node4" href="$_b_i_t___m_a_t_h_8h.html" title="Common bit manipulation operations." alt="" coords="294,85,429,117"/>
 <area shape="rect" id="node5" href="$main_8h.html" title="Project Header for main.c." alt="" coords="453,85,533,117"/>
 <area shape="rect" id="node6" href="$port_8h.html" title="Port Header file for the milk pasteurization example." alt="" coords="558,85,631,117"/>

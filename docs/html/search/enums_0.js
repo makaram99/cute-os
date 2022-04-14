@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['activation_5fstatus_5ft_167',['ACTIVATION_STATUS_t',['../_s_t_d___t_y_p_e_s_8h.html#ae0b164adcf6f9d41e3f63015bf4f6e32',1,'STD_TYPES.h']]]
+  ['traffic_5fsequence_5fduration_5ft_169',['TRAFFIC_SEQUENCE_DURATION_t',['../traffic__cfg_8h.html#aec88567a76515e7a4bc2d300531c6308',1,'traffic_cfg.h']]],
+  ['traffic_5fsequence_5ft_170',['TRAFFIC_SEQUENCE_t',['../traffic_8h.html#a00e0e3324d15be77df026e35644b6457',1,'traffic.h']]]
 ];

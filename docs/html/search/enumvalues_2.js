@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['false_184',['FALSE',['../_s_t_d___t_y_p_e_s_8h.html#a4cb9b2fd33bff75a223b35dd2e7b67deaa1e095cc966dbecf6a0d8aad75348d1a',1,'STD_TYPES.h']]]
+  ['red_173',['RED',['../traffic_8h.html#a00e0e3324d15be77df026e35644b6457af80f9a890089d211842d59625e561f88',1,'traffic.h']]],
+  ['red_5famber_174',['RED_AMBER',['../traffic_8h.html#a00e0e3324d15be77df026e35644b6457a77e3d0fbeb9f02d74acbc8ab1bf8d38d',1,'traffic.h']]]
 ];
