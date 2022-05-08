@@ -3,7 +3,7 @@
 <img alt="Creative Commons Licence" style="border-width:0" src="docs/logo.png" height="20"/>  <img src="https://img.shields.io/badge/license-Mit%20-blue" alt="license"/>  <img src="https://img.shields.io/github/v/release/makaram99/cute-os" alt="release"/>  <img src="https://img.shields.io/github/last-commit/makaram99/cute-os" alt="last commit"/>
 
 <p align="center">
-  <img height="300" src="https://freepikpsd.com/file/2019/10/cute-stickers-transparent-Png-Transparent-Images.png" alt="cute">
+  <img height="300" src="docs/logo.png" alt="cute">
 </p>
 
 ✅ Perform a review and leave a comment <a href="https://github.com/makaram99/cute-os/issues/1">here</a></strong>
